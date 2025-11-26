@@ -11,6 +11,6 @@ import SwiftUI
 public struct SwiftUIView: View {
     public init() {}
     public var body: some View {
-        Text("SwiftUI View!")
+        Text("SwiftUI View from Swift package manager!")
     }
 }

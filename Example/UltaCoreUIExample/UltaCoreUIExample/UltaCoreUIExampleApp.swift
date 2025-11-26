@@ -13,7 +13,7 @@ import UltaCoreUI
 struct UltaCoreUIExampleApp: App {
     var body: some Scene {
         WindowGroup {
-            SwiftUIView()
+            ContentView()
         }
     }
 }
