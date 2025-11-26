@@ -8,6 +8,7 @@
 import SwiftUI
 import UltaCoreUI
 
+
 @main
 struct UltaCoreUIExampleApp: App {
     var body: some Scene {
