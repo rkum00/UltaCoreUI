@@ -14,6 +14,7 @@
 		88C808892ED73AB5000BD06E /* UltaCoreUIExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C808882ED73AB5000BD06E /* UltaCoreUIExampleTests.swift */; };
 		88C808932ED73AB5000BD06E /* UltaCoreUIExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C808922ED73AB5000BD06E /* UltaCoreUIExampleUITests.swift */; };
 		88C808952ED73AB5000BD06E /* UltaCoreUIExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C808942ED73AB5000BD06E /* UltaCoreUIExampleUITestsLaunchTests.swift */; };
+		88C808A32ED73F30000BD06E /* UltaCoreUI in Frameworks */ = {isa = PBXBuildFile; productRef = 88C808A22ED73F30000BD06E /* UltaCoreUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88C808A32ED73F30000BD06E /* UltaCoreUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +145,9 @@
 			dependencies = (
 			);
 			name = UltaCoreUIExample;
+			packageProductDependencies = (
+				88C808A22ED73F30000BD06E /* UltaCoreUI */,
+			);
 			productName = UltaCoreUIExample;
 			productReference = 88C808742ED73AB3000BD06E /* UltaCoreUIExample.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +220,9 @@
 				Base,
 			);
 			mainGroup = 88C8086B2ED73AB3000BD06E;
+			packageReferences = (
+				88C808A12ED73F30000BD06E /* XCRemoteSwiftPackageReference "UltaCoreUI" */,
+			);
 			productRefGroup = 88C808752ED73AB3000BD06E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -582,6 +590,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		88C808A12ED73F30000BD06E /* XCRemoteSwiftPackageReference "UltaCoreUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rkum00/UltaCoreUI";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		88C808A22ED73F30000BD06E /* UltaCoreUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 88C808A12ED73F30000BD06E /* XCRemoteSwiftPackageReference "UltaCoreUI" */;
+			productName = UltaCoreUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 88C8086C2ED73AB3000BD06E /* Project object */;
 }

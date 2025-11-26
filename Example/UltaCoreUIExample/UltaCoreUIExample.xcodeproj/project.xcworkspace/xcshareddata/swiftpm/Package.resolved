@@ -1,0 +1,15 @@
+{
+  "originHash" : "55ef4021ef49dca964dd0cd39f11d92e3ee967cd551cf3e422e4ce96445230fb",
+  "pins" : [
+    {
+      "identity" : "ultacoreui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/rkum00/UltaCoreUI",
+      "state" : {
+        "branch" : "main",
+        "revision" : "f9fa7bd2a788c9a085aa36261c8c64f42e3f40bd"
+      }
+    }
+  ],
+  "version" : 3
+}
