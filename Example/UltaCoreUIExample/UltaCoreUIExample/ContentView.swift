@@ -58,12 +58,13 @@ struct SectionView: View {
                     .font(.headline)
                 Spacer()
                 Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
-                    .onTapGesture {
-                        toggleExpand()
-                    }
             }
             .padding(.vertical, 5)
             .frame(height: 50)
+            .contentShape(Rectangle())
+            .onTapGesture {
+                toggleExpand()
+            }
             
             if isExpanded {
                 Divider()
