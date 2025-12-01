@@ -53,11 +53,16 @@ struct SectionView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            HStack {
+            ZStack {
                 Text(title)
-                    .font(.headline)
-                Spacer()
-                Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
+                    .font(.title)
+                    .fontWeight(.semibold)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                HStack {
+                    Spacer()
+                    Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
+                        .font(.title3)
+                }
             }
             .padding(.vertical, 5)
             .frame(height: 50)
