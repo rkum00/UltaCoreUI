@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		881064542EDEAEBD001B17CC /* UBConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881064532EDEAEBD001B17CC /* UBConstants.swift */; };
+		8829728C2EDEE6E100538F3F /* UltaThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8829728B2EDEE6E100538F3F /* UltaThemeView.swift */; };
 		88C808782ED73AB3000BD06E /* UltaCoreUIExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C808772ED73AB3000BD06E /* UltaCoreUIExampleApp.swift */; };
 		88C8087A2ED73AB3000BD06E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C808792ED73AB3000BD06E /* ContentView.swift */; };
 		88C8087C2ED73AB5000BD06E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88C8087B2ED73AB5000BD06E /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		881064532EDEAEBD001B17CC /* UBConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UBConstants.swift; sourceTree = "<group>"; };
+		8829728B2EDEE6E100538F3F /* UltaThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaThemeView.swift; sourceTree = "<group>"; };
 		88C808742ED73AB3000BD06E /* UltaCoreUIExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltaCoreUIExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C808772ED73AB3000BD06E /* UltaCoreUIExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaCoreUIExampleApp.swift; sourceTree = "<group>"; };
 		88C808792ED73AB3000BD06E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +77,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		881064522EDEABBD001B17CC /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				88C808792ED73AB3000BD06E /* ContentView.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		8829728A2EDEE6A900538F3F /* ThemesView */ = {
+			isa = PBXGroup;
+			children = (
+				8829728B2EDEE6E100538F3F /* UltaThemeView.swift */,
+			);
+			path = ThemesView;
+			sourceTree = "<group>";
+		};
 		88C8086B2ED73AB3000BD06E = {
 			isa = PBXGroup;
 			children = (
@@ -97,7 +117,9 @@
 			isa = PBXGroup;
 			children = (
 				88C808772ED73AB3000BD06E /* UltaCoreUIExampleApp.swift */,
-				88C808792ED73AB3000BD06E /* ContentView.swift */,
+				881064532EDEAEBD001B17CC /* UBConstants.swift */,
+				881064522EDEABBD001B17CC /* HomeView */,
+				8829728A2EDEE6A900538F3F /* ThemesView */,
 				88C8087B2ED73AB5000BD06E /* Assets.xcassets */,
 				88C8087D2ED73AB5000BD06E /* Preview Content */,
 			);
@@ -267,6 +289,8 @@
 			files = (
 				88C8087A2ED73AB3000BD06E /* ContentView.swift in Sources */,
 				88C808782ED73AB3000BD06E /* UltaCoreUIExampleApp.swift in Sources */,
+				8829728C2EDEE6E100538F3F /* UltaThemeView.swift in Sources */,
+				881064542EDEAEBD001B17CC /* UBConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
