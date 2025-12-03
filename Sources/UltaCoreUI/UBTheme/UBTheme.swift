@@ -205,4 +205,37 @@ public extension UBTheme {
             return Theme3.ubThemeColorForegroundDisabled
         }
     }
+    
+    static func applyBackgroundBaselineInverseColor(theme: UBTheme = .current) -> UIColor {
+        switch theme {
+        case .theme1:
+            return Theme1.ubThemeColorBackgroundBaselineInverse
+        case .theme2:
+            return Theme2.ubThemeColorBackgroundBaselineInverse
+        case .theme3:
+            return Theme3.ubThemeColorBackgroundBaselineInverse
+        }
+    }
+    
+    static func applyBackgroundPrimaryColor(theme: UBTheme = .current) -> UIColor {
+        switch theme {
+        case .theme1:
+            return Theme1.ubThemeColorBackgroundPrimary
+        case .theme2:
+            return Theme2.ubThemeColorBackgroundPrimary
+        case .theme3:
+            return Theme3.ubThemeColorBackgroundPrimary
+        }
+    }
+    
+    static func applyBackgroundBaselineColor(theme: UBTheme = .current) -> UIColor {
+        switch theme {
+        case .theme1:
+            return Theme1.ubThemeColorBackgroundBaseline
+        case .theme2:
+            return Theme2.ubThemeColorBackgroundBaseline
+        case .theme3:
+            return Theme3.ubThemeColorBackgroundBaseline
+        }
+    }
 }
