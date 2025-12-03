@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		881064542EDEAEBD001B17CC /* UBConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881064532EDEAEBD001B17CC /* UBConstants.swift */; };
-		8829728C2EDEE6E100538F3F /* UltaThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8829728B2EDEE6E100538F3F /* UltaThemeView.swift */; };
+		881064542EDEAEBD001B17CC /* UltaConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881064532EDEAEBD001B17CC /* UltaConstants.swift */; };
+		8829728C2EDEE6E100538F3F /* UltaThemeOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8829728B2EDEE6E100538F3F /* UltaThemeOptionsView.swift */; };
+		8829728E2EE01DB100538F3F /* UltaThemeOptionsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8829728D2EE01DB100538F3F /* UltaThemeOptionsRouter.swift */; };
+		882972902EE01DF000538F3F /* UltaThemeOptionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8829728F2EE01DF000538F3F /* UltaThemeOptionsPresenter.swift */; };
+		882972932EE039D400538F3F /* UltaTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882972922EE039D400538F3F /* UltaTextView.swift */; };
+		882972952EE0419700538F3F /* UltaTextViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882972942EE0419700538F3F /* UltaTextViewPresenter.swift */; };
+		882972972EE0420C00538F3F /* UltaTextViewOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882972962EE0420C00538F3F /* UltaTextViewOptions.swift */; };
+		882972992EE0456F00538F3F /* UltaTextRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882972982EE0456F00538F3F /* UltaTextRowView.swift */; };
 		88C808782ED73AB3000BD06E /* UltaCoreUIExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C808772ED73AB3000BD06E /* UltaCoreUIExampleApp.swift */; };
 		88C8087A2ED73AB3000BD06E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C808792ED73AB3000BD06E /* ContentView.swift */; };
 		88C8087C2ED73AB5000BD06E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88C8087B2ED73AB5000BD06E /* Assets.xcassets */; };
@@ -37,8 +43,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		881064532EDEAEBD001B17CC /* UBConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UBConstants.swift; sourceTree = "<group>"; };
-		8829728B2EDEE6E100538F3F /* UltaThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaThemeView.swift; sourceTree = "<group>"; };
+		881064532EDEAEBD001B17CC /* UltaConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaConstants.swift; sourceTree = "<group>"; };
+		8829728B2EDEE6E100538F3F /* UltaThemeOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaThemeOptionsView.swift; sourceTree = "<group>"; };
+		8829728D2EE01DB100538F3F /* UltaThemeOptionsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaThemeOptionsRouter.swift; sourceTree = "<group>"; };
+		8829728F2EE01DF000538F3F /* UltaThemeOptionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaThemeOptionsPresenter.swift; sourceTree = "<group>"; };
+		882972922EE039D400538F3F /* UltaTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaTextView.swift; sourceTree = "<group>"; };
+		882972942EE0419700538F3F /* UltaTextViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaTextViewPresenter.swift; sourceTree = "<group>"; };
+		882972962EE0420C00538F3F /* UltaTextViewOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaTextViewOptions.swift; sourceTree = "<group>"; };
+		882972982EE0456F00538F3F /* UltaTextRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaTextRowView.swift; sourceTree = "<group>"; };
 		88C808742ED73AB3000BD06E /* UltaCoreUIExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltaCoreUIExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C808772ED73AB3000BD06E /* UltaCoreUIExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaCoreUIExampleApp.swift; sourceTree = "<group>"; };
 		88C808792ED73AB3000BD06E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,12 +97,25 @@
 			path = HomeView;
 			sourceTree = "<group>";
 		};
-		8829728A2EDEE6A900538F3F /* ThemesView */ = {
+		8829728A2EDEE6A900538F3F /* OptionsThemesView */ = {
 			isa = PBXGroup;
 			children = (
-				8829728B2EDEE6E100538F3F /* UltaThemeView.swift */,
+				8829728B2EDEE6E100538F3F /* UltaThemeOptionsView.swift */,
+				8829728D2EE01DB100538F3F /* UltaThemeOptionsRouter.swift */,
+				8829728F2EE01DF000538F3F /* UltaThemeOptionsPresenter.swift */,
 			);
-			path = ThemesView;
+			path = OptionsThemesView;
+			sourceTree = "<group>";
+		};
+		882972912EE0399500538F3F /* UltaTextView */ = {
+			isa = PBXGroup;
+			children = (
+				882972922EE039D400538F3F /* UltaTextView.swift */,
+				882972942EE0419700538F3F /* UltaTextViewPresenter.swift */,
+				882972962EE0420C00538F3F /* UltaTextViewOptions.swift */,
+				882972982EE0456F00538F3F /* UltaTextRowView.swift */,
+			);
+			path = UltaTextView;
 			sourceTree = "<group>";
 		};
 		88C8086B2ED73AB3000BD06E = {
@@ -117,9 +142,10 @@
 			isa = PBXGroup;
 			children = (
 				88C808772ED73AB3000BD06E /* UltaCoreUIExampleApp.swift */,
-				881064532EDEAEBD001B17CC /* UBConstants.swift */,
+				881064532EDEAEBD001B17CC /* UltaConstants.swift */,
 				881064522EDEABBD001B17CC /* HomeView */,
-				8829728A2EDEE6A900538F3F /* ThemesView */,
+				8829728A2EDEE6A900538F3F /* OptionsThemesView */,
+				882972912EE0399500538F3F /* UltaTextView */,
 				88C8087B2ED73AB5000BD06E /* Assets.xcassets */,
 				88C8087D2ED73AB5000BD06E /* Preview Content */,
 			);
@@ -288,9 +314,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				88C8087A2ED73AB3000BD06E /* ContentView.swift in Sources */,
+				882972932EE039D400538F3F /* UltaTextView.swift in Sources */,
+				882972992EE0456F00538F3F /* UltaTextRowView.swift in Sources */,
+				882972972EE0420C00538F3F /* UltaTextViewOptions.swift in Sources */,
+				882972902EE01DF000538F3F /* UltaThemeOptionsPresenter.swift in Sources */,
+				8829728E2EE01DB100538F3F /* UltaThemeOptionsRouter.swift in Sources */,
+				882972952EE0419700538F3F /* UltaTextViewPresenter.swift in Sources */,
 				88C808782ED73AB3000BD06E /* UltaCoreUIExampleApp.swift in Sources */,
-				8829728C2EDEE6E100538F3F /* UltaThemeView.swift in Sources */,
-				881064542EDEAEBD001B17CC /* UBConstants.swift in Sources */,
+				8829728C2EDEE6E100538F3F /* UltaThemeOptionsView.swift in Sources */,
+				881064542EDEAEBD001B17CC /* UltaConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

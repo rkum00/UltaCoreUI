@@ -23,7 +23,7 @@ struct ContentView: View {
                         
                         if expandedSections.contains(section.title) {
                             ForEach(section.items, id: \.self) { item in
-                                NavigationLink(destination: UltaThemeView(itemName: item)) {
+                                NavigationLink(destination: UltaOptionsThemeView(presenter: UltaThemeOptionsPresenter(router: UltaOptionsThemeRouter()))) {
                                     Text(item)
                                         .padding(.vertical, 10)
                                 }

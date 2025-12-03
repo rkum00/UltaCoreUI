@@ -17,4 +17,3 @@ let sections: [SectionData] = [
     SectionData(title: "Atoms", items: ["Colors", "Fonts", "Icons"]),
     SectionData(title: "Molecules", items: ["UBText", "UBButton", "UBCardContainer"])
 ]
-let themes = ["Theme1", "Theme2", "Theme3"]
