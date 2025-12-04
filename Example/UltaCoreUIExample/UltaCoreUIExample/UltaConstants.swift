@@ -7,6 +7,21 @@
 
 import UIKit
 import UltaCoreUI
+import SwiftUI
+
+enum OptionsHeaderType: String, CaseIterable {
+    case atoms = "Atoms"
+    case molecues = "Molecues"
+}
+
+enum OptionsPageType: String, CaseIterable {
+    case colors = "Colors"
+    case fonts = "Fonts"
+    case icons = "Icons"
+    case ubText = "UBText"
+    case ubButton = "UBButton"
+    case ubCardContainer = "UBCard Container"
+}
 
 public enum GlobalTheme1ColorEnum: String, CaseIterable {
     case ubThemeColorBackgroundBaseline
@@ -282,11 +297,17 @@ public enum GlobalTheme3ColorEnum: String, CaseIterable {
 
 struct SectionData: Identifiable {
     let id = UUID()
-    let title: String
-    let items: [String]
+    let title: OptionsHeaderType
+    let items: [OptionsPageType]
 }
 
 let sections: [SectionData] = [
-    SectionData(title: "Atoms", items: ["Colors", "Fonts", "Icons"]),
-    SectionData(title: "Molecules", items: ["UBText", "UBButton", "UBCardContainer"])
+    SectionData(title: OptionsHeaderType.atoms,
+                items: [OptionsPageType.colors,
+                        OptionsPageType.fonts,
+                        OptionsPageType.icons]),
+    SectionData(title: OptionsHeaderType.molecues,
+                items: [OptionsPageType.ubText,
+                        OptionsPageType.ubButton,
+                        OptionsPageType.ubCardContainer])
 ]

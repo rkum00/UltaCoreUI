@@ -16,15 +16,15 @@ struct ContentView: View {
             List {
                 ForEach(sections) { section in
                     Section(header: SectionHeader(
-                        title: section.title,
-                        isExpanded: expandedSections.contains(section.title),
-                        onTap: { toggle(section.title) }
+                        title: section.title.rawValue,
+                        isExpanded: expandedSections.contains(section.title.rawValue),
+                        onTap: { toggle(section.title.rawValue) }
                     )) {
                         
-                        if expandedSections.contains(section.title) {
+                        if expandedSections.contains(section.title.rawValue) {
                             ForEach(section.items, id: \.self) { item in
-                                NavigationLink(destination: UltaOptionsThemeView(presenter: UltaThemeOptionsPresenter(router: UltaOptionsThemeRouter()))) {
-                                    Text(item)
+                                NavigationLink(destination: UltaOptionsThemeView(presenter: UltaOptionsThemePresenter(router: UltaOptionsThemeRouter()), selectedOption: item)) {
+                                    Text(item.rawValue)
                                         .padding(.vertical, 10)
                                 }
                             }

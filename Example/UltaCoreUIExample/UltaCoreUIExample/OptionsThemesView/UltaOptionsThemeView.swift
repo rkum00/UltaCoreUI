@@ -6,20 +6,22 @@
 //
 
 import SwiftUI
+import UltaCoreUI
 
 struct UltaOptionsThemeView: View {
-    @StateObject var presenter: UltaThemeOptionsPresenter
+    @StateObject var presenter: UltaOptionsThemePresenter
+    var selectedOption: OptionsPageType
     
     var body: some View {
-        List(presenter.themes, id: \.self) { item in
+        List(UBTheme.allCases, id: \.self) { theme in
             NavigationLink(
-                destination: presenter.navigateToDetail(for: item)
+                destination: presenter.navigateToDetail(selectedPageOption: selectedOption, for: theme)
             ) {
-                Text(item)
+                Text(theme.rawValue.capitalized)
                     .padding(.vertical, 10)
             }
         }
-        .navigationTitle("Color Options")
+        .navigationTitle("Theme Options")
         .navigationBarTitleDisplayMode(.inline)
         .listStyle(.plain)
     }
