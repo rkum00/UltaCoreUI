@@ -130,21 +130,6 @@ public enum TextFontSize: CaseIterable {
             return UBGlobal.fontSize500
         }
     }
-    
-    func getPalmerLakeFontSize() -> CGFloat {
-        switch self {
-        case .xsmall:
-            return UBGlobal.fontSize400
-        case .small:
-            return UBGlobal.fontSize500
-        case .medium:
-            return UBGlobal.fontSize550
-        case .large:
-            return UBGlobal.fontSize700
-        case .xlarge, .xxlarge:
-            return UBGlobal.fontSize900
-        }
-    }
 }
 
 /// These are the different line heights available for text component

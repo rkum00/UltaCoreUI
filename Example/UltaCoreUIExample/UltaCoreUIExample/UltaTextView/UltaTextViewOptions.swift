@@ -83,14 +83,15 @@ public enum UltaTextViewOptions: String, CaseIterable {
     
     func getWeightComponent(row: Int) -> UBText {
         switch TextFontWeight.allCases[row] {
-        case .bold:
-            return UBText(textAttribute: TextAttributes(text: "Bold", fontWeight: .bold))
-        case .regular:
-            return UBText(textAttribute: TextAttributes(text: "Regular"))
-        case .semiBold:
-            return UBText(textAttribute: TextAttributes(text: "SemiBold", fontWeight: .semiBold))
-        default:
-            return UBText(textAttribute: TextAttributes(text: "Medium", fontWeight: .medium))
+//        case .regular:
+//            return UBText(textAttribute: TextAttributes(text: "Regular"))
+//        case .semiBold:
+//            return UBText(textAttribute: TextAttributes(text: "SemiBold", fontWeight: .semiBold))
+//        case .bold:
+//            return UBText(textAttribute: TextAttributes(text: "Bold", fontWeight: .bold))
+//        case .medium:
+//            return UBText(textAttribute: TextAttributes(text: "Medium", fontWeight: .medium))
+        default: return UBText(textAttribute: TextAttributes(text: "Bold", fontWeight: .bold))
         }
     }
     
