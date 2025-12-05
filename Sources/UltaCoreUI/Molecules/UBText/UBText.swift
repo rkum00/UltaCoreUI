@@ -1,6 +1,6 @@
 //
-//  SwiftUIView.swift
-//  
+//  UBText.swift
+//
 //
 //  Created by Rakesh Kumar on 03/12/25.
 //

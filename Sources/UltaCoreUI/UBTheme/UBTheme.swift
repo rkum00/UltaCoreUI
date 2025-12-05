@@ -238,4 +238,15 @@ public extension UBTheme {
             return Theme3.ubThemeColorBackgroundBaseline
         }
     }
+    
+    static func applyBackgroundTransparentColor(theme: UBTheme = .current) -> UIColor {
+        switch theme {
+        case .theme1:
+            return Theme1.ubThemeColorBackgroundTransparent
+        case .theme2:
+            return Theme2.ubThemeColorBackgroundTransparent
+        case .theme3:
+            return Theme3.ubThemeColorBackgroundTransparent
+        }
+    }
 }
