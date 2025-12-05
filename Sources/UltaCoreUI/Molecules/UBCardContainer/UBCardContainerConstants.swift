@@ -10,10 +10,10 @@ import SwiftUI
 
 /// Represents the possible outline widths for a card component.
 /// Used to specify small, medium, or large outline thickness.
-public enum UBCardSize {
-    case small
-    case medium
-    case large
+public enum UBCardSize: String, CaseIterable {
+    case small = "Small"
+    case medium = "Medium"
+    case large = "Large"
 
     /// Returns the width value associated with the current card size.
     ///
