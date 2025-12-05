@@ -34,7 +34,7 @@ public struct UBCardView: View {
         }
         UBText(textAttribute: TextAttributes(text: title,
                                              color: .neutralHighInverse,
-                                             fontSize: .small,
+                                             fontSize: .medium,
                                              textAlign: .center))
         UBText(textAttribute: TextAttributes(text: subtitle,
                                              color: .neutralHighInverse,
@@ -42,7 +42,7 @@ public struct UBCardView: View {
                                              textAlign: .center))
         UBText(textAttribute: TextAttributes(text: description,
                                              color: .neutralHighInverse,
-                                             fontSize: .large,
+                                             fontSize: .medium,
                                              textAlign: .center))
     }
 }
