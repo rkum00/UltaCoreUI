@@ -35,14 +35,17 @@ public struct UBCardView: View {
         UBText(textAttribute: TextAttributes(text: title,
                                              color: .neutralHighInverse,
                                              fontSize: .medium,
-                                             textAlign: .center))
+                                             textAlign: .center,
+                                             fontWeight: .bold))
         UBText(textAttribute: TextAttributes(text: subtitle,
                                              color: .neutralHighInverse,
                                              fontSize: .medium,
-                                             textAlign: .center))
+                                             textAlign: .center,
+                                             fontWeight: .regular))
         UBText(textAttribute: TextAttributes(text: description,
                                              color: .neutralHighInverse,
                                              fontSize: .medium,
-                                             textAlign: .center))
+                                             textAlign: .center,
+                                             fontWeight: .regular))
     }
 }
