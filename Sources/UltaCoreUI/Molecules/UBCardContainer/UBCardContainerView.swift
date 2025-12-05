@@ -15,8 +15,9 @@ public struct UBCardContainerView<Content: View>: View {
     var state: UBCardState
     var shape: UBCardShape
     var axis: UBCardAxis
-    var theme: UBTheme = .current
-    var contentPadding: EdgeInsets
+    var theme: UBTheme
+    var contentPadding: UBCardPadding
+    var contentPaddingEdge: UBCardPaddingEdge
     var content: () -> Content
     
     public init(size: UBCardSize,
@@ -25,7 +26,8 @@ public struct UBCardContainerView<Content: View>: View {
                 shape: UBCardShape,
                 axis: UBCardAxis,
                 theme: UBTheme = .current,
-                contentPadding: EdgeInsets = EdgeInsets(),
+                contentPadding: UBCardPadding,
+                contentPaddingEdge: UBCardPaddingEdge = .all,
                 content: @escaping () -> Content) {
         self.size = size
         self.type = type
@@ -34,6 +36,7 @@ public struct UBCardContainerView<Content: View>: View {
         self.axis = axis
         self.theme = theme
         self.contentPadding = contentPadding
+        self.contentPaddingEdge = contentPaddingEdge
         self.content = content
     }
     
@@ -58,7 +61,7 @@ public struct UBCardContainerView<Content: View>: View {
                     VStack { content() }
                 }
             }
-            .padding(contentPadding)
+            .padding(UBCardPadding.insets(edge: contentPaddingEdge, size: contentPadding))
             .opacity(state == .disabled ? 0.6 : 1)
         }
         .frame(width: size.getWidth(), height: size.getHeight())

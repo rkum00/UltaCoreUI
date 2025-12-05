@@ -68,6 +68,16 @@ public enum UBCardAlignment: String, CaseIterable {
     case middleTop
 }
 
+public enum UBCardPaddingEdge {
+    case top
+    case bottom
+    case leading
+    case trailing
+    case horizontal
+    case vertical
+    case all
+}
+
 public enum UBCardPadding: String, CaseIterable {
     case none
     case xSmall
@@ -80,7 +90,7 @@ public enum UBCardPadding: String, CaseIterable {
     ///
     /// - Returns: A `CGFloat` representing the padding value for the corresponding case.
     /// - Note: The returned value is determined by mapping each case to a specific spacing constant from `UBGlobal`.
-    func getPadding() -> CGFloat {
+    var value: CGFloat {
         switch self {
         case.none:
             return UBGlobal.space0
@@ -97,6 +107,54 @@ public enum UBCardPadding: String, CaseIterable {
         }
     }
 }
+
+@available(iOS 13.0, *)
+public extension UBCardPadding {
+    static func insets(
+        edge: UBCardPaddingEdge,
+        size: UBCardPadding
+    ) -> EdgeInsets {
+        
+        switch edge {
+        case .all:
+            return EdgeInsets(
+                top: size.value,
+                leading: size.value,
+                bottom: size.value,
+                trailing: size.value
+            )
+            
+        case .horizontal:
+            return EdgeInsets(
+                top: 0,
+                leading: size.value,
+                bottom: 0,
+                trailing: size.value
+            )
+            
+        case .vertical:
+            return EdgeInsets(
+                top: size.value,
+                leading: 0,
+                bottom: size.value,
+                trailing: 0
+            )
+            
+        case .top:
+            return EdgeInsets(top: size.value, leading: 0, bottom: 0, trailing: 0)
+            
+        case .bottom:
+            return EdgeInsets(top: 0, leading: 0, bottom: size.value, trailing: 0)
+            
+        case .leading:
+            return EdgeInsets(top: 0, leading: size.value, bottom: 0, trailing: 0)
+            
+        case .trailing:
+            return EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: size.value)
+        }
+    }
+}
+
 
 public enum UBCardAxis {
     case horizontal
@@ -156,10 +214,3 @@ public enum UBCardShape {
     }
 }
 
-public enum UBCardPaddingSide: String, CaseIterable {
-    case top
-    case bottom
-    case left
-    case right
-    case allSides
-}
