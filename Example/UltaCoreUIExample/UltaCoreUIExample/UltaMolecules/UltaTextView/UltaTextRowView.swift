@@ -22,10 +22,9 @@ struct UltaTextRowView: View {
     
     var shouldRemoveFrameHeight: Bool = false
     
-    public init(ubText: UBText,
-                section: Int,
-                row: Int
-    ) {
+    init(ubText: UBText,
+         section: Int,
+         row: Int) {
         if (section == 4) || (section == 7) || (section == 8) {
             shouldRemoveFrameHeight = true
         }

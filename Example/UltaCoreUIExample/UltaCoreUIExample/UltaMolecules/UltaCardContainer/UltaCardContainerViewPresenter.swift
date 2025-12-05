@@ -7,6 +7,7 @@
 
 import UltaCoreUI
 import Foundation
+import SwiftUI
 
 class UltaCardContainerViewPresenter: ObservableObject {
     
@@ -23,13 +24,53 @@ class UltaCardContainerViewPresenter: ObservableObject {
     func getRowsCount(for section: Int) -> Int {
         return UltaCardContainerViewOptions.allCases[section].numberOfRows()
     }
-    
-    func getComponent(row: Int, section: Int, isTapped: Bool = false) -> UBText {
+        
+    func getComponent(row: Int, section: Int) -> some View {
         switch UltaCardContainerViewOptions.allCases[section] {
-        default: UBText(textAttribute: TextAttributes(text: "Card Container"))
+        case .size:
+            return AnyView(
+                UltaCardContainerViewOptions.size.getSizeComponent(
+                    section: section,
+                    row: row,
+                    theme: theme
+                )
+            )
+        case .padding:
+            return AnyView(
+                UltaCardContainerViewOptions.size.getPaddingComponent(
+                    section: section,
+                    row: row,
+                    theme: theme
+                )
+            )
+        default:
+            return AnyView(
+                UltaCardContainerRowView(
+                    ubCardContainer: UBCardContainerView(
+                        size: .medium,
+                        type: .elevated,
+                        state: .normal,
+                        shape: .rounded,
+                        axis: .vertical,
+                        theme: theme,
+                        contentPadding: .medium
+                    ) {
+                        UBText(
+                            textAttribute: TextAttributes(text: "Card Container",
+                                                          color: .neutralHighInverse,
+                                                          fontSize: .medium,
+                                                          textAlign: .center,
+                                                          fontWeight: .regular)
+                        )
+                    },
+                    section: section,
+                    row: row
+                )
+            )
         }
     }
-    
+
+
     func getSectionTitle(section: Int) -> String {
         return UltaCardContainerViewOptions.allCases[section].rawValue
     }

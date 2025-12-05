@@ -10,7 +10,7 @@ import UltaCoreUI
 import SwiftUI
 
 public enum UltaTextViewOptions: String, CaseIterable {
-    case topDescription = "Text displays a string and is used to show text throughout the app, including standalone paragraphs and within other components. Color, font weight, font size, alignment, line through, and max lines can be customized. See TextTokens for color, size, and weight options."
+    case topDescription = "Description for UBText View options."
     case color = "All color options"
     case weight = "All weight options"
     case size = "All size options"

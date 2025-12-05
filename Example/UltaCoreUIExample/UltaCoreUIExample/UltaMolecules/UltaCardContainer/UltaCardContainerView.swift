@@ -23,10 +23,8 @@ struct UltaCardContainerView: View {
                 ForEach(0..<presenter.numberOfSections, id: \.self) { section in
                     Section(header: sectionHeader(section: section)) {
                         ForEach(0..<presenter.getRowsCount(for: section), id: \.self) { row in
-                            UltaCardContainerRowView(ubText: presenter.getComponent(row: row, section: section, isTapped: false),
-                                                     section: section,
-                                                     row: row
-                            )
+                            UltaCardContainerRowView(ubCardContainer: presenter.getComponent(row: row, section: section), section: section, row: row)
+                                .padding()
                         }
                     }
                     .listRowSeparator(.hidden)
