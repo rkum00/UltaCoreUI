@@ -14,6 +14,13 @@ public struct UBCardView: View {
     let subtitle: String
     let description: String
     
+    public init(icon: Image?, title: String, subtitle: String, description: String) {
+        self.icon = icon
+        self.title = title
+        self.subtitle = subtitle
+        self.description = description
+    }
+    
     public var body: some View {
         if let icon {
             icon
