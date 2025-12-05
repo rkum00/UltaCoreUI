@@ -8,13 +8,13 @@
 import SwiftUI
 
 @available(iOS 15.0, *)
-struct UBCardView: View {
+public struct UBCardView: View {
     let icon: Image?
     let title: String
     let subtitle: String
     let description: String
     
-    var body: some View {
+    public var body: some View {
         if let icon {
             icon
                 .resizable()
