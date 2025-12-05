@@ -13,18 +13,22 @@ public struct UBCardView: View {
     let title: String
     let subtitle: String
     let description: String
+    let tintColor: Color
     
-    public init(icon: Image?, title: String, subtitle: String, description: String) {
+    public init(icon: Image?, title: String, subtitle: String, description: String, tintColor: Color) {
         self.icon = icon
         self.title = title
         self.subtitle = subtitle
         self.description = description
+        self.tintColor = tintColor
     }
     
     public var body: some View {
         if let icon {
             icon
                 .resizable()
+                .renderingMode(.template)
+                .foregroundColor(tintColor)
                 .scaledToFit()
                 .frame(width: UBGlobal.sizeWidth600, height: UBGlobal.sizeHeight600)
         }
