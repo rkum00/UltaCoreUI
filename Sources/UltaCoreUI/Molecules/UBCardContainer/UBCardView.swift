@@ -33,17 +33,17 @@ public struct UBCardView: View {
                 .frame(width: UBGlobal.sizeWidth600, height: UBGlobal.sizeHeight600)
         }
         UBText(textAttribute: TextAttributes(text: title,
-                                             color: .neutralHighInverse,
+                                             color: .neutralLow,
                                              fontSize: .medium,
                                              textAlign: .center,
                                              fontWeight: .bold))
         UBText(textAttribute: TextAttributes(text: subtitle,
-                                             color: .neutralHighInverse,
+                                             color: .neutralLow,
                                              fontSize: .medium,
                                              textAlign: .center,
                                              fontWeight: .regular))
         UBText(textAttribute: TextAttributes(text: description,
-                                             color: .neutralHighInverse,
+                                             color: .neutralLow,
                                              fontSize: .medium,
                                              textAlign: .center,
                                              fontWeight: .regular))

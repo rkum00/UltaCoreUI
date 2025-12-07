@@ -191,26 +191,25 @@ public enum UBCardType {
 
 @available(iOS 13.0, *)
 public enum UBCardState: String, CaseIterable {
+    case selectedBackgroundPrimary
+    case selectedOutlinePrimary
     case normal
-    case selected
     case disabled
     
     func getBackgroundColor(theme: UBTheme = .current) -> Color {
         switch self {
-        case .normal:
+        case .selectedBackgroundPrimary:
             return Color(UBTheme.applyBackgroundPrimaryColor(theme: theme))
-        case .selected:
-            return Color(UBTheme.applyBackgroundBaselineInverseColor(theme: theme))
-        case .disabled:
+        default:
             return Color(UBTheme.applyBackgroundTransparentColor(theme: theme))
         }
     }
     
     var opacityValue: Double {
         switch self {
-        case .normal: return 1.0
-        case .selected: return 0.8
         case .disabled: return 0.5
+        default:
+            return 1.0
         }
     }
 }
