@@ -167,13 +167,6 @@ public enum UBCardType {
     case outlined
     case flat
     
-    public var borderColor: Color {
-        switch self {
-        case .outlined: Color.gray.opacity(0.4)
-        default: .clear
-        }
-    }
-    
     public var shadowRadius: CGFloat {
         switch self {
         case .elevated: 4
@@ -183,7 +176,7 @@ public enum UBCardType {
     
     public var lineWidth: CGFloat {
         switch self {
-        case .elevated: 1
+        case .elevated, .outlined: 1
         default: 0
         }
     }
