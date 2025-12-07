@@ -249,4 +249,37 @@ public extension UBTheme {
             return Theme3.ubThemeColorBackgroundTransparent
         }
     }
+    
+    static func applyOutlineNeutralLowColor(theme: UBTheme = .current) -> UIColor {
+        switch theme {
+        case .theme1:
+            return Theme1.ubThemeColorOutlineNeutralLow
+        case .theme2:
+            return Theme2.ubThemeColorOutlineNeutralLow
+        case .theme3:
+            return Theme3.ubThemeColorOutlineNeutralLow
+        }
+    }
+    
+    static func applyOutlinePrimaryColor(theme: UBTheme = .current) -> UIColor {
+        switch theme {
+        case .theme1:
+            return Theme1.ubThemeColorOutlinePrimary
+        case .theme2:
+            return Theme2.ubThemeColorOutlinePrimary
+        case .theme3:
+            return Theme3.ubThemeColorOutlinePrimary
+        }
+    }
+    
+    static func applyOutlineNeutralHighColor(theme: UBTheme = .current) -> UIColor {
+        switch theme {
+        case .theme1:
+            return Theme1.ubThemeColorOutlineNeutralHigh
+        case .theme2:
+            return Theme2.ubThemeColorOutlineNeutralHigh
+        case .theme3:
+            return Theme3.ubThemeColorOutlineNeutralHigh
+        }
+    }
 }

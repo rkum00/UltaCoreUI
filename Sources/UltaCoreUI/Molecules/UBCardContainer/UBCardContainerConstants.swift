@@ -180,6 +180,13 @@ public enum UBCardType {
         default: 0
         }
     }
+    
+    public var lineWidth: CGFloat {
+        switch self {
+        case .elevated: 1
+        default: 0
+        }
+    }
 }
 
 @available(iOS 13.0, *)
@@ -198,6 +205,14 @@ public enum UBCardState: String, CaseIterable {
             return Color(UBTheme.applyBackgroundTransparentColor(theme: theme))
         }
     }
+    
+    var opacityValue: Double {
+        switch self {
+        case .normal: return 1.0
+        case .selected: return 0.8
+        case .disabled: return 0.5
+        }
+    }
 }
 
 public enum UBCardShape {
@@ -214,3 +229,25 @@ public enum UBCardShape {
     }
 }
 
+@available(iOS 13.0, *)
+public enum UBCardOutlineColor: String, CaseIterable {
+    case primary
+    case neutralLow
+    case neutralHigh
+    
+    /// Returns the corresponding `UIColor` for the current case based on the provided theme.
+    ///
+    /// - Parameter theme: The `UMATheme` to use for color selection. Defaults to `.current`.
+    /// - Returns: A `UIColor` representing the color for the current case and theme.
+   
+    func getColor(theme: UBTheme = .current) -> Color {
+        switch self {
+        case .neutralLow:
+            return Color(UBTheme.applyOutlineNeutralLowColor(theme: theme))
+        case .primary:
+            return Color(UBTheme.applyOutlinePrimaryColor(theme: theme))
+        case .neutralHigh:
+            return Color(UBTheme.applyOutlineNeutralHighColor(theme: theme))
+        }
+    }
+}
