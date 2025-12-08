@@ -98,17 +98,19 @@ public struct UBCardContainerView<Content: View>: View {
     @GestureState private var isPressed = false
     
     // MARK: - Initializer
-    public init(size: UBCardSize,
-                type: UBCardType,
-                state: UBCardState,
-                shape: UBCardShape,
-                axis: UBCardAxis,
-                theme: UBTheme = .current,
-                contentPadding: UBCardPadding,
-                contentPaddingEdge: UBCardPaddingEdge = .all,
-                outlineColor: UBCardOutlineColor = .primary,
-                onTap: (() -> Void)? = nil,
-                content: @escaping () -> Content) {
+    public init(
+        size: UBCardSize,
+        type: UBCardType,
+        state: UBCardState,
+        shape: UBCardShape,
+        axis: UBCardAxis,
+        theme: UBTheme = .current,
+        contentPadding: UBCardPadding,
+        contentPaddingEdge: UBCardPaddingEdge = .all,
+        outlineColor: UBCardOutlineColor = .primary,
+        onTap: (() -> Void)? = nil,
+        content: @escaping () -> Content
+    ) {
         self.size = size
         self.type = type
         self.state = state
@@ -137,22 +139,12 @@ public struct UBCardContainerView<Content: View>: View {
         }
     }
     
-    // MARK: - Tap Gesture
-    private var tapGesture: some Gesture {
-        DragGesture(minimumDistance: 0)
-            .updating($isPressed) { _, pressed, _ in
-                pressed = true
-            }
-            .onEnded { _ in
-                onTap?()
-            }
-    }
-    
     // MARK: - Body
     public var body: some View {
         arrangedContent
             .padding(UBCardPadding.insets(edge: contentPaddingEdge, size: contentPadding))
             .frame(width: size.getWidth())
+            .frame(maxHeight: .infinity)
             .background(
                 shapeView
                     .fill(state.getBackgroundColor(theme: theme))
@@ -165,7 +157,16 @@ public struct UBCardContainerView<Content: View>: View {
             .opacity(state.opacityValue * (isPressed ? 0.85 : 1.0))
             .scaleEffect(isPressed ? 0.97 : 1.0)
             .animation(.easeOut(duration: 0.15), value: isPressed)
-            .contentShape(Rectangle())
-            .gesture(tapGesture)
+            .contentShape(Rectangle()) // ensures entire area is tappable
+            .highPriorityGesture(
+                DragGesture(minimumDistance: 0)
+                    .updating($isPressed) { _, pressed, _ in
+                        pressed = true
+                    }
+                    .onEnded { _ in
+                        onTap?()
+                    }
+            )
     }
 }
+
