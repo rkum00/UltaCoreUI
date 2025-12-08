@@ -13,14 +13,17 @@ public struct UBCardView: View {
     let title: String
     let subtitle: String
     let description: String
+    let textColor: TextColorType
     let tintColor: Color
     
-    public init(icon: Image?, title: String, subtitle: String, description: String, tintColor: Color) {
+    
+    public init(icon: Image?, title: String, subtitle: String, description: String, textColor: TextColorType = .neutralLow, tintColor: Color) {
         self.icon = icon
         self.title = title
         self.subtitle = subtitle
         self.description = description
         self.tintColor = tintColor
+        self.textColor = textColor
     }
     
     public var body: some View {
@@ -33,17 +36,17 @@ public struct UBCardView: View {
                 .frame(width: UBGlobal.sizeWidth600, height: UBGlobal.sizeHeight600)
         }
         UBText(textAttribute: TextAttributes(text: title,
-                                             color: .neutralLow,
+                                             color: textColor,
                                              fontSize: .medium,
                                              textAlign: .center,
                                              fontWeight: .bold))
         UBText(textAttribute: TextAttributes(text: subtitle,
-                                             color: .neutralLow,
+                                             color: textColor,
                                              fontSize: .medium,
                                              textAlign: .center,
                                              fontWeight: .regular))
         UBText(textAttribute: TextAttributes(text: description,
-                                             color: .neutralLow,
+                                             color: textColor,
                                              fontSize: .medium,
                                              textAlign: .center,
                                              fontWeight: .regular))
