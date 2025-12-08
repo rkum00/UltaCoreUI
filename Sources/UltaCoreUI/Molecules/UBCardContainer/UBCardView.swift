@@ -42,12 +42,12 @@ public struct UBCardView: View {
                                              fontWeight: .bold))
         UBText(textAttribute: TextAttributes(text: subtitle,
                                              color: textColor,
-                                             fontSize: .medium,
+                                             fontSize: .small,
                                              textAlign: .center,
                                              fontWeight: .regular))
         UBText(textAttribute: TextAttributes(text: description,
                                              color: textColor,
-                                             fontSize: .medium,
+                                             fontSize: .xsmall,
                                              textAlign: .center,
                                              fontWeight: .regular))
     }
