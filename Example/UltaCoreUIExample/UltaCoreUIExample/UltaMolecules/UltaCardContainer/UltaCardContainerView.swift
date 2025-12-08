@@ -24,7 +24,6 @@ struct UltaCardContainerView: View {
                     Section(header: sectionHeader(section: section)) {
                         ForEach(0..<presenter.getRowsCount(for: section), id: \.self) { row in
                             UltaCardContainerRowView(ubCardContainer: presenter.getComponent(row: row, section: section), section: section, row: row)
-                                .padding()
                         }
                     }
                     .listRowSeparator(.hidden)

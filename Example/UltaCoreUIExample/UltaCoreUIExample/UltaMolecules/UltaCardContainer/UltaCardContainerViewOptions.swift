@@ -39,12 +39,12 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                     shape: .rounded,
                     axis: .vertical,
                     theme: theme,
-                    contentPadding: .medium
+                    contentPadding: .small
                 ) {
                     UBCardView(icon: Image(systemName: "bolt.fill"),
                                title: "Pick up",
                                subtitle: "Free",
-                               description: "shipping with $35",
+                               description: "Shipping with $35",
                                tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)))
                 },
                 section: section,
@@ -85,7 +85,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                     UBCardView(icon: Image(systemName: "lock.fill"),
                                title: "Same Day",
                                subtitle: "Free same",
-                               description: "delivery over $50",
+                               description: "Delivery over $50",
                                tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)))
                 },
                 section: section,
@@ -99,7 +99,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
         case .none:
             return UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
-                    size: .small,
+                    size: .medium,
                     type: .elevated,
                     state: .normal,
                     shape: .rounded,
@@ -110,7 +110,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                     UBCardView(icon: Image(systemName: "bolt.fill"),
                                title: "Pick up",
                                subtitle: "Free",
-                               description: "shipping with $35",
+                               description: "Shipping with $35",
                                tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)))
                 },
                 section: section,
@@ -119,7 +119,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
         case .xSmall:
             return UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
-                    size: .small,
+                    size: .medium,
                     type: .elevated,
                     state: .normal,
                     shape: .rounded,
@@ -140,7 +140,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
         case .small:
             return UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
-                    size: .small,
+                    size: .medium,
                     type: .elevated,
                     state: .normal,
                     shape: .rounded,
@@ -151,7 +151,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                     UBCardView(icon: Image(systemName: "lock.fill"),
                                title: "Same Day",
                                subtitle: "Free same",
-                               description: "delivery over $50",
+                               description: "Delivery over $50",
                                tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)))
                 },
                 section: section,
@@ -161,7 +161,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
         case .medium:
             return UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
-                    size: .small,
+                    size: .medium,
                     type: .elevated,
                     state: .normal,
                     shape: .rounded,
@@ -172,7 +172,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                     UBCardView(icon: Image(systemName: "bolt.fill"),
                                title: "Pick up",
                                subtitle: "Free",
-                               description: "shipping with $35",
+                               description: "Shipping with $35",
                                tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)))
                 },
                 section: section,
@@ -201,7 +201,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
         case .xLarge:
             return UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
-                    size: .large,
+                    size: .medium,
                     type: .elevated,
                     state: .normal,
                     shape: .rounded,
@@ -212,7 +212,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                     UBCardView(icon: Image(systemName: "lock.fill"),
                                title: "Same Day",
                                subtitle: "Free same",
-                               description: "delivery over $50",
+                               description: "Delivery over $50",
                                tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)))
                 },
                 section: section,
@@ -232,12 +232,12 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                     shape: .rounded,
                     axis: .vertical,
                     theme: theme,
-                    contentPadding: .small
+                    contentPadding: .none
                 ) {
                     UBCardView(icon: Image(systemName: "bolt.fill"),
                                title: "Pick up",
                                subtitle: "Free",
-                               description: "shipping with $35",
+                               description: "Shipping",
                                textColor: .neutralHighInverse,
                                tintColor: Color(UBTheme.applyBackgroundBaselineColor(theme: theme)))
                 },
@@ -253,7 +253,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                     shape: .rounded,
                     axis: .vertical,
                     theme: theme,
-                    contentPadding: .medium
+                    contentPadding: .xSmall
                 ) {
                     UBCardView(icon: Image(systemName: "wifi"),
                                title: "Secure Mode",
@@ -268,18 +268,18 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
         case 2:
             return UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
-                    size: .large,
+                    size: .medium,
                     type: .elevated,
                     state: .selectedBackgroundPrimary,
                     shape: .rounded,
                     axis: .vertical,
                     theme: theme,
-                    contentPadding: .large
+                    contentPadding: .small
                 ) {
                     UBCardView(icon: Image(systemName: "lock.fill"),
                                title: "Same Day",
                                subtitle: "Free same",
-                               description: "delivery over $50",
+                               description: "Delivery over $50",
                                textColor: .neutralHighInverse,
                                tintColor: Color(UBTheme.applyBackgroundBaselineColor(theme: theme)))
                 },
@@ -301,7 +301,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                     UBCardView(icon: Image(systemName: "lock.fill"),
                                title: "Out of Stock",
                                subtitle: "Out of store",
-                               description: "delivery over $50",
+                               description: "Delivery over $50",
                                textColor: .neutralLow,
                                tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)))
                 },
