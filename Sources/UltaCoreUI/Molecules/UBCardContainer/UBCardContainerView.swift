@@ -198,8 +198,7 @@ public struct UBCardContainerView<Content: View>: View {
                                      size: contentPadding)
             )
             .opacity(state.opacityValue)
-            .frame(width: size.getWidth(),
-                   height: size.getHeight())
+            .frame(width: size.getWidth())
             .background(
                 shapeView
                     .fill(state.getBackgroundColor(theme: theme))

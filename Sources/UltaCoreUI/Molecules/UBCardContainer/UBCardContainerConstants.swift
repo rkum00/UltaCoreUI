@@ -29,21 +29,6 @@ public enum UBCardSize: String, CaseIterable {
             return UBGlobal.sizeWidth2000
         }
     }
-    
-    /// Returns the height value associated with the current card size.
-    ///
-    /// - Returns: A `CGFloat` representing the width for the card size (`small`, `medium`, or `large`).
-    /// - Note: The returned value is determined by the card size case and corresponds to a predefined global border width constant.
-    func getHeight() -> CGFloat {
-        switch self {
-        case .small:
-            return UBGlobal.sizeHeight1400
-        case .medium:
-            return UBGlobal.sizeHeight1750
-        case .large:
-            return UBGlobal.sizeHeight2000
-        }
-    }
 }
 
 
