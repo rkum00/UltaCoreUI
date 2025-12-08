@@ -123,13 +123,13 @@ public struct UBCardContainerView<Content: View>: View {
     }
     
     // MARK: - Shape
-    var shapeView: some InsettableShape {
+    private var shapeView: some InsettableShape {
         RoundedRectangle(cornerRadius: shape.cornerRadius)
     }
     
     // MARK: - Arranged Content
     @ViewBuilder
-    var arrangedContent: some View {
+    private var arrangedContent: some View {
         if axis == .horizontal {
             HStack(spacing: contentPadding.value) { content() }
         } else {
@@ -137,20 +137,21 @@ public struct UBCardContainerView<Content: View>: View {
         }
     }
     
-    // MARK: - Body
-    public var body: some View {
-        let tapGesture = DragGesture(minimumDistance: 0)
+    // MARK: - Tap Gesture
+    private var tapGesture: some Gesture {
+        DragGesture(minimumDistance: 0)
             .updating($isPressed) { _, pressed, _ in
                 pressed = true
             }
             .onEnded { _ in
                 onTap?()
             }
-        
+    }
+    
+    // MARK: - Body
+    public var body: some View {
         arrangedContent
-            .padding(
-                UBCardPadding.insets(edge: contentPaddingEdge, size: contentPadding)
-            )
+            .padding(UBCardPadding.insets(edge: contentPaddingEdge, size: contentPadding))
             .frame(width: size.getWidth())
             .background(
                 shapeView
@@ -168,4 +169,3 @@ public struct UBCardContainerView<Content: View>: View {
             .gesture(tapGesture)
     }
 }
-
