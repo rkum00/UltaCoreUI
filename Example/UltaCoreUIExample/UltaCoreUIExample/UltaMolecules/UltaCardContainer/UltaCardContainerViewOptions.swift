@@ -119,7 +119,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
         case .xSmall:
             return UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
-                    size: .small,
+                    size: .medium,
                     type: .elevated,
                     state: .normal,
                     shape: .rounded,
@@ -140,7 +140,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
         case .small:
             return UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
-                    size: .small,
+                    size: .medium,
                     type: .elevated,
                     state: .normal,
                     shape: .rounded,
@@ -161,7 +161,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
         case .medium:
             return UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
-                    size: .small,
+                    size: .medium,
                     type: .elevated,
                     state: .normal,
                     shape: .rounded,
@@ -181,7 +181,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
         case .large:
             return UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
-                    size: .small,
+                    size: .medium,
                     type: .elevated,
                     state: .normal,
                     shape: .rounded,
@@ -201,7 +201,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
         case .xLarge:
             return UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
-                    size: .small,
+                    size: .medium,
                     type: .elevated,
                     state: .normal,
                     shape: .rounded,
@@ -232,7 +232,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                     shape: .rounded,
                     axis: .vertical,
                     theme: theme,
-                    contentPadding: .medium
+                    contentPadding: .small
                 ) {
                     UBCardView(icon: Image(systemName: "bolt.fill"),
                                title: "Pick up",
@@ -274,7 +274,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                     shape: .rounded,
                     axis: .vertical,
                     theme: theme,
-                    contentPadding: .medium
+                    contentPadding: .large
                 ) {
                     UBCardView(icon: Image(systemName: "lock.fill"),
                                title: "Same Day",
