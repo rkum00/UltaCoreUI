@@ -13,6 +13,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
     case topDescription = "Description for Card Container."
     case size = "All size options"
     case padding = "Padding"
+    case background = "Background"
     
     func numberOfRows() -> Int {
         switch self {
@@ -22,6 +23,8 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
             return UBCardSize.allCases.count
         case .padding:
             return UBCardPadding.allCases.count
+        case .background:
+            return UBCardSize.allCases.count
         }
     }
     
@@ -31,7 +34,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
             return UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
                     size: .small,
-                    type: .elevated,
+                    type: .outlined,
                     state: .normal,
                     shape: .rounded,
                     axis: .vertical,
@@ -42,7 +45,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                                title: "Pick up",
                                subtitle: "Free",
                                description: "shipping with $35",
-                               tintColor: .white)
+                               tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)))
                 },
                 section: section,
                 row: row
@@ -62,7 +65,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                                title: "Secure Mode",
                                subtitle: "Unavailable",
                                description: "Free in store pickup",
-                               tintColor: .white)
+                               tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)))
                 },
                 section: section,
                 row: row
@@ -83,7 +86,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                                title: "Same Day",
                                subtitle: "Free same",
                                description: "delivery over $50",
-                               tintColor: .white)
+                               tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)))
                 },
                 section: section,
                 row: row
@@ -108,7 +111,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                                title: "Pick up",
                                subtitle: "Free",
                                description: "shipping with $35",
-                               tintColor: .white)
+                               tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)))
                 },
                 section: section,
                 row: row
@@ -128,7 +131,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                                title: "Secure Mode",
                                subtitle: "Unavailable",
                                description: "Free in store pickup",
-                               tintColor: .white)
+                               tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)))
                 },
                 section: section,
                 row: row
@@ -149,7 +152,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                                title: "Same Day",
                                subtitle: "Free same",
                                description: "delivery over $50",
-                               tintColor: .white)
+                               tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)))
                 },
                 section: section,
                 row: row
@@ -170,7 +173,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                                title: "Pick up",
                                subtitle: "Free",
                                description: "shipping with $35",
-                               tintColor: .white)
+                               tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)))
                 },
                 section: section,
                 row: row
@@ -190,7 +193,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                                title: "Secure Mode",
                                subtitle: "Unavailable",
                                description: "Free in store pickup",
-                               tintColor: .white)
+                               tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)))
                 },
                 section: section,
                 row: row
@@ -210,11 +213,80 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                                title: "Same Day",
                                subtitle: "Free same",
                                description: "delivery over $50",
+                               tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)))
+                },
+                section: section,
+                row: row
+            )
+        }
+    }
+    
+    func getBackgroundColorComponent(section: Int, row: Int, theme: UBTheme = .current) -> some View {
+        switch UBCardSize.allCases[row] {
+        case .small:
+            return UltaCardContainerRowView(
+                ubCardContainer: UBCardContainerView(
+                    size: .small,
+                    type: .elevated,
+                    state: .selectedBackgroundPrimary,
+                    shape: .rounded,
+                    axis: .vertical,
+                    theme: theme,
+                    contentPadding: .medium
+                ) {
+                    UBCardView(icon: Image(systemName: "bolt.fill"),
+                               title: "Pick up",
+                               subtitle: "Free",
+                               description: "shipping with $35",
+                               textColor: .neutralHighInverse,
+                               tintColor: .white)
+                },
+                section: section,
+                row: row
+            )
+        case .medium:
+            return UltaCardContainerRowView(
+                ubCardContainer: UBCardContainerView(
+                    size: .medium,
+                    type: .elevated,
+                    state: .selectedBackgroundPrimary,
+                    shape: .rounded,
+                    axis: .vertical,
+                    theme: theme,
+                    contentPadding: .medium
+                ) {
+                    UBCardView(icon: Image(systemName: "wifi"),
+                               title: "Secure Mode",
+                               subtitle: "Unavailable",
+                               description: "Free in store pickup",
+                               textColor: .neutralHighInverse,
+                               tintColor: .white)
+                },
+                section: section,
+                row: row
+            )
+        case .large:
+            return UltaCardContainerRowView(
+                ubCardContainer: UBCardContainerView(
+                    size: .large,
+                    type: .elevated,
+                    state: .selectedBackgroundPrimary,
+                    shape: .rounded,
+                    axis: .vertical,
+                    theme: theme,
+                    contentPadding: .medium
+                ) {
+                    UBCardView(icon: Image(systemName: "lock.fill"),
+                               title: "Same Day",
+                               subtitle: "Free same",
+                               description: "delivery over $50",
+                               textColor: .neutralHighInverse,
                                tintColor: .white)
                 },
                 section: section,
                 row: row
             )
         }
+        
     }
 }

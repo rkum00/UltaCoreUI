@@ -43,6 +43,14 @@ class UltaCardContainerViewPresenter: ObservableObject {
                     theme: theme
                 )
             )
+        case .background:
+            return AnyView(
+                UltaCardContainerViewOptions.size.getBackgroundColorComponent(
+                    section: section,
+                    row: row,
+                    theme: theme
+                )
+            )
         default:
             return AnyView(
                 UltaCardContainerRowView(
