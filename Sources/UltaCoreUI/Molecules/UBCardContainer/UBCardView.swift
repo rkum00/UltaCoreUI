@@ -47,7 +47,7 @@ public struct UBCardView: View {
                                              fontWeight: .regular))
         UBText(textAttribute: TextAttributes(text: description,
                                              color: textColor,
-                                             fontSize: .xsmall,
+                                             fontSize: .small,
                                              textAlign: .center,
                                              fontWeight: .regular))
     }
