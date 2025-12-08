@@ -128,9 +128,9 @@ public struct UBCardContainerView<Content: View>: View {
             // Content layout
             Group {
                 if axis == .horizontal {
-                    HStack { content() }
+                    HStack(spacing: UBGlobal.space200) { content() }
                 } else {
-                    VStack { content() }
+                    VStack(spacing: UBGlobal.space200) { content() }
                 }
             }
             .padding(UBCardPadding.insets(edge: contentPaddingEdge,
