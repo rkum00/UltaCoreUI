@@ -24,7 +24,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
         case .padding:
             return UBCardPadding.allCases.count
         case .background:
-            return UBCardSize.allCases.count
+            return 4
         }
     }
     
@@ -119,7 +119,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
         case .xSmall:
             return UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
-                    size: .medium,
+                    size: .small,
                     type: .elevated,
                     state: .normal,
                     shape: .rounded,
@@ -140,7 +140,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
         case .small:
             return UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
-                    size: .medium,
+                    size: .small,
                     type: .elevated,
                     state: .normal,
                     shape: .rounded,
@@ -161,7 +161,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
         case .medium:
             return UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
-                    size: .medium,
+                    size: .small,
                     type: .elevated,
                     state: .normal,
                     shape: .rounded,
@@ -201,7 +201,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
         case .xLarge:
             return UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
-                    size: .medium,
+                    size: .large,
                     type: .elevated,
                     state: .normal,
                     shape: .rounded,
@@ -222,8 +222,8 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
     }
     
     func getBackgroundColorComponent(section: Int, row: Int, theme: UBTheme = .current) -> some View {
-        switch UBCardSize.allCases[row] {
-        case .small:
+        switch row {
+        case 0:
             return UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
                     size: .small,
@@ -239,12 +239,12 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                                subtitle: "Free",
                                description: "shipping with $35",
                                textColor: .neutralHighInverse,
-                               tintColor: .white)
+                               tintColor: Color(UBTheme.applyBackgroundBaselineColor(theme: theme)))
                 },
                 section: section,
                 row: row
             )
-        case .medium:
+        case 1:
             return UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
                     size: .medium,
@@ -260,12 +260,12 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                                subtitle: "Unavailable",
                                description: "Free in store pickup",
                                textColor: .neutralHighInverse,
-                               tintColor: .white)
+                               tintColor: Color(UBTheme.applyBackgroundBaselineColor(theme: theme)))
                 },
                 section: section,
                 row: row
             )
-        case .large:
+        case 2:
             return UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
                     size: .large,
@@ -281,12 +281,33 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                                subtitle: "Free same",
                                description: "delivery over $50",
                                textColor: .neutralHighInverse,
-                               tintColor: .white)
+                               tintColor: Color(UBTheme.applyBackgroundBaselineColor(theme: theme)))
+                },
+                section: section,
+                row: row
+            )
+        default:
+            return UltaCardContainerRowView(
+                ubCardContainer: UBCardContainerView(
+                    size: .medium,
+                    type: .outlined,
+                    state: .disabled,
+                    shape: .rounded,
+                    axis: .vertical,
+                    theme: theme,
+                    contentPadding: .medium,
+                    outlineColor: .neutralLow
+                ) {
+                    UBCardView(icon: Image(systemName: "lock.fill"),
+                               title: "Out of Stock",
+                               subtitle: "Out of store",
+                               description: "delivery over $50",
+                               textColor: .neutralLow,
+                               tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)))
                 },
                 section: section,
                 row: row
             )
         }
-        
     }
 }
