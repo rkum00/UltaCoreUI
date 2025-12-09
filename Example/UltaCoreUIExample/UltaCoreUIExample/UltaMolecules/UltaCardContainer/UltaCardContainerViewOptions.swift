@@ -27,7 +27,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
         case .background:
             return 4
         case .interactive:
-            return UBCardSelectionMode.allCases.count
+            return 3
         }
     }
     
@@ -315,8 +315,15 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
     }
     
     func getInteractiveComponent(section: Int, row: Int, theme: UBTheme = .current) -> some View {
-        switch UBCardSelectionMode.allCases[row] {
-        case .outline:
+        switch row {
+        case 0:
+            InteractiveCardComponent(
+                section: section,
+                row: row,
+                theme: theme,
+                selectionMode: .outline
+            )
+        case 1:
             InteractiveCardComponent(
                 section: section,
                 row: row,
@@ -371,7 +378,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
         private var outlineColor: UBCardOutlineColor {
             switch selectionMode {
             case .outline:
-                return isSelected ? .primary : .neutralLow
+                return isSelected ? (row == 0 ? .primary : .neutralHigh) : .neutralLow
             case .background:
                 return .neutralLow
             }
