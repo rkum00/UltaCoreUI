@@ -206,6 +206,11 @@ public enum UBCardShape {
     }
 }
 
+public enum UBCardSelectionMode: String, CaseIterable {
+    case outline = "Outline"
+    case background = "Background"
+}
+
 @available(iOS 13.0, *)
 public enum UBCardOutlineColor: String, CaseIterable {
     case primary
