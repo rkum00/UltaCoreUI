@@ -14,6 +14,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
     case size = "All size options"
     case padding = "Padding"
     case background = "Background"
+    case interactive = "Interactive"
     
     func numberOfRows() -> Int {
         switch self {
@@ -25,6 +26,8 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
             return UBCardPadding.allCases.count
         case .background:
             return 4
+        case .interactive:
+            return UBCardSelectionMode.allCases.count
         }
     }
     
@@ -308,6 +311,100 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                 section: section,
                 row: row
             )
+        }
+    }
+    
+    @ViewBuilder
+    func getInteractiveComponent(section: Int, row: Int, theme: UBTheme = .current) -> some View {
+        switch UBCardSelectionMode.allCases[row] {
+        case .outline:
+            InteractiveCardComponent(
+                section: section,
+                row: row,
+                theme: theme,
+                selectionMode: .outline
+            )
+        default:
+            InteractiveCardComponent(
+                section: section,
+                row: row,
+                theme: theme,
+                selectionMode: .background
+            )
+        }
+    }
+    
+    struct InteractiveCardComponent: View {
+        let section: Int
+        let row: Int
+        let theme: UBTheme
+        let selectionMode: UBCardSelectionMode
+        
+        @State private var isSelected: Bool = false
+        
+        var body: some View {
+            
+            UBCardContainerView(
+                size: .small,
+                type: .outlined,
+                state: cardState,
+                shape: .rounded,
+                axis: .vertical,
+                theme: theme,
+                contentPadding: .small,
+                outlineColor: outlineColor,
+                onTap: { isSelected.toggle() }
+            ) {
+                UBCardView(
+                    icon: Image(systemName: "bolt.fill"),
+                    title: "Pick up",
+                    subtitle: "Free",
+                    description: "Shipping with $35",
+                    textColor: textColor,
+                    tintColor: tintColor
+                )
+            }
+        }
+        
+        
+        // MARK: - Dynamic Values Based on Mode
+        
+        private var outlineColor: UBCardOutlineColor {
+            switch selectionMode {
+            case .outline:
+                return isSelected ? .primary : .neutralLow
+            case .background:
+                return .neutralLow
+            }
+        }
+        
+        private var cardState: UBCardState {
+            switch selectionMode {
+            case .outline:
+                return .normal
+            case .background:
+                return isSelected ? .selectedBackgroundPrimary : .normal
+            }
+        }
+        
+        private var textColor: TextColorType {
+            switch selectionMode {
+            case .outline:
+                return .neutralLow
+            case .background:
+                return isSelected ? .neutralHighInverse : .neutralLow
+            }
+        }
+        
+        private var tintColor: Color {
+            switch selectionMode {
+            case .outline:
+                return Color(UBTheme.applyBackgroundPrimaryColor(theme: theme))
+            case .background:
+                return isSelected
+                ? Color(UBTheme.applyBackgroundBaselineColor(theme: theme))
+                : Color(UBTheme.applyBackgroundPrimaryColor(theme: theme))
+            }
         }
     }
 }
