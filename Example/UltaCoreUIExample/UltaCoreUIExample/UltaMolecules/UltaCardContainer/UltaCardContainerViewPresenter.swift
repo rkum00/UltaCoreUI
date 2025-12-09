@@ -24,69 +24,61 @@ class UltaCardContainerViewPresenter: ObservableObject {
     func getRowsCount(for section: Int) -> Int {
         return UltaCardContainerViewOptions.allCases[section].numberOfRows()
     }
-        
+    
+    @ViewBuilder
     func getComponent(row: Int, section: Int) -> some View {
         switch UltaCardContainerViewOptions.allCases[section] {
         case .size:
-            return AnyView(
-                UltaCardContainerViewOptions.size.getSizeComponent(
-                    section: section,
-                    row: row,
-                    theme: theme
-                )
+            UltaCardContainerViewOptions.size.getSizeComponent(
+                section: section,
+                row: row,
+                theme: theme
             )
         case .padding:
-            return AnyView(
-                UltaCardContainerViewOptions.size.getPaddingComponent(
-                    section: section,
-                    row: row,
-                    theme: theme
-                )
+            UltaCardContainerViewOptions.size.getPaddingComponent(
+                section: section,
+                row: row,
+                theme: theme
             )
         case .background:
-            return AnyView(
-                UltaCardContainerViewOptions.size.getBackgroundColorComponent(
-                    section: section,
-                    row: row,
-                    theme: theme
-                )
+            UltaCardContainerViewOptions.size.getBackgroundColorComponent(
+                section: section,
+                row: row,
+                theme: theme
             )
         case .interactive:
-            return AnyView(
-                UltaCardContainerViewOptions.size.getInteractiveComponent(
-                    section: section,
-                    row: row,
-                    theme: theme
-                )
+            UltaCardContainerViewOptions.size.getInteractiveComponent(
+                section: section,
+                row: row,
+                theme: theme
             )
         default:
-            return AnyView(
-                UltaCardContainerRowView(
-                    ubCardContainer: UBCardContainerView(
-                        size: .medium,
-                        type: .elevated,
-                        state: .normal,
-                        shape: .rounded,
-                        axis: .vertical,
-                        theme: theme,
-                        contentPadding: .medium
-                    ) {
-                        UBText(
-                            textAttribute: TextAttributes(text: "Card Container",
-                                                          color: .neutralHighInverse,
-                                                          fontSize: .medium,
-                                                          textAlign: .center,
-                                                          fontWeight: .regular)
+            UltaCardContainerRowView(
+                ubCardContainer: UBCardContainerView(
+                    size: .medium,
+                    type: .elevated,
+                    state: .normal,
+                    shape: .rounded,
+                    axis: .vertical,
+                    theme: theme,
+                    contentPadding: .medium
+                ) {
+                    UBText(
+                        textAttribute: TextAttributes(
+                            text: "Card Container",
+                            color: .neutralHighInverse,
+                            fontSize: .medium,
+                            textAlign: .center,
+                            fontWeight: .regular
                         )
-                    },
-                    section: section,
-                    row: row
-                )
+                    )
+                },
+                section: section,
+                row: row
             )
         }
     }
-
-
+    
     func getSectionTitle(section: Int) -> String {
         return UltaCardContainerViewOptions.allCases[section].rawValue
     }

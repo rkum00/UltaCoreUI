@@ -34,7 +34,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
     func getSizeComponent(section: Int, row: Int, theme: UBTheme = .current) -> some View {
         switch UBCardSize.allCases[row] {
         case .small:
-            return UltaCardContainerRowView(
+            UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
                     size: .small,
                     type: .outlined,
@@ -54,7 +54,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                 row: row
             )
         case .medium:
-            return UltaCardContainerRowView(
+            UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
                     size: .medium,
                     type: .elevated,
@@ -75,7 +75,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
             )
             
         case .large:
-            return UltaCardContainerRowView(
+            UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
                     size: .large,
                     type: .elevated,
@@ -100,7 +100,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
     func getPaddingComponent(section: Int, row: Int, theme: UBTheme = .current) -> some View {
         switch UBCardPadding.allCases[row] {
         case .none:
-            return UltaCardContainerRowView(
+            UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
                     size: .medium,
                     type: .elevated,
@@ -120,7 +120,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                 row: row
             )
         case .xSmall:
-            return UltaCardContainerRowView(
+            UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
                     size: .medium,
                     type: .elevated,
@@ -141,7 +141,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
             )
             
         case .small:
-            return UltaCardContainerRowView(
+            UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
                     size: .medium,
                     type: .elevated,
@@ -162,7 +162,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
             )
             
         case .medium:
-            return UltaCardContainerRowView(
+            UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
                     size: .medium,
                     type: .elevated,
@@ -182,7 +182,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                 row: row
             )
         case .large:
-            return UltaCardContainerRowView(
+            UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
                     size: .medium,
                     type: .elevated,
@@ -202,7 +202,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                 row: row
             )
         case .xLarge:
-            return UltaCardContainerRowView(
+            UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
                     size: .medium,
                     type: .elevated,
@@ -227,7 +227,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
     func getBackgroundColorComponent(section: Int, row: Int, theme: UBTheme = .current) -> some View {
         switch row {
         case 0:
-            return UltaCardContainerRowView(
+            UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
                     size: .small,
                     type: .elevated,
@@ -248,7 +248,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                 row: row
             )
         case 1:
-            return UltaCardContainerRowView(
+            UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
                     size: .medium,
                     type: .elevated,
@@ -269,7 +269,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                 row: row
             )
         case 2:
-            return UltaCardContainerRowView(
+            UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
                     size: .medium,
                     type: .elevated,
@@ -290,7 +290,7 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                 row: row
             )
         default:
-            return UltaCardContainerRowView(
+            UltaCardContainerRowView(
                 ubCardContainer: UBCardContainerView(
                     size: .medium,
                     type: .outlined,
@@ -314,7 +314,6 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
         }
     }
     
-    @ViewBuilder
     func getInteractiveComponent(section: Int, row: Int, theme: UBTheme = .current) -> some View {
         switch UBCardSelectionMode.allCases[row] {
         case .outline:
