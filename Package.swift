@@ -16,7 +16,9 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "UltaCoreUI",
-            path: "Sources"),
+            path: "Sources",
+        resources: [
+            .process("UltaCoreUI/Fonts")]),
         .testTarget(
             name: "UltaCoreUITests",
             dependencies: ["UltaCoreUI"]),
