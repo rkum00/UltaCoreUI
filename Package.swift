@@ -17,8 +17,10 @@ let package = Package(
         .target(
             name: "UltaCoreUI",
             path: "Sources",
-        resources: [
-            .process("UltaCoreUI/Fonts/NunitoSans")]),
+            resources: [
+                .process("UltaCoreUI/Fonts/NunitoSans")
+            ]
+        ),
         .testTarget(
             name: "UltaCoreUITests",
             dependencies: ["UltaCoreUI"]),
