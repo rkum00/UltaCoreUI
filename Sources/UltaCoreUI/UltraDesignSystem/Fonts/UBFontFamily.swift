@@ -396,9 +396,7 @@ extension UBFontFamily {
     }
 }
 
-// TODO: Refactor to add support for Dynamic Fonts, tracked in PGG-438
-// Use UBTypography (and ABTyprographyLabel) to support scaling Dynamic Fonts
-public struct UMAStaticFont {
+public struct UBStaticFont {
     public static let xxLargeTitleNS           = UBFontFamily.xxLargeTitleNS.font
     public static let xLargeTitleNS            = UBFontFamily.xLargeTitleNS.font
     public static let largeTitleNS             = UBFontFamily.largeTitleNS.font
