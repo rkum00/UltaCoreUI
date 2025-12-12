@@ -11,6 +11,10 @@ import UltaCoreUI
 
 @main
 struct UltaCoreUIExampleApp: App {
+    init() {
+        UBStaticFont.registerFonts()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
