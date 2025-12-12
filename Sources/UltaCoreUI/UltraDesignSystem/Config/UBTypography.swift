@@ -8,7 +8,7 @@
 import UIKit
 
 /// Represents a font as it appears in design documents
-/// (This should replace `UMAFontConfiguration` because it captures additional information)
+/// (This should replace `UBFontConfiguration` because it captures additional information)
 public struct UBTypography {
     public let fontFamilyName: String
     public let fontWeight: UBFontWeight
@@ -17,7 +17,7 @@ public struct UBTypography {
     
     /// The text style (e.g. `.body` or `.largeTitle`) that this font most closely represents.
     /// Used for Dynamic Type scaling of the font
-    /// TODO: define the appropriate textStyle for every type face in `UMAFontFamily`
+    /// TODO: define the appropriate textStyle for every type face in `UBFontFamily`
     public let textStyle: UIFont.TextStyle
     /// Whether this font should be scaled through Dynamic Type
     public let isDynamic: Bool

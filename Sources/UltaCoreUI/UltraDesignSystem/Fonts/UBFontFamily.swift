@@ -376,7 +376,7 @@ public extension UBFontFamily {
 
 extension UBFontFamily {
     
-    /// Convert UMAFontFamily enum into UBTypography
+    /// Convert UBFontFamily enum into UBTypography
     /// - Parameter isDynamic: whether font should be scaled using Dynamic Type
     /// - Returns: Typography info for this font
     public func toTypography(isDynamic: Bool) -> UBTypography {

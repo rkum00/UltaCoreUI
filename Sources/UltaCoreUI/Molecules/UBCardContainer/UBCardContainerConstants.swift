@@ -219,7 +219,7 @@ public enum UBCardOutlineColor: String, CaseIterable {
     
     /// Returns the corresponding `UIColor` for the current case based on the provided theme.
     ///
-    /// - Parameter theme: The `UMATheme` to use for color selection. Defaults to `.current`.
+    /// - Parameter theme: The `UBTheme` to use for color selection. Defaults to `.current`.
     /// - Returns: A `UIColor` representing the color for the current case and theme.
    
     func getColor(theme: UBTheme = .current) -> Color {

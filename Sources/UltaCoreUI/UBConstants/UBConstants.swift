@@ -338,7 +338,7 @@ public enum Intent: CaseIterable {
         }
     }
     
-    /// Returns the color type to be sent to PDSText Component for diplaying Inline alert text
+    /// Returns the color type to be sent to UBText Component for diplaying Inline alert text
     func getTextColorType() -> TextColorType {
         switch self {
         case .info:
