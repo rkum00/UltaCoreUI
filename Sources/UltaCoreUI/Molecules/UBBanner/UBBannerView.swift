@@ -40,10 +40,20 @@ public struct UBBannerView: View {
                 .font(.title)
             
             VStack(alignment: .leading, spacing: 4) {
-                UBText(textAttribute: TextAttributes(text: title, color: textColor, fontSize: .xlarge, fontWeight: .bold))
+                UBText(textAttribute: TextAttributes(
+                    text: title,
+                    color: textColor,
+                    fontSize: .xlarge,
+                    fontWeight: .bold
+                ))
                 
                 if let message {
-                    UBText(textAttribute: TextAttributes(text: message, color: textColor, fontSize: .small, fontWeight: .regular))
+                    UBText(textAttribute: TextAttributes(
+                        text: message,
+                        color: textColor,
+                        fontSize: .small,
+                        fontWeight: .regular
+                    ))
                 }
             }
             
@@ -53,8 +63,14 @@ public struct UBBannerView: View {
                 Button(action: onClose) {
                     Image(systemName: "xmark")
                         .foregroundColor(.white)
+                        .padding(8)
                 }
+                .buttonStyle(.plain)
             }
+        }
+        .contentShape(Rectangle())
+        .onTapGesture {
+            print("Banner tapped")
         }
         .padding()
         .background(backgroundColor)
