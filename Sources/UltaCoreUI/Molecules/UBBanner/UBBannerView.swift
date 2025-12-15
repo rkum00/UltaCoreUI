@@ -69,9 +69,6 @@ public struct UBBannerView: View {
             }
         }
         .contentShape(Rectangle())
-        .onTapGesture {
-            print("Banner tapped")
-        }
         .padding()
         .background(backgroundColor)
         .cornerRadius(14)
