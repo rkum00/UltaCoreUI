@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-public enum UBBannerConstants: String, CaseIterable {
+public enum UBBannerType: String, CaseIterable {
     case success
     case error
     case warning
