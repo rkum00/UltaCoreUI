@@ -157,7 +157,7 @@ public struct UBBannerView: View {
             .shadow(radius: UBGlobal.borderRadius100)
             .padding(.horizontal)
             .transition(.slideFadeFromTop)
-            .animation(.easeInOut(duration: 0.3), value: isVisible)
+            .animation(.bannerSpring, value: isVisible)
             .task {
                 await autoDismiss()
             }
@@ -225,11 +225,20 @@ private extension UBBannerView {
     
     func dismissBanner() {
         guard isVisible else { return }
-        withAnimation {
+        withAnimation(.bannerSpring) {
             isVisible = false
             onClose?(type)
         }
     }
+}
+
+@available(iOS 13.0, *)
+private extension Animation {
+    static let bannerSpring = Animation.spring(
+        response: 0.45,
+        dampingFraction: 0.85,
+        blendDuration: 0.25
+    )
 }
 
 @available(iOS 13.0, *)
