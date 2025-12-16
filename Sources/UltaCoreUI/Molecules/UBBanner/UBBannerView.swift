@@ -14,7 +14,6 @@ public struct UBBannerView: View {
     let type: UBBannerType
     let iconName: String
     let textColor: TextColorType
-    let backgroundColor: Color
     let theme: UBTheme
     let onClose: ((UBBannerType) -> Void)?
 
@@ -24,7 +23,6 @@ public struct UBBannerView: View {
         type: UBBannerType,
         iconName: String,
         textColor: TextColorType,
-        backgroundColor: Color,
         theme: UBTheme = .current,
         onClose: ((UBBannerType) -> Void)?
     ) {
@@ -33,7 +31,6 @@ public struct UBBannerView: View {
         self.type = type
         self.iconName = iconName
         self.textColor = textColor
-        self.backgroundColor = backgroundColor
         self.theme = theme
         self.onClose = onClose
     }
@@ -77,7 +74,7 @@ public struct UBBannerView: View {
         }
         .contentShape(Rectangle())
         .padding()
-        .background(backgroundColor)
+        .background(type.backgroundColor)
         .cornerRadius(UBGlobal.borderRadius300)
         .shadow(radius: UBGlobal.borderRadius100)
         .padding(.horizontal)
