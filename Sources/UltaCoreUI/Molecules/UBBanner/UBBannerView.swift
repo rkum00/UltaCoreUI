@@ -144,24 +144,27 @@ public struct UBBannerView: View {
     }
     
     public var body: some View {
-        HStack(alignment: .top, spacing: UBGlobal.space300) {
-            iconView
-            textContent
-            Spacer()
-            closeButton
-        }
-        .padding()
-        .background(type.backgroundColor)
-        .cornerRadius(UBGlobal.borderRadius300)
-        .shadow(radius: UBGlobal.borderRadius100)
-        .padding(.horizontal)
-        .opacity(isVisible ? 1 : 0)
-        .animation(.easeInOut, value: isVisible)
-        .task {
-            await autoDismiss()
+        if isVisible {
+            HStack(alignment: .top, spacing: UBGlobal.space300) {
+                iconView
+                textContent
+                Spacer()
+                closeButton
+            }
+            .padding()
+            .background(type.backgroundColor)
+            .cornerRadius(UBGlobal.borderRadius300)
+            .shadow(radius: UBGlobal.borderRadius100)
+            .padding(.horizontal)
+            .transition(.slideFadeFromTop)
+            .animation(.easeInOut(duration: 0.3), value: isVisible)
+            .task {
+                await autoDismiss()
+            }
         }
     }
 }
+
 @available(iOS 15.0, *)
 private extension UBBannerView {
     
@@ -229,3 +232,12 @@ private extension UBBannerView {
     }
 }
 
+@available(iOS 13.0, *)
+private extension AnyTransition {
+    static var slideFadeFromTop: AnyTransition {
+        .asymmetric(
+            insertion: .move(edge: .top).combined(with: .opacity),
+            removal: .move(edge: .top).combined(with: .opacity)
+        )
+    }
+}
