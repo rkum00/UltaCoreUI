@@ -123,7 +123,7 @@ public struct UBBannerView: View {
     let theme: UBTheme
     let onClose: ((UBBannerType) -> Void)?
     
-    @State private var isVisible = true
+    @State private var isVisible = false
     
     public init(
         title: String,
@@ -144,23 +144,25 @@ public struct UBBannerView: View {
     }
     
     public var body: some View {
-        if isVisible {
-            HStack(alignment: .top, spacing: UBGlobal.space300) {
-                iconView
-                textContent
-                Spacer()
-                closeButton
+        HStack(alignment: .top, spacing: UBGlobal.space300) {
+            iconView
+            textContent
+            Spacer()
+            closeButton
+        }
+        .padding()
+        .background(type.backgroundColor)
+        .cornerRadius(UBGlobal.borderRadius300)
+        .shadow(radius: UBGlobal.borderRadius100)
+        .padding(.horizontal)
+        .offset(y: isVisible ? 0 : -140)
+        .opacity(isVisible ? 1 : 0)
+        .animation(.bannerSpring, value: isVisible)
+        .task {
+            withAnimation(.bannerSpring) {
+                isVisible = true
             }
-            .padding()
-            .background(type.backgroundColor)
-            .cornerRadius(UBGlobal.borderRadius300)
-            .shadow(radius: UBGlobal.borderRadius100)
-            .padding(.horizontal)
-            .transition(.slideFadeFromTop)
-            .animation(.bannerSpring, value: isVisible)
-            .task {
-                await autoDismiss()
-            }
+            await autoDismiss()
         }
     }
 }
@@ -239,14 +241,4 @@ private extension Animation {
         dampingFraction: 0.85,
         blendDuration: 0.25
     )
-}
-
-@available(iOS 13.0, *)
-private extension AnyTransition {
-    static var slideFadeFromTop: AnyTransition {
-        .asymmetric(
-            insertion: .move(edge: .top).combined(with: .opacity),
-            removal: .move(edge: .top).combined(with: .opacity)
-        )
-    }
 }
