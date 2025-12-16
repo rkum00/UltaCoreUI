@@ -207,6 +207,7 @@ private extension UBBannerView {
                         width: UBGlobal.sizeWidth400,
                         height: UBGlobal.sizeHeight400
                     )
+                    .scaleEffect(UBGlobal.fontLineHeight25)
                     .foregroundColor(.white)
             }
             .buttonStyle(.plain)
