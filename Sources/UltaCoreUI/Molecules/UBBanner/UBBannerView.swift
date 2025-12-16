@@ -35,8 +35,14 @@ public struct UBBannerView: View {
     public var body: some View {
         HStack(alignment: .top, spacing: UBGlobal.space300) {
             Image(systemName: type.iconName)
+                .renderingMode(.template)
+                .resizable()
+                .scaledToFit()
+                .frame(
+                    width: UBGlobal.sizeWidth600,
+                    height: UBGlobal.sizeHeight600
+                )
                 .foregroundColor(.white)
-                .font(.title)
 
             VStack(alignment: .leading, spacing: UBGlobal.space100) {
                 UBText(textAttribute: TextAttributes(
