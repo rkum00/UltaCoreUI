@@ -71,7 +71,7 @@ public struct UBBannerView: View {
                     Image(systemName: type.crossicon)
                         .renderingMode(.template)
                         .resizable()
-                        .scaledToFit()
+                        .aspectRatio(1.0, contentMode: .fit)
                         .frame(
                             width: UBGlobal.sizeWidth400,
                             height: UBGlobal.sizeHeight400
