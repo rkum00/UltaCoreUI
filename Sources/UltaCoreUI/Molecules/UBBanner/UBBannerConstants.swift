@@ -32,4 +32,8 @@ public enum UBBannerType: String, CaseIterable {
         case .info: return "info.circle.fill"
         }
     }
+    
+    var crossicon: String {
+        return "xmark"
+    }
 }

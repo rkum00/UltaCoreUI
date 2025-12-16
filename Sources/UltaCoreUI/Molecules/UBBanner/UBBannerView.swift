@@ -68,9 +68,15 @@ public struct UBBannerView: View {
                 Button {
                     onClose(type)
                 } label: {
-                    Image(systemName: "xmark")
+                    Image(systemName: type.crossicon)
+                        .renderingMode(.template)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(
+                            width: UBGlobal.sizeWidth400,
+                            height: UBGlobal.sizeHeight400
+                        )
                         .foregroundColor(.white)
-                        .padding(UBGlobal.space200)
                 }
                 .buttonStyle(.plain)
             }
