@@ -13,9 +13,11 @@ final class UltaOptionsThemeRouter {
     func makeDetailView(selectedPageOption: OptionsPageType, for theme: UBTheme) -> some View {
         switch selectedPageOption {
         case .ubText:
-            UltaTextView(theme: theme, optionType: selectedPageOption)
+            UltaTextView(theme: theme, optionType: .ubText)
         case .ubCardContainer:
-            UltaCardContainerView(theme: theme, optionType: selectedPageOption)
+            UltaCardContainerView(theme: theme, optionType: .ubCardContainer)
+        case .ubBanner:
+            UltaBannerView(theme: theme, optionType: .ubBanner)
         default:
             Text(theme.rawValue)
         }
