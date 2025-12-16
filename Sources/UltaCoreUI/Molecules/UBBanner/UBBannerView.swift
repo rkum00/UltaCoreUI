@@ -15,7 +15,7 @@ public struct UBBannerView: View {
     let textColor: TextColorType
     let theme: UBTheme
     let onClose: ((UBBannerType) -> Void)?
-
+    
     public init(
         title: String,
         message: String?,
@@ -31,7 +31,7 @@ public struct UBBannerView: View {
         self.theme = theme
         self.onClose = onClose
     }
-
+    
     public var body: some View {
         HStack(alignment: .top, spacing: UBGlobal.space300) {
             Image(systemName: type.iconName)
@@ -43,7 +43,7 @@ public struct UBBannerView: View {
                     height: UBGlobal.sizeHeight600
                 )
                 .foregroundColor(.white)
-
+            
             VStack(alignment: .leading, spacing: UBGlobal.space100) {
                 UBText(textAttribute: TextAttributes(
                     text: title,
@@ -51,7 +51,7 @@ public struct UBBannerView: View {
                     fontSize: .xlarge,
                     fontWeight: .bold
                 ))
-
+                
                 if let message {
                     UBText(textAttribute: TextAttributes(
                         text: message,
@@ -61,23 +61,22 @@ public struct UBBannerView: View {
                     ))
                 }
             }
-
             Spacer()
-
             if let onClose {
                 Button {
                     onClose(type)
                 } label: {
-                    Image(systemName: type.crossicon)
-                        .renderingMode(.template)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(
-                            width: UBGlobal.sizeWidth400,
-                            height: UBGlobal.sizeHeight400
-                        )
-                        .foregroundColor(.white)
-                        .fixedSize()
+                    ZStack {
+                        Image(systemName: type.crossicon)
+                            .renderingMode(.template)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(
+                                width: UBGlobal.sizeWidth400,
+                                height: UBGlobal.sizeHeight400
+                            )
+                            .foregroundColor(.white)
+                    }
                 }
                 .buttonStyle(.plain)
             }
