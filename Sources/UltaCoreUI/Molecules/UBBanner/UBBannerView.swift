@@ -12,7 +12,6 @@ public struct UBBannerView: View {
     let title: String
     let message: String?
     let type: UBBannerType
-    let iconName: String
     let textColor: TextColorType
     let theme: UBTheme
     let onClose: ((UBBannerType) -> Void)?
@@ -21,7 +20,6 @@ public struct UBBannerView: View {
         title: String,
         message: String?,
         type: UBBannerType,
-        iconName: String,
         textColor: TextColorType,
         theme: UBTheme = .current,
         onClose: ((UBBannerType) -> Void)?
@@ -29,7 +27,6 @@ public struct UBBannerView: View {
         self.title = title
         self.message = message
         self.type = type
-        self.iconName = iconName
         self.textColor = textColor
         self.theme = theme
         self.onClose = onClose
@@ -37,7 +34,7 @@ public struct UBBannerView: View {
 
     public var body: some View {
         HStack(alignment: .top, spacing: UBGlobal.space300) {
-            Image(systemName: iconName)
+            Image(systemName: type.iconName)
                 .foregroundColor(.white)
                 .font(.title)
 

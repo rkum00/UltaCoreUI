@@ -24,7 +24,7 @@ public enum UBBannerType: String, CaseIterable {
         }
     }
 
-    var icon: String {
+    var iconName: String {
         switch self {
         case .success: return "checkmark.circle.fill"
         case .error: return "xmark.octagon.fill"
