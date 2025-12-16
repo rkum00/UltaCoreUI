@@ -75,7 +75,7 @@ public struct UBBannerView: View {
                                 width: UBGlobal.sizeWidth400,
                                 height: UBGlobal.sizeHeight400
                             )
-                            .scaleEffect(UBGlobal.fontLineHeight200)
+                            .scaleEffect(UBGlobal.fontLineHeight25)
                             .foregroundColor(.white)
                     }
                 }
