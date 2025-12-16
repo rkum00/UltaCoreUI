@@ -71,12 +71,13 @@ public struct UBBannerView: View {
                     Image(systemName: type.crossicon)
                         .renderingMode(.template)
                         .resizable()
-                        .aspectRatio(1.0, contentMode: .fit)
+                        .scaledToFit()
                         .frame(
                             width: UBGlobal.sizeWidth400,
                             height: UBGlobal.sizeHeight400
                         )
                         .foregroundColor(.white)
+                        .fixedSize()
                 }
                 .buttonStyle(.plain)
             }
