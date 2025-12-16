@@ -39,12 +39,12 @@ public struct UBBannerView: View {
     }
 
     public var body: some View {
-        HStack(alignment: .top, spacing: 12) {
+        HStack(alignment: .top, spacing: UBGlobal.space300) {
             Image(systemName: iconName)
                 .foregroundColor(.white)
                 .font(.title)
 
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: UBGlobal.space100) {
                 UBText(textAttribute: TextAttributes(
                     text: title,
                     color: textColor,
@@ -70,7 +70,7 @@ public struct UBBannerView: View {
                 } label: {
                     Image(systemName: "xmark")
                         .foregroundColor(.white)
-                        .padding(8)
+                        .padding(UBGlobal.space200)
                 }
                 .buttonStyle(.plain)
             }
@@ -78,8 +78,8 @@ public struct UBBannerView: View {
         .contentShape(Rectangle())
         .padding()
         .background(backgroundColor)
-        .cornerRadius(14)
-        .shadow(radius: 5)
+        .cornerRadius(UBGlobal.borderRadius300)
+        .shadow(radius: UBGlobal.borderRadius100)
         .padding(.horizontal)
     }
 }
