@@ -13,7 +13,8 @@ public struct UBBannerView: View {
     let message: String?
     let type: UBBannerType
     let textColor: TextColorType
-    let duration: TimeInterval?
+    let duration: TimeInterval
+    let autoDismiss: Bool
     let theme: UBTheme
     let onClose: ((UBBannerType) -> Void)?
     
@@ -24,7 +25,8 @@ public struct UBBannerView: View {
         message: String?,
         type: UBBannerType,
         textColor: TextColorType,
-        duration: TimeInterval? = nil,
+        duration: TimeInterval,
+        autoDismiss: Bool = false,
         theme: UBTheme = .current,
         onClose: ((UBBannerType) -> Void)? = nil
     ) {
@@ -33,6 +35,7 @@ public struct UBBannerView: View {
         self.type = type
         self.textColor = textColor
         self.duration = duration
+        self.autoDismiss = autoDismiss
         self.theme = theme
         self.onClose = onClose
     }
@@ -49,14 +52,14 @@ public struct UBBannerView: View {
         .cornerRadius(UBGlobal.borderRadius300)
         .shadow(radius: UBGlobal.borderRadius100)
         .padding(.horizontal)
-        .offset(y: isVisible ? 0 : -140)
-        .opacity(isVisible ? 1 : 0)
+        .offset(y: isVisible ? UBGlobal.space0 : -(UBGlobal.space2000))
+        .opacity(Double(isVisible ? UBGlobal.opacity1000 : UBGlobal.opacity0))
         .animation(.bannerSpring, value: isVisible)
-        .task {
-            withAnimation(.bannerSpring) {
-                isVisible = true
+        .task(id: autoDismiss) {
+            showBanner()
+            if autoDismiss {
+                await scheduleAutoDismiss()
             }
-            await autoDismiss()
         }
     }
 }
@@ -112,10 +115,20 @@ private extension UBBannerView {
             .buttonStyle(.plain)
         }
     }
+}
+
+@available(iOS 15.0, *)
+private extension UBBannerView {
+    func showBanner() {
+        withAnimation(.bannerSpring) {
+            isVisible = true
+        }
+    }
     
-    func autoDismiss() async {
-        guard let duration else { return }
-        try? await Task.sleep(nanoseconds: UInt64(duration * 1_000_000_000))
+    func scheduleAutoDismiss() async {
+        try? await Task.sleep(
+            nanoseconds: UInt64(duration * 1_000_000_000)
+        )
         dismissBanner()
     }
     
@@ -123,8 +136,8 @@ private extension UBBannerView {
         guard isVisible else { return }
         withAnimation(.bannerSpring) {
             isVisible = false
-            onClose?(type)
         }
+        onClose?(type)
     }
 }
 
