@@ -45,7 +45,7 @@ public struct UBBannerView: View {
             closeButton
         }
         .padding()
-        .background(type.backgroundColor)
+        .background(type.getBackgroundColor(theme: theme))
         .cornerRadius(UBGlobal.borderRadius300)
         .shadow(radius: UBGlobal.borderRadius100)
         .padding(.horizontal)

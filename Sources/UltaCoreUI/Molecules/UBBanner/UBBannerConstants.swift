@@ -13,17 +13,21 @@ public enum UBBannerType: String, CaseIterable {
     case error
     case warning
     case info
-
+    
     @available(iOS 13.0, *)
-    var backgroundColor: Color {
+    func getBackgroundColor(theme: UBTheme) -> Color {
         switch self {
-        case .success: return Color(UBTheme.applyPositiveColor())
-        case .error: return Color(UBTheme.applyErrorColor())
-        case .warning: return Color(UBTheme.applyWarningColor())
-        case .info: return Color(UBTheme.applyInfoColor())
+        case .success:
+            return Color(UBTheme.applyPositiveColor(theme: theme))
+        case .error:
+            return Color(UBTheme.applyErrorColor(theme: theme))
+        case .warning:
+            return Color(UBTheme.applyWarningColor(theme: theme))
+        case .info:
+            return Color(UBTheme.applyInfoColor(theme: theme))
         }
     }
-
+    
     var iconName: String {
         switch self {
         case .success: return "checkmark.circle.fill"
