@@ -63,7 +63,6 @@ public struct UBBannerView: View {
 
 @available(iOS 15.0, *)
 private extension UBBannerView {
-    
     var iconView: some View {
         Image(systemName: type.iconName)
             .resizable()

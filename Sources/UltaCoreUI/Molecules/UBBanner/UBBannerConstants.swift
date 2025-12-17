@@ -17,10 +17,10 @@ public enum UBBannerType: String, CaseIterable {
     @available(iOS 13.0, *)
     var backgroundColor: Color {
         switch self {
-        case .success: return Color.green.opacity(0.9)
-        case .error: return Color.red.opacity(0.9)
-        case .warning: return Color.orange.opacity(0.9)
-        case .info: return Color.blue.opacity(0.9)
+        case .success: return Color(UBTheme.applyPositiveColor())
+        case .error: return Color(UBTheme.applyErrorColor())
+        case .warning: return Color(UBTheme.applyWarningColor())
+        case .info: return Color(UBTheme.applyInfoColor())
         }
     }
 
