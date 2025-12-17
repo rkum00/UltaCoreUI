@@ -52,15 +52,18 @@ public struct UBBannerView: View {
         .cornerRadius(UBGlobal.borderRadius300)
         .shadow(radius: UBGlobal.borderRadius100)
         .padding(.horizontal)
-        .offset(y: isVisible ? UBGlobal.space0 : -(UBGlobal.space2000))
-        .opacity(Double(isVisible ? UBGlobal.opacity1000 : UBGlobal.opacity0))
-        .animation(.bannerSpring, value: isVisible)
-        .task(id: autoDismiss) {
-            showBanner()
+        .onAppear{
+            withAnimation(.bannerSpring) {
+                isVisible = true
+            }
             if autoDismiss {
-                await scheduleAutoDismiss()
+                Task {
+                    await scheduleAutoDismiss()
+                }
             }
         }
+        .offset(y: isVisible ? UBGlobal.space0 : -(UBGlobal.space2000))
+        .opacity(Double(isVisible ? UBGlobal.opacity1000 : UBGlobal.opacity0))
     }
 }
 
@@ -137,7 +140,9 @@ private extension UBBannerView {
         withAnimation(.bannerSpring) {
             isVisible = false
         }
-        onClose?(type)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.45) {
+            onClose?(type)
+        }
     }
 }
 
