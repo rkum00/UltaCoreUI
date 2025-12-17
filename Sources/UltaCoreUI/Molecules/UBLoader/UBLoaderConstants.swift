@@ -8,14 +8,14 @@
 import Foundation
 import SwiftUI
 
-/// This enum defines the colors available for the spinner component.
+/// This enum defines the colors available for the loader component.
 public enum UBLoaderColor: String, CaseIterable {
     case primary
     case inverse
     
-    ///  This method returns the color of the spinner based on the selected theme and color.
-    /// - Parameter theme: The theme of the spinner. It is used to set color based on the selected theme.
-    /// - Returns: The color of the spinner based on the selected theme and color.
+    ///  This method returns the color of the loader based on the selected theme and color.
+    /// - Parameter theme: The theme of the loader. It is used to set color based on the selected theme.
+    /// - Returns: The color of the loader based on the selected theme and color.
     @available(iOS 13.0, *)
     func getIndicatorColor(theme: UBTheme) -> Color {
         switch self {
@@ -26,8 +26,8 @@ public enum UBLoaderColor: String, CaseIterable {
         }
     }
     
-    ///  This method returns the track color of the spinner based on the selected color.
-    /// - Returns: The track color of the spinner based on the selected color.
+    ///  This method returns the track color of the loader based on the selected color.
+    /// - Returns: The track color of the loader based on the selected color.
     @available(iOS 13.0, *)
     func getTrackColor() -> Color {
         switch self {
@@ -50,7 +50,7 @@ public enum UBLoaderColor: String, CaseIterable {
     }
 }
 
-/// This enum defines the sizes available for the spinner component.
+/// This enum defines the sizes available for the loader component.
 public enum UBLoaderSize: String, CaseIterable {
     case xSmall
     case small
@@ -58,8 +58,8 @@ public enum UBLoaderSize: String, CaseIterable {
     case large
     case xLarge
     
-    /// This method returns the width of the spinner based on the selected size.
-    /// - Returns: The width of the spinner based on the selected size.
+    /// This method returns the width of the loader based on the selected size.
+    /// - Returns: The width of the loader based on the selected size.
     func getWidth() -> CGFloat {
         switch self {
         case .xSmall:
@@ -75,8 +75,8 @@ public enum UBLoaderSize: String, CaseIterable {
         }
     }
     
-    ///  This method returns the height of the spinner based on the selected size.
-    /// - Returns: The height of the spinner based on the selected size.
+    ///  This method returns the height of the loader based on the selected size.
+    /// - Returns: The height of the loader based on the selected size.
     func getHeight() -> CGFloat {
         switch self {
         case .xSmall:
@@ -92,8 +92,8 @@ public enum UBLoaderSize: String, CaseIterable {
         }
     }
     
-    ///  This method returns the border width of the spinner based on the selected size.
-    /// - Returns: The border width of the spinner based on the selected size.
+    ///  This method returns the border width of the loader based on the selected size.
+    /// - Returns: The border width of the loader based on the selected size.
     func getBorderWidth() -> CGFloat {
         switch self {
         case .xSmall:
@@ -121,7 +121,7 @@ public enum UBLoaderSize: String, CaseIterable {
         }
     }
     
-    /// This method returns the spacing between the spinner and label
+    /// This method returns the spacing between the loader and label
     func getLabelSpacing() -> CGFloat {
         switch self {
         case .xSmall, .small:
