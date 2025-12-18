@@ -99,7 +99,9 @@ public struct UBLoaderView: View {
     }
 }
 */
+
 public struct UBLoaderView: View {
+    
     private let theme: UBTheme
     private let color: UBLoaderColor
     private let size: UBLoaderSize
@@ -146,19 +148,23 @@ public struct UBLoaderView: View {
             let angle = timeline.date.timeIntervalSinceReferenceDate * 360
             
             ZStack {
+                // Track (perfect circle)
                 Circle()
                     .stroke(color.getTrackColor(), lineWidth: lineWidth)
                 
+                // Indicator (perfect circle)
                 Circle()
                     .trim(from: 0, to: 0.25)
                     .stroke(
                         color.getIndicatorColor(theme: theme),
-                        style: StrokeStyle(lineWidth: lineWidth, lineCap: .round)
+                        style: StrokeStyle(
+                            lineWidth: lineWidth,
+                            lineCap: .round
+                        )
                     )
                     .rotationEffect(.degrees(angle))
             }
             .frame(width: dimension, height: dimension)
-            .drawingGroup() // <-- critical for List
         }
         .padding()
     }
