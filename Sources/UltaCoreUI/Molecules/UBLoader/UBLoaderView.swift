@@ -54,7 +54,8 @@ public struct UBLoaderView: View {
         let trackColor = color.getTrackColor()
         
         return TimelineView(.animation) { timeline in
-            let angle = timeline.date.timeIntervalSinceReferenceDate * 360
+            let angle = timeline.date.timeIntervalSinceReferenceDate
+                .truncatingRemainder(dividingBy: 1) * 360
             
             Circle()
                 .stroke(trackColor, lineWidth: lineWidth)
