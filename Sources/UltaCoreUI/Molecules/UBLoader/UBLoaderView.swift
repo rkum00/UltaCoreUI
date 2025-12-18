@@ -48,8 +48,8 @@ public struct UBLoaderView: View {
     }
     
     private var loaderCircle: some View {
-        let dimension = size.getWidth()
-        let lineWidth = size.getBorderWidth()
+        let dimension = size.width
+        let lineWidth = size.borderWidth
         let indicatorColor = color.getIndicatorColor(theme: theme)
         let trackColor = color.getTrackColor()
         

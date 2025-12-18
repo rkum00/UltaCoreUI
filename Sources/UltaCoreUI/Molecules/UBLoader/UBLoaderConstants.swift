@@ -60,7 +60,7 @@ public enum UBLoaderSize: String, CaseIterable {
     
     /// This method returns the width of the loader based on the selected size.
     /// - Returns: The width of the loader based on the selected size.
-    func getWidth() -> CGFloat {
+    var width: CGFloat {
         switch self {
         case .xSmall:
             return UBGlobal.sizeWidth200
@@ -75,26 +75,9 @@ public enum UBLoaderSize: String, CaseIterable {
         }
     }
     
-    ///  This method returns the height of the loader based on the selected size.
-    /// - Returns: The height of the loader based on the selected size.
-    func getHeight() -> CGFloat {
-        switch self {
-        case .xSmall:
-            return UBGlobal.sizeHeight200
-        case .small:
-            return UBGlobal.sizeHeight400
-        case .medium:
-            return UBGlobal.sizeHeight600
-        case .large:
-            return UBGlobal.sizeHeight800
-        case .xLarge:
-            return UBGlobal.sizeHeight1000
-        }
-    }
-    
     ///  This method returns the border width of the loader based on the selected size.
     /// - Returns: The border width of the loader based on the selected size.
-    func getBorderWidth() -> CGFloat {
+    var borderWidth: CGFloat {
         switch self {
         case .xSmall:
             return UBGlobal.borderWidth150
