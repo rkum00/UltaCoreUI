@@ -10,7 +10,7 @@ import SwiftUI
 @available(iOS 15.0, *)
 public struct UBLoaderView: View {
     // MARK: - State
-    @State private var isAnimating = false
+    @State private var rotation: Double = 0
     
     // MARK: - Properties
     private let theme: UBTheme
@@ -55,7 +55,7 @@ public struct UBLoaderView: View {
             loaderLabel
         }
         .onAppear {
-            isAnimating = true
+            startAnimation()
         }
     }
     
@@ -81,14 +81,20 @@ public struct UBLoaderView: View {
                     )
                 )
                 .frame(width: dimension, height: dimension)
-                .rotationEffect(.degrees(isAnimating ? 360 : 0))
+                .rotationEffect(.degrees(rotation))
                 .animation(
                     .linear(duration: animationDuration)
                     .repeatForever(autoreverses: false),
-                    value: isAnimating
+                    value: rotation
                 )
         }
         .padding()
+    }
+    
+    // MARK: - Animation
+    private func startAnimation() {
+        rotation = 0
+        rotation = 360
     }
 }
 
