@@ -18,6 +18,8 @@ final class UltaOptionsThemeRouter {
             UltaCardContainerView(theme: theme, optionType: .ubCardContainer)
         case .ubBanner:
             UltaBannerView(theme: theme, optionType: .ubBanner)
+        case .ubLoader:
+            UltaLoaderView(theme: theme, optionType: .ubLoader)
         default:
             Text(theme.rawValue)
         }

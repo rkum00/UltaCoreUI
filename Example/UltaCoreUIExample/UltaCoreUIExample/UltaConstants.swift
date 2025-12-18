@@ -22,6 +22,7 @@ enum OptionsPageType: String, CaseIterable {
     case ubButton = "UBButton"
     case ubCardContainer = "UBCard Container"
     case ubBanner = "UBBanner"
+    case ubLoader = "UBLoader"
 }
 
 public enum GlobalTheme1ColorEnum: String, CaseIterable {
@@ -311,5 +312,6 @@ let sections: [SectionData] = [
                 items: [OptionsPageType.ubText,
                         OptionsPageType.ubButton,
                         OptionsPageType.ubCardContainer,
-                        OptionsPageType.ubBanner])
+                        OptionsPageType.ubBanner,
+                        OptionsPageType.ubLoader])
 ]
