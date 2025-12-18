@@ -50,25 +50,27 @@ public struct UBLoaderView: View {
     private var loaderCircle: some View {
         let dimension = size.getWidth()
         let lineWidth = size.getBorderWidth()
+        let indicatorColor = color.getIndicatorColor(theme: theme)
+        let trackColor = color.getTrackColor()
         
         return TimelineView(.animation) { timeline in
             let angle = timeline.date.timeIntervalSinceReferenceDate * 360
             
-            ZStack {
-                Circle()
-                    .stroke(color.getTrackColor(), lineWidth: lineWidth)
-                Circle()
-                    .trim(from: 0, to: 0.25)
-                    .stroke(
-                        color.getIndicatorColor(theme: theme),
-                        style: StrokeStyle(
-                            lineWidth: lineWidth,
-                            lineCap: .round
+            Circle()
+                .stroke(trackColor, lineWidth: lineWidth)
+                .overlay {
+                    Circle()
+                        .trim(from: 0, to: 0.25)
+                        .stroke(
+                            indicatorColor,
+                            style: StrokeStyle(
+                                lineWidth: lineWidth,
+                                lineCap: .round
+                            )
                         )
-                    )
-                    .rotationEffect(.degrees(angle))
-            }
-            .frame(width: dimension, height: dimension)
+                        .rotationEffect(.degrees(angle))
+                }
+                .frame(width: dimension, height: dimension)
         }
         .padding()
     }
