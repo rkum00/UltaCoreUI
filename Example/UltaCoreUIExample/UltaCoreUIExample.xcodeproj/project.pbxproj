@@ -23,6 +23,10 @@
 		889151392EEFE774000EB452 /* UltaBannerViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889151382EEFE774000EB452 /* UltaBannerViewPresenter.swift */; };
 		8891513B2EEFE78E000EB452 /* UltaBannerViewOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8891513A2EEFE78E000EB452 /* UltaBannerViewOptions.swift */; };
 		8891513D2EEFE7C8000EB452 /* UltaBannerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8891513C2EEFE7C8000EB452 /* UltaBannerRowView.swift */; };
+		88A606872EF5290C007BED5D /* UltaFontsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A606862EF5290C007BED5D /* UltaFontsView.swift */; };
+		88A606892EF52928007BED5D /* UltaFontsOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A606882EF52928007BED5D /* UltaFontsOptions.swift */; };
+		88A6068B2EF5293B007BED5D /* UltaFontsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A6068A2EF5293B007BED5D /* UltaFontsPresenter.swift */; };
+		88A6068D2EF52954007BED5D /* UltaFontsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A6068C2EF52953007BED5D /* UltaFontsRowView.swift */; };
 		88C808782ED73AB3000BD06E /* UltaCoreUIExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C808772ED73AB3000BD06E /* UltaCoreUIExampleApp.swift */; };
 		88C8087A2ED73AB3000BD06E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C808792ED73AB3000BD06E /* ContentView.swift */; };
 		88C8087C2ED73AB5000BD06E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88C8087B2ED73AB5000BD06E /* Assets.xcassets */; };
@@ -75,6 +79,10 @@
 		889151382EEFE774000EB452 /* UltaBannerViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaBannerViewPresenter.swift; sourceTree = "<group>"; };
 		8891513A2EEFE78E000EB452 /* UltaBannerViewOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaBannerViewOptions.swift; sourceTree = "<group>"; };
 		8891513C2EEFE7C8000EB452 /* UltaBannerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaBannerRowView.swift; sourceTree = "<group>"; };
+		88A606862EF5290C007BED5D /* UltaFontsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaFontsView.swift; sourceTree = "<group>"; };
+		88A606882EF52928007BED5D /* UltaFontsOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaFontsOptions.swift; sourceTree = "<group>"; };
+		88A6068A2EF5293B007BED5D /* UltaFontsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaFontsPresenter.swift; sourceTree = "<group>"; };
+		88A6068C2EF52953007BED5D /* UltaFontsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaFontsRowView.swift; sourceTree = "<group>"; };
 		88C808742ED73AB3000BD06E /* UltaCoreUIExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltaCoreUIExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C808772ED73AB3000BD06E /* UltaCoreUIExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaCoreUIExampleApp.swift; sourceTree = "<group>"; };
 		88C808792ED73AB3000BD06E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -125,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				88E487F72EF3FFB2001D99E6 /* Colors */,
+				88A606852EF528BF007BED5D /* Fonts */,
 			);
 			path = UltaAtoms;
 			sourceTree = "<group>";
@@ -189,6 +198,17 @@
 				8891513C2EEFE7C8000EB452 /* UltaBannerRowView.swift */,
 			);
 			path = UltaBanner;
+			sourceTree = "<group>";
+		};
+		88A606852EF528BF007BED5D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				88A606862EF5290C007BED5D /* UltaFontsView.swift */,
+				88A606882EF52928007BED5D /* UltaFontsOptions.swift */,
+				88A6068A2EF5293B007BED5D /* UltaFontsPresenter.swift */,
+				88A6068C2EF52953007BED5D /* UltaFontsRowView.swift */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		88C8086B2ED73AB3000BD06E = {
@@ -419,17 +439,21 @@
 				882972972EE0420C00538F3F /* UltaTextViewOptions.swift in Sources */,
 				88F7748B2EF3059900CD9262 /* UltaLoaderOptions.swift in Sources */,
 				88F7748F2EF305D400CD9262 /* UltaLoaderRowView.swift in Sources */,
+				88A606872EF5290C007BED5D /* UltaFontsView.swift in Sources */,
 				88E487FD2EF40030001D99E6 /* UltaColorsPresenter.swift in Sources */,
 				882972902EE01DF000538F3F /* UltaOptionsThemePresenter.swift in Sources */,
 				889151372EEFE72C000EB452 /* UltaBannerView.swift in Sources */,
 				889151392EEFE774000EB452 /* UltaBannerViewPresenter.swift in Sources */,
 				8808554F2EE1DEB80016AA79 /* UltaCardContainerView.swift in Sources */,
 				88F7748D2EF305BA00CD9262 /* UltaLoaderPresenter.swift in Sources */,
+				88A606892EF52928007BED5D /* UltaFontsOptions.swift in Sources */,
 				880855532EE1DF450016AA79 /* UltaCardContainerViewOptions.swift in Sources */,
 				8829728E2EE01DB100538F3F /* UltaOptionsThemeRouter.swift in Sources */,
 				882972952EE0419700538F3F /* UltaTextViewPresenter.swift in Sources */,
+				88A6068B2EF5293B007BED5D /* UltaFontsPresenter.swift in Sources */,
 				88C808782ED73AB3000BD06E /* UltaCoreUIExampleApp.swift in Sources */,
 				880855512EE1DF0E0016AA79 /* UltaCardContainerViewPresenter.swift in Sources */,
+				88A6068D2EF52954007BED5D /* UltaFontsRowView.swift in Sources */,
 				8829728C2EDEE6E100538F3F /* UltaOptionsThemeView.swift in Sources */,
 				881064542EDEAEBD001B17CC /* UltaConstants.swift in Sources */,
 				88E487F92EF3FFDF001D99E6 /* UltaColorsView.swift in Sources */,

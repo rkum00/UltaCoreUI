@@ -14,6 +14,8 @@ final class UltaOptionsThemeRouter {
         switch selectedPageOption {
         case .colors:
             UltaColorsView(theme: theme, optionType: .colors)
+        case .fonts:
+            UltaFontsView(theme: theme, optionType: .fonts)
         case .ubText:
             UltaTextView(theme: theme, optionType: .ubText)
         case .ubCardContainer:
