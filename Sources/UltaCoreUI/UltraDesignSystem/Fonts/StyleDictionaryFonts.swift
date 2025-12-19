@@ -74,80 +74,80 @@ public extension FontModel {
     }
     
     class var display24: FontModel {
-       FontModel(fontSize: UBGlobal.space600, fontFamily: UBGlobal.fontFamilyPoppins + "-Medium", fontDecoration: nil, title: "Display24")
+        FontModel(fontSize: UBGlobal.space600, fontFamily: UBGlobal.fontFamilyPoppins + "-Medium", fontDecoration: nil, title: "Display24")
     }
     
     class var heading: FontModel {
-       FontModel(fontSize: UBGlobal.fontSize500, fontFamily: UBGlobal.fontFamilyPoppins + "-Medium", fontDecoration: nil, title: "Heading")
-
+        FontModel(fontSize: UBGlobal.fontSize500, fontFamily: UBGlobal.fontFamilyPoppins + "-Medium", fontDecoration: nil, title: "Heading")
+        
     }
     
     class var headingH1: FontModel {
-       FontModel(fontSize: UBGlobal.fontSize500, fontFamily: UBGlobal.fontFamilyPoppins + "-Medium", fontDecoration: nil, title: "Headline1")
-
+        FontModel(fontSize: UBGlobal.fontSize500, fontFamily: UBGlobal.fontFamilyPoppins + "-Medium", fontDecoration: nil, title: "Headline1")
+        
     }
     
     class var headingH2: FontModel {
-       FontModel(fontSize: UBGlobal.fontSize400, fontFamily: UBGlobal.fontFamilyPoppins + "-Medium", fontDecoration: nil, title: "Headline2")
+        FontModel(fontSize: UBGlobal.fontSize400, fontFamily: UBGlobal.fontFamilyPoppins + "-Medium", fontDecoration: nil, title: "Headline2")
     }
     
     class var headingH3: FontModel {
-       FontModel(fontSize: UBGlobal.fontSize300, fontFamily: UBGlobal.fontFamilyPoppins + "-Medium", fontDecoration: nil, title: "Headline3")
+        FontModel(fontSize: UBGlobal.fontSize300, fontFamily: UBGlobal.fontFamilyPoppins + "-Medium", fontDecoration: nil, title: "Headline3")
     }
     class var headingH4: FontModel {
         FontModel(fontSize: UBGlobal.fontSize200, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-SemiBold", fontDecoration: nil, title: "Headline4")
     }
     class var headingH5: FontModel {
-       FontModel(fontSize: UBGlobal.fontSize100, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-SemiBold", fontDecoration: nil, title: "Headline5")
+        FontModel(fontSize: UBGlobal.fontSize100, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-SemiBold", fontDecoration: nil, title: "Headline5")
     }
     
     class var body20: FontModel {
-       FontModel(fontSize: UBGlobal.space500, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-Regular", fontDecoration: nil, title: "Body20")
+        FontModel(fontSize: UBGlobal.space500, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-Regular", fontDecoration: nil, title: "Body20")
     }
     
     class var body20Emphasis: FontModel {
-       FontModel(fontSize: UBGlobal.space500, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-SemiBold", fontDecoration: nil, title: "Body20_Emphasis")
+        FontModel(fontSize: UBGlobal.space500, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-SemiBold", fontDecoration: nil, title: "Body20_Emphasis")
     }
     
     class var body20Strikethrough: FontModel {
-       FontModel(fontSize: UBGlobal.space500, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-SemiBold", fontDecoration: UltaStyleFontsGlobal .fontTextDecorationLineThrough, title: "Body20_StrikeThrough")
+        FontModel(fontSize: UBGlobal.space500, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-SemiBold", fontDecoration: UltaStyleFontsGlobal.fontTextDecorationLineThrough, title: "Body20_StrikeThrough")
     }
     
     class var body20Link: FontModel {
-       FontModel(fontSize: UBGlobal.space500, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-SemiBold", fontDecoration: UltaStyleFontsGlobal .fontTextDecorationUnderline, title: "Body20_Link")
+        FontModel(fontSize: UBGlobal.space500, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-SemiBold", fontDecoration: UltaStyleFontsGlobal.fontTextDecorationUnderline, title: "Body20_Link")
     }
     
     class var body16: FontModel {
-       FontModel(fontSize: UBGlobal.fontSize300, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-Regular", fontDecoration: nil, title: "Body16")
+        FontModel(fontSize: UBGlobal.fontSize300, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-Regular", fontDecoration: nil, title: "Body16")
     }
     
     class var body16Emphasis: FontModel {
-       FontModel(fontSize: UBGlobal.fontSize300, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-SemiBold", fontDecoration: nil, title: "Body16_Emphasis")
+        FontModel(fontSize: UBGlobal.fontSize300, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-SemiBold", fontDecoration: nil, title: "Body16_Emphasis")
     }
     
     class var body16Strikethrough: FontModel {
-       FontModel(fontSize: UBGlobal.fontSize300, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-SemiBold", fontDecoration: UltaStyleFontsGlobal .fontTextDecorationLineThrough, title: "Body16_StrikeThrough")
+        FontModel(fontSize: UBGlobal.fontSize300, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-SemiBold", fontDecoration: UltaStyleFontsGlobal.fontTextDecorationLineThrough, title: "Body16_StrikeThrough")
     }
     
     class var body16Link: FontModel {
-       FontModel(fontSize: UBGlobal.fontSize300, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-SemiBold", fontDecoration: UltaStyleFontsGlobal .fontTextDecorationUnderline, title: "Body16_Link")
+        FontModel(fontSize: UBGlobal.fontSize300, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-SemiBold", fontDecoration: UltaStyleFontsGlobal.fontTextDecorationUnderline, title: "Body16_Link")
     }
     
     
     class var body14: FontModel {
-       FontModel(fontSize: UBGlobal.fontSize200, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-Regular", fontDecoration: nil, title: "Body14")
+        FontModel(fontSize: UBGlobal.fontSize200, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-Regular", fontDecoration: nil, title: "Body14")
     }
     
     class var body14Emphasis: FontModel {
-       FontModel(fontSize: UBGlobal.fontSize200, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-SemiBold", fontDecoration: nil, title: "Body14_Emphasis")
+        FontModel(fontSize: UBGlobal.fontSize200, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-SemiBold", fontDecoration: nil, title: "Body14_Emphasis")
     }
     
     class var body14Strikethrough: FontModel {
-       FontModel(fontSize: UBGlobal.fontSize200, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-SemiBold", fontDecoration: UltaStyleFontsGlobal .fontTextDecorationLineThrough, title: "Body14_StrikeThrough")
+        FontModel(fontSize: UBGlobal.fontSize200, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-SemiBold", fontDecoration: UltaStyleFontsGlobal.fontTextDecorationLineThrough, title: "Body14_StrikeThrough")
     }
     
     class var body14Link: FontModel {
-       FontModel(fontSize: UBGlobal.fontSize200, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-SemiBold", fontDecoration: UltaStyleFontsGlobal .fontTextDecorationUnderline, title: "Body14_Link")
+        FontModel(fontSize: UBGlobal.fontSize200, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-SemiBold", fontDecoration: UltaStyleFontsGlobal.fontTextDecorationUnderline, title: "Body14_Link")
     }
     
     class var body12: FontModel {
@@ -155,21 +155,20 @@ public extension FontModel {
     }
     
     class var body12Emphasis: FontModel {
-       FontModel(fontSize: UBGlobal.fontSize100, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-SemiBold", fontDecoration: nil, title: "Body12_Emphasis")
+        FontModel(fontSize: UBGlobal.fontSize100, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-SemiBold", fontDecoration: nil, title: "Body12_Emphasis")
     }
     
     class var body12Strikethrough: FontModel {
-       FontModel(fontSize: UBGlobal.fontSize100, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-SemiBold", fontDecoration: UltaStyleFontsGlobal .fontTextDecorationLineThrough, title: "Body12_StrikeThrough")
+        FontModel(fontSize: UBGlobal.fontSize100, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-SemiBold", fontDecoration: UltaStyleFontsGlobal.fontTextDecorationLineThrough, title: "Body12_StrikeThrough")
     }
     
     class var body12Link: FontModel {
-       FontModel(fontSize: UBGlobal.fontSize100, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-SemiBold", fontDecoration: UltaStyleFontsGlobal .fontTextDecorationUnderline, title: "Body12_Link")
+        FontModel(fontSize: UBGlobal.fontSize100, fontFamily: UBGlobal.fontFamilyNunitoSans.removeWhitespace() + "-SemiBold", fontDecoration: UltaStyleFontsGlobal.fontTextDecorationUnderline, title: "Body12_Link")
     }
     
     class func getFontModels() -> [FontModel] {
         return [display40, display32, display28, display24, heading, headingH1, headingH2, headingH3, headingH4, headingH5, body20, body20Link, body20Emphasis, body20Strikethrough, body16,
                 body16Link, body16Emphasis, body16Strikethrough, body14, body14Link, body14Emphasis, body14Strikethrough, body12, body12Link, body12Emphasis, body12Strikethrough]
-        
     }
 }
 
