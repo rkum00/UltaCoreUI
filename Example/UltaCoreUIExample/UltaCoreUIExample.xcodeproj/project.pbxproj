@@ -31,6 +31,10 @@
 		88C808932ED73AB5000BD06E /* UltaCoreUIExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C808922ED73AB5000BD06E /* UltaCoreUIExampleUITests.swift */; };
 		88C808952ED73AB5000BD06E /* UltaCoreUIExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C808942ED73AB5000BD06E /* UltaCoreUIExampleUITestsLaunchTests.swift */; };
 		88C808A32ED73F30000BD06E /* UltaCoreUI in Frameworks */ = {isa = PBXBuildFile; productRef = 88C808A22ED73F30000BD06E /* UltaCoreUI */; };
+		88E487F92EF3FFDF001D99E6 /* UltaColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E487F82EF3FFDF001D99E6 /* UltaColorsView.swift */; };
+		88E487FB2EF40007001D99E6 /* UltaColorsOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E487FA2EF40007001D99E6 /* UltaColorsOptions.swift */; };
+		88E487FD2EF40030001D99E6 /* UltaColorsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E487FC2EF40030001D99E6 /* UltaColorsPresenter.swift */; };
+		88E488012EF44412001D99E6 /* UltaColorsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E488002EF44412001D99E6 /* UltaColorsRowView.swift */; };
 		88F774892EF3055F00CD9262 /* UltaLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F774882EF3055F00CD9262 /* UltaLoaderView.swift */; };
 		88F7748B2EF3059900CD9262 /* UltaLoaderOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7748A2EF3059900CD9262 /* UltaLoaderOptions.swift */; };
 		88F7748D2EF305BA00CD9262 /* UltaLoaderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7748C2EF305B900CD9262 /* UltaLoaderPresenter.swift */; };
@@ -81,6 +85,10 @@
 		88C8088E2ED73AB5000BD06E /* UltaCoreUIExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UltaCoreUIExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C808922ED73AB5000BD06E /* UltaCoreUIExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaCoreUIExampleUITests.swift; sourceTree = "<group>"; };
 		88C808942ED73AB5000BD06E /* UltaCoreUIExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaCoreUIExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		88E487F82EF3FFDF001D99E6 /* UltaColorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaColorsView.swift; sourceTree = "<group>"; };
+		88E487FA2EF40007001D99E6 /* UltaColorsOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaColorsOptions.swift; sourceTree = "<group>"; };
+		88E487FC2EF40030001D99E6 /* UltaColorsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaColorsPresenter.swift; sourceTree = "<group>"; };
+		88E488002EF44412001D99E6 /* UltaColorsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaColorsRowView.swift; sourceTree = "<group>"; };
 		88F774882EF3055F00CD9262 /* UltaLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaLoaderView.swift; sourceTree = "<group>"; };
 		88F7748A2EF3059900CD9262 /* UltaLoaderOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaLoaderOptions.swift; sourceTree = "<group>"; };
 		88F7748C2EF305B900CD9262 /* UltaLoaderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaLoaderPresenter.swift; sourceTree = "<group>"; };
@@ -116,6 +124,7 @@
 		8808554B2EE17CF10016AA79 /* UltaAtoms */ = {
 			isa = PBXGroup;
 			children = (
+				88E487F72EF3FFB2001D99E6 /* Colors */,
 			);
 			path = UltaAtoms;
 			sourceTree = "<group>";
@@ -240,6 +249,17 @@
 				88C808942ED73AB5000BD06E /* UltaCoreUIExampleUITestsLaunchTests.swift */,
 			);
 			path = UltaCoreUIExampleUITests;
+			sourceTree = "<group>";
+		};
+		88E487F72EF3FFB2001D99E6 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				88E487F82EF3FFDF001D99E6 /* UltaColorsView.swift */,
+				88E487FA2EF40007001D99E6 /* UltaColorsOptions.swift */,
+				88E487FC2EF40030001D99E6 /* UltaColorsPresenter.swift */,
+				88E488002EF44412001D99E6 /* UltaColorsRowView.swift */,
+			);
+			path = Colors;
 			sourceTree = "<group>";
 		};
 		88F774872EF3053F00CD9262 /* UltaLoader */ = {
@@ -395,9 +415,11 @@
 				882972932EE039D400538F3F /* UltaTextView.swift in Sources */,
 				88F774892EF3055F00CD9262 /* UltaLoaderView.swift in Sources */,
 				882972992EE0456F00538F3F /* UltaTextRowView.swift in Sources */,
+				88E487FB2EF40007001D99E6 /* UltaColorsOptions.swift in Sources */,
 				882972972EE0420C00538F3F /* UltaTextViewOptions.swift in Sources */,
 				88F7748B2EF3059900CD9262 /* UltaLoaderOptions.swift in Sources */,
 				88F7748F2EF305D400CD9262 /* UltaLoaderRowView.swift in Sources */,
+				88E487FD2EF40030001D99E6 /* UltaColorsPresenter.swift in Sources */,
 				882972902EE01DF000538F3F /* UltaOptionsThemePresenter.swift in Sources */,
 				889151372EEFE72C000EB452 /* UltaBannerView.swift in Sources */,
 				889151392EEFE774000EB452 /* UltaBannerViewPresenter.swift in Sources */,
@@ -410,7 +432,9 @@
 				880855512EE1DF0E0016AA79 /* UltaCardContainerViewPresenter.swift in Sources */,
 				8829728C2EDEE6E100538F3F /* UltaOptionsThemeView.swift in Sources */,
 				881064542EDEAEBD001B17CC /* UltaConstants.swift in Sources */,
+				88E487F92EF3FFDF001D99E6 /* UltaColorsView.swift in Sources */,
 				8891513B2EEFE78E000EB452 /* UltaBannerViewOptions.swift in Sources */,
+				88E488012EF44412001D99E6 /* UltaColorsRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

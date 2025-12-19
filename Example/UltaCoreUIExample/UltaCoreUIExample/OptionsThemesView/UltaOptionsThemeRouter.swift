@@ -12,6 +12,8 @@ final class UltaOptionsThemeRouter {
     @ViewBuilder
     func makeDetailView(selectedPageOption: OptionsPageType, for theme: UBTheme) -> some View {
         switch selectedPageOption {
+        case .colors:
+            UltaColorsView(theme: theme, optionType: .colors)
         case .ubText:
             UltaTextView(theme: theme, optionType: .ubText)
         case .ubCardContainer:
