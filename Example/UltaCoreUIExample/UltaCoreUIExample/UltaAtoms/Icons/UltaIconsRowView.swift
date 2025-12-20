@@ -22,8 +22,11 @@ struct UltaIconsRowView: View {
     }
     
     var body: some View {
-        VStack(alignment: .center, spacing: 30) {
+        VStack(alignment: .center, spacing: 10) {
             icon
+                .resizable()
+                .scaledToFit()
+                .frame(width: 50, height: 50)
             UBText(textAttribute: TextAttributes(text: iconName))
         }
     }
