@@ -18,6 +18,7 @@ let package = Package(
             name: "UltaCoreUI",
             path: "Sources",
             resources: [
+                .process("UltaCoreUI/Fonts/NunitoSans"),
                 .process("UltaCoreUI/UltraDesignSystem/Resources")
             ]
         ),
