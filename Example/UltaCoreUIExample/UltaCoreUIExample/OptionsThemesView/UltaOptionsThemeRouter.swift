@@ -16,6 +16,8 @@ final class UltaOptionsThemeRouter {
             UltaColorsView(theme: theme, optionType: .colors)
         case .fonts:
             UltaFontsView(theme: theme, optionType: .fonts)
+        case .icons:
+            UltaIconsView(theme: theme, optionType: .icons)
         case .ubText:
             UltaTextView(theme: theme, optionType: .ubText)
         case .ubCardContainer:

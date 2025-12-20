@@ -296,6 +296,44 @@ public enum GlobalTheme3ColorEnum: String, CaseIterable {
     }
 }
 
+public enum StyleDictionaryGlobalEnumIcons: String, CaseIterable {
+    case chevronDownOutlined16 = "chevron_down_outlined_16"
+    case chevronDownOutlined24 = "chevron_down_outlined_24"
+    case chevronLeftOutlined16 = "chevron_left_outlined_16"
+    case chevronLeftOutlined24 = "chevron_left_outlined_24"
+    case chevronRightOutlined16 = "chevron_right_outlined_16"
+    case chevronRightOutlined24 = "chevron_right_outlined_24"
+    case chevronUpRightOutlined16 = "chevron_up_outlined_16"
+    case chevronUpRightOutlined24 = "chevron_up_outlined_24"
+    case checkmarkOutline16 = "checkmark_outlined_16"
+    case checkmarkOutline24 = "checkmark_outlined_24"
+    case checkmarkCircleOutline16 = "checkmark_circle_outlined_16"
+    case checkmarkCircleOutline24 = "checkmark_circle_outlined_24"
+    case clearFilled24 = "clear_filled_24"
+    case clearOutlined24 = "clear_outlined_24"
+    case closeOutline16 = "close_outlined_16"
+    case closeOutline24 = "close_outlined_24"
+    case editOutline16 = "edit_outlined_16"
+    case editOutline24 = "edit_outlined_24"
+    case emailOutline16 = "email_outlined_16"
+    case emailOutline24 = "email_outlined_24"
+    case errorFilled16 = "error_filled_16"
+    case errorFilled24 = "error_filled_24"
+    case errorOutline16 = "error_outlined_16"
+    case errorOutline24 = "error_outlined_24"
+    case infoFilled16 = "info_filled_16"
+    case infoFilled24 = "info_filled_24"
+    case infoOutline16 = "info_outlined_16"
+    case infoOutline24 = "info_outlined_24"
+    case warningFilled16 = "warning_filled_16"
+    case warningFilled24 = "warning_filled_24"
+    case warningOutlined16 = "warning_outlined_16"
+    case warningOutlined24 = "warning_outlined_24"
+    case wifiOutline16 = "wifi_outlined_16"
+    case wifiOutline24 = "wifi_outlined_24"
+    case wifiOutline32 = "wifi_outlined_32"
+}
+
 
 struct SectionData: Identifiable {
     let id = UUID()

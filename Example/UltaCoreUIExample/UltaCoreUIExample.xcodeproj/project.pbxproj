@@ -27,6 +27,11 @@
 		88A606892EF52928007BED5D /* UltaFontsOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A606882EF52928007BED5D /* UltaFontsOptions.swift */; };
 		88A6068B2EF5293B007BED5D /* UltaFontsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A6068A2EF5293B007BED5D /* UltaFontsPresenter.swift */; };
 		88A6068D2EF52954007BED5D /* UltaFontsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A6068C2EF52953007BED5D /* UltaFontsRowView.swift */; };
+		88A6068F2EF6D5D0007BED5D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88A6068E2EF6D5D0007BED5D /* Launch Screen.storyboard */; };
+		88A606922EF6DC7F007BED5D /* UltaIconsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A606912EF6DC7F007BED5D /* UltaIconsView.swift */; };
+		88A606942EF6DCBF007BED5D /* UltaIconsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A606932EF6DCBF007BED5D /* UltaIconsPresenter.swift */; };
+		88A606962EF6DCDC007BED5D /* UltaIconsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A606952EF6DCDC007BED5D /* UltaIconsRowView.swift */; };
+		88A606982EF6DD08007BED5D /* UltaIconsOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A606972EF6DD08007BED5D /* UltaIconsOptions.swift */; };
 		88C808782ED73AB3000BD06E /* UltaCoreUIExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C808772ED73AB3000BD06E /* UltaCoreUIExampleApp.swift */; };
 		88C8087A2ED73AB3000BD06E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C808792ED73AB3000BD06E /* ContentView.swift */; };
 		88C8087C2ED73AB5000BD06E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88C8087B2ED73AB5000BD06E /* Assets.xcassets */; };
@@ -83,6 +88,11 @@
 		88A606882EF52928007BED5D /* UltaFontsOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaFontsOptions.swift; sourceTree = "<group>"; };
 		88A6068A2EF5293B007BED5D /* UltaFontsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaFontsPresenter.swift; sourceTree = "<group>"; };
 		88A6068C2EF52953007BED5D /* UltaFontsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaFontsRowView.swift; sourceTree = "<group>"; };
+		88A6068E2EF6D5D0007BED5D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		88A606912EF6DC7F007BED5D /* UltaIconsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaIconsView.swift; sourceTree = "<group>"; };
+		88A606932EF6DCBF007BED5D /* UltaIconsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaIconsPresenter.swift; sourceTree = "<group>"; };
+		88A606952EF6DCDC007BED5D /* UltaIconsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaIconsRowView.swift; sourceTree = "<group>"; };
+		88A606972EF6DD08007BED5D /* UltaIconsOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaIconsOptions.swift; sourceTree = "<group>"; };
 		88C808742ED73AB3000BD06E /* UltaCoreUIExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltaCoreUIExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C808772ED73AB3000BD06E /* UltaCoreUIExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltaCoreUIExampleApp.swift; sourceTree = "<group>"; };
 		88C808792ED73AB3000BD06E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -134,6 +144,7 @@
 			children = (
 				88E487F72EF3FFB2001D99E6 /* Colors */,
 				88A606852EF528BF007BED5D /* Fonts */,
+				88A606902EF6DC36007BED5D /* Icons */,
 			);
 			path = UltaAtoms;
 			sourceTree = "<group>";
@@ -211,9 +222,21 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		88A606902EF6DC36007BED5D /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				88A606912EF6DC7F007BED5D /* UltaIconsView.swift */,
+				88A606972EF6DD08007BED5D /* UltaIconsOptions.swift */,
+				88A606932EF6DCBF007BED5D /* UltaIconsPresenter.swift */,
+				88A606952EF6DCDC007BED5D /* UltaIconsRowView.swift */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
 		88C8086B2ED73AB3000BD06E = {
 			isa = PBXGroup;
 			children = (
+				88A6068E2EF6D5D0007BED5D /* Launch Screen.storyboard */,
 				88C808762ED73AB3000BD06E /* UltaCoreUIExample */,
 				88C808872ED73AB5000BD06E /* UltaCoreUIExampleTests */,
 				88C808912ED73AB5000BD06E /* UltaCoreUIExampleUITests */,
@@ -403,6 +426,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88A6068F2EF6D5D0007BED5D /* Launch Screen.storyboard in Resources */,
 				88C8087F2ED73AB5000BD06E /* Preview Assets.xcassets in Resources */,
 				88C8087C2ED73AB5000BD06E /* Assets.xcassets in Resources */,
 			);
@@ -440,14 +464,17 @@
 				88F7748B2EF3059900CD9262 /* UltaLoaderOptions.swift in Sources */,
 				88F7748F2EF305D400CD9262 /* UltaLoaderRowView.swift in Sources */,
 				88A606872EF5290C007BED5D /* UltaFontsView.swift in Sources */,
+				88A606922EF6DC7F007BED5D /* UltaIconsView.swift in Sources */,
 				88E487FD2EF40030001D99E6 /* UltaColorsPresenter.swift in Sources */,
 				882972902EE01DF000538F3F /* UltaOptionsThemePresenter.swift in Sources */,
 				889151372EEFE72C000EB452 /* UltaBannerView.swift in Sources */,
 				889151392EEFE774000EB452 /* UltaBannerViewPresenter.swift in Sources */,
+				88A606962EF6DCDC007BED5D /* UltaIconsRowView.swift in Sources */,
 				8808554F2EE1DEB80016AA79 /* UltaCardContainerView.swift in Sources */,
 				88F7748D2EF305BA00CD9262 /* UltaLoaderPresenter.swift in Sources */,
 				88A606892EF52928007BED5D /* UltaFontsOptions.swift in Sources */,
 				880855532EE1DF450016AA79 /* UltaCardContainerViewOptions.swift in Sources */,
+				88A606982EF6DD08007BED5D /* UltaIconsOptions.swift in Sources */,
 				8829728E2EE01DB100538F3F /* UltaOptionsThemeRouter.swift in Sources */,
 				882972952EE0419700538F3F /* UltaTextViewPresenter.swift in Sources */,
 				88A6068B2EF5293B007BED5D /* UltaFontsPresenter.swift in Sources */,
@@ -457,6 +484,7 @@
 				8829728C2EDEE6E100538F3F /* UltaOptionsThemeView.swift in Sources */,
 				881064542EDEAEBD001B17CC /* UltaConstants.swift in Sources */,
 				88E487F92EF3FFDF001D99E6 /* UltaColorsView.swift in Sources */,
+				88A606942EF6DCBF007BED5D /* UltaIconsPresenter.swift in Sources */,
 				8891513B2EEFE78E000EB452 /* UltaBannerViewOptions.swift in Sources */,
 				88E488012EF44412001D99E6 /* UltaColorsRowView.swift in Sources */,
 			);
@@ -627,6 +655,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -655,6 +684,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "wifi_32_outlined.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
