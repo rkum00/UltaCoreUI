@@ -11,7 +11,6 @@ import SwiftUI
 
 public struct UBImageConstants {
     public static let imageNotFound = "image_not_found"
-    public static let bundlePath = "UltaCatalogue.bundle"
 }
 
 public protocol UBImages {
@@ -20,34 +19,20 @@ public protocol UBImages {
 
 public extension UBImages {
     
-    /// Function to get a UIImage form the UltaDesignSystem asset catalogue
-    /// - Parameter name: Image name
-    /// - Returns: Optional UIImage for UIKit
+    /// Returns a UIImage from the SPM asset catalog
     func getImage(name: String) -> UIImage? {
-        let imageName: String = name.isEmpty ? UBImageConstants.imageNotFound : name
-        let bundle: Bundle = Bundle(for: UBGlobal.self)
-        
-        guard let resourceURL: URL = bundle.resourceURL?.appendingPathComponent(UBImageConstants.bundlePath),
-              let resourceBundle: Bundle = Bundle(url: resourceURL) else { return nil }
-        
-        return UIImage(named: imageName, in: resourceBundle, compatibleWith: nil)
+        let imageName = name.isEmpty ? UBImageConstants.imageNotFound: name
+        return UIImage(named: imageName, in: .module, compatibleWith: nil)
     }
     
-    /// Function to get a Image form the UltaDesignSystem asset catalogue
-    /// - Parameter name: Image name
-    /// - Returns: Optional Image for SwiftUI
+    /// Returns a SwiftUI Image from the SPM asset catalog
     @available(iOS 13.0, *)
     func getImageView(name: String) -> Image? {
-        let imageName: String = name.isEmpty ? UBImageConstants.imageNotFound : name
-        let bundle: Bundle = Bundle(for: UBGlobal.self)
+        let imageName = name.isEmpty ? UBImageConstants.imageNotFound: name
         
-        guard let resourceURL: URL = bundle.resourceURL?.appendingPathComponent(UBImageConstants.bundlePath) else { return nil }
-        guard let resourceBundle: Bundle = Bundle(url: resourceURL) else { return nil }
-        
-        if let uiImage = UIImage(named: imageName, in: resourceBundle, compatibleWith: nil) {
-            return Image(uiImage: uiImage)
+        guard let uiImage = UIImage(named: imageName, in: .module, compatibleWith: nil) else {
+            return nil
         }
-        
-        return nil
+        return Image(uiImage: uiImage)
     }
 }
