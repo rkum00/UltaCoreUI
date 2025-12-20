@@ -26,12 +26,12 @@ struct UltaIconsView: View {
                 ForEach(0..<presenter.numberOfSections, id: \.self) { section in
                     Section(header: sectionHeader(section: section)) {
                         ForEach(0..<presenter.getRowsCount(for: section), id: \.self) { row in
-                            UltaColorsRowView(name: presenter.getComponentName(row: row, section: section),
-                                              section: section,
-                                              row: row)
+                            UltaIconsRowView(iconName: presenter.getComponentName(row: row, section: section),
+                                             icon: presenter.getIcon(row: row, section: section),
+                                             section: section,
+                                             row: row)
                         }
                     }
-                    .listRowSeparator(.hidden)
                 }
             }
             .listStyle(GroupedListStyle())

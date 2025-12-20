@@ -11,7 +11,7 @@ import SwiftUI
 
 public struct UBImageConstants {
     public static let imageNotFound = "image_not_found"
-    public static let bundlePath = "UltaDesignSystem.bundle"
+    public static let bundlePath = "UltaCatalogue.bundle"
 }
 
 public protocol UBImages {

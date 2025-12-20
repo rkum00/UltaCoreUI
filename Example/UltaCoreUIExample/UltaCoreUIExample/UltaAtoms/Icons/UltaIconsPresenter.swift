@@ -7,6 +7,7 @@
 
 import Foundation
 import UltaCoreUI
+import SwiftUI
 
 class UltaIconsPresenter: ObservableObject {
     var theme: UBTheme
@@ -29,6 +30,15 @@ class UltaIconsPresenter: ObservableObject {
             return UltaIconsOptions.icons.getIconName(index: row)
         default:
             return ""
+        }
+    }
+    
+    func getIcon(row: Int, section: Int) -> Image {
+        switch UltaIconsOptions.allCases[section] {
+        case .icons:
+            return UltaIconsOptions.icons.getIcon(index: row) ?? Image("")
+        default:
+            return Image("")
         }
     }
     
