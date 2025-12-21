@@ -24,11 +24,11 @@ struct UltaIconsRowView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(spacing: UBGlobal.space200) {
             icon
                 .renderingMode(.template)
                 .foregroundColor(tintColor)
-            UBText(textAttribute: TextAttributes(text: iconName))
+            UBText(textAttribute: TextAttributes(text: iconName, textAlign: .center))
         }
     }
 }
