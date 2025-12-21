@@ -10,13 +10,10 @@ import UltaCoreUI
 import SwiftUI
 
 enum UltaIconsOptions: String, CaseIterable {
-    case topDescription = "The available icons options are compatible with all components."
     case icons = "Icons Options"
     
     func numberOfRows() -> Int {
         switch self {
-        case .topDescription:
-            return 0
         case .icons:
             return StyleDictionaryGlobalEnumIcons.allCases.count
         }
@@ -28,8 +25,6 @@ enum UltaIconsOptions: String, CaseIterable {
     
     func getIconTintColor(theme: UBTheme) -> Color {
         switch self {
-        case .topDescription:
-            return .black
         case .icons:
             return Color(UBTheme.applyBackgroundPrimaryColor(theme: theme))
         }

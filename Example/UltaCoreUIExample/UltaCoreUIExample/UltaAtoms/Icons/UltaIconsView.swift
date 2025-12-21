@@ -32,17 +32,21 @@ struct UltaIconsView: View {
                         header: sectionHeader(section: section)) {
                             LazyVGrid(columns: columns, spacing: UBGlobal.space600) {
                                 ForEach(0..<presenter.getRowsCount(for: section), id: \.self) { row in
-                                    UltaIconsRowView(
-                                        iconName: presenter.getComponentName(row: row, section: section),
-                                        icon: presenter.getIcon(row: row, section: section),
-                                        tintColor: presenter.getTintColor(row: row, section: section),
-                                        section: section,
-                                        row: row
-                                    )
+                                    VStack(alignment: .leading, spacing: UBGlobal.space0) {
+                                        UltaIconsRowView(
+                                            iconName: presenter.getComponentName(row: row, section: section),
+                                            icon: presenter.getIcon(row: row, section: section),
+                                            tintColor: presenter.getTintColor(row: row, section: section),
+                                            section: section,
+                                            row: row
+                                        )
+                                        Spacer(minLength: 0)
+                                    }
+                                    .frame(maxWidth: .infinity, alignment: .topLeading)
                                 }
                             }
-                            .padding(UBGlobal.space200)
-                            .background(section == 0 ? Color.clear : Color.white)
+                            .padding(UBGlobal.space400)
+                            .background(.white)
                         }
                 }
             }
