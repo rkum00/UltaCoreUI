@@ -11,12 +11,14 @@ import UltaCoreUI
 struct UltaIconsRowView: View {
     let iconName: String
     let icon: Image
+    let tintColor: Color
     let section: Int
     let row: Int
     
-    public init(iconName: String, icon: Image, section: Int, row: Int) {
+    public init(iconName: String, icon: Image, tintColor: Color, section: Int, row: Int) {
         self.iconName = iconName
         self.icon = icon
+        self.tintColor = tintColor
         self.section = section
         self.row = row
     }
@@ -24,6 +26,8 @@ struct UltaIconsRowView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             icon
+                .renderingMode(.template)
+                .foregroundColor(tintColor)
             UBText(textAttribute: TextAttributes(text: iconName))
         }
     }

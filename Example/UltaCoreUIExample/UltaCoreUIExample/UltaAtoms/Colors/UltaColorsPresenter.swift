@@ -20,11 +20,11 @@ class UltaColorsPresenter: ObservableObject {
         return UltaColorsOptions.allCases.count
     }
     
-    func getRowsCount(for section: Int, theme: UBTheme) -> Int {
+    func getRowsCount(for section: Int) -> Int {
         return UltaColorsOptions.allCases[section].numberOfRows(theme: theme)
     }
     
-    func getComponentName(row: Int, section: Int, theme: UBTheme) -> String {
+    func getComponentName(row: Int, section: Int) -> String {
         switch UltaColorsOptions.allCases[section] {
         case .option:
             return UltaColorsOptions.option.getColorName(row: row, section: section, theme: theme)
@@ -33,7 +33,7 @@ class UltaColorsPresenter: ObservableObject {
         }
     }
     
-    func getComponentBackgroundColor(row: Int, section: Int, theme: UBTheme) -> Color {
+    func getComponentBackgroundColor(row: Int, section: Int) -> Color {
         switch UltaColorsOptions.allCases[section] {
         case .option:
             return UltaColorsOptions.option.getBackgroundColor(row: row, section: section, theme: theme)

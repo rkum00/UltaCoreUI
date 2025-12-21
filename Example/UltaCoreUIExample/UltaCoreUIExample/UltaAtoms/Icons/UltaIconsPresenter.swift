@@ -42,6 +42,15 @@ class UltaIconsPresenter: ObservableObject {
         }
     }
     
+    func getTintColor(row: Int, section: Int) -> Color {
+        switch UltaIconsOptions.allCases[section] {
+        case .icons:
+            return UltaIconsOptions.icons.getIconTintColor(theme: theme)
+        default:
+            return .black
+        }
+    }
+    
     /// Returns the title for a specific row in a section.
     /// - Parameter section: The index of the section.
     /// - Returns: The title of the specified row in the section.

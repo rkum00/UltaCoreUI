@@ -28,6 +28,7 @@ struct UltaIconsView: View {
                         ForEach(0..<presenter.getRowsCount(for: section), id: \.self) { row in
                             UltaIconsRowView(iconName: presenter.getComponentName(row: row, section: section),
                                              icon: presenter.getIcon(row: row, section: section),
+                                             tintColor: presenter.getTintColor(row: row, section: section),
                                              section: section,
                                              row: row)
                         }

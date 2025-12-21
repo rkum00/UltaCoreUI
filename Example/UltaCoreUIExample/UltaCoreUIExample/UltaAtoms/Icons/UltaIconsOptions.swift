@@ -25,6 +25,15 @@ enum UltaIconsOptions: String, CaseIterable {
     func getIconName(index: Int) -> String {
         return StyleDictionaryGlobalEnumIcons.allCases[index].rawValue
     }
+    
+    func getIconTintColor(theme: UBTheme) -> Color {
+        switch self {
+        case .topDescription:
+            return .black
+        case .icons:
+            return Color(UBTheme.applyBackgroundPrimaryColor(theme: theme))
+        }
+    }
 }
 
 extension UltaIconsOptions: UBImages {

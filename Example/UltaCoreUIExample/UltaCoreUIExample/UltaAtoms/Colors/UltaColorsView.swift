@@ -25,11 +25,11 @@ struct UltaColorsView: View {
             List {
                 ForEach(0..<presenter.numberOfSections, id: \.self) { section in
                     Section(header: sectionHeader(section: section)) {
-                        ForEach(0..<presenter.getRowsCount(for: section, theme: theme), id: \.self) { row in
-                            UltaColorsRowView(name: presenter.getComponentName(row: row, section: section, theme: theme),
+                        ForEach(0..<presenter.getRowsCount(for: section), id: \.self) { row in
+                            UltaColorsRowView(name: presenter.getComponentName(row: row, section: section),
                                               section: section,
                                               row: row)
-                            .listRowBackground(presenter.getComponentBackgroundColor(row: row, section: section, theme: theme))
+                            .listRowBackground(presenter.getComponentBackgroundColor(row: row, section: section))
                         }
                     }
                     .listRowSeparator(.hidden)
