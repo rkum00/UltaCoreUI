@@ -18,7 +18,7 @@ let package = Package(
             name: "UltaCoreUI",
             path: "Sources",
             resources: [
-                .process("UltaCoreUI/UltraDesignSystem/Resources")
+                .process("UltaCoreUI/Resources")
             ]
         ),
         .testTarget(
