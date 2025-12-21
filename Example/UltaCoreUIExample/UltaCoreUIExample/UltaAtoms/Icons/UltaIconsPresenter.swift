@@ -28,8 +28,6 @@ class UltaIconsPresenter: ObservableObject {
         switch UltaIconsOptions.allCases[section] {
         case .icons:
             return UltaIconsOptions.icons.getIconName(index: row)
-        default:
-            return ""
         }
     }
     
@@ -37,8 +35,6 @@ class UltaIconsPresenter: ObservableObject {
         switch UltaIconsOptions.allCases[section] {
         case .icons:
             return UltaIconsOptions.icons.getIcon(index: row) ?? Image("")
-        default:
-            return Image("")
         }
     }
     
@@ -46,8 +42,6 @@ class UltaIconsPresenter: ObservableObject {
         switch UltaIconsOptions.allCases[section] {
         case .icons:
             return UltaIconsOptions.icons.getIconTintColor(theme: theme)
-        default:
-            return .black
         }
     }
     
