@@ -127,16 +127,12 @@ public enum UltaButtonViewOptions: String, CaseIterable {
     func getWidthOptions(row: Int, theme: UBTheme, action: @escaping () -> Void) -> UBButton {
         switch row {
         case 0:
-            return UBButton(label: "Default width", variant: .filledPrimary, leading: Slot(imageName: StyleDictionaryGlobalEnumIcons.wifiOutline24.rawValue), theme: theme, action: action)
+            return UBButton(label: "Default width", variant: .filledPrimary, fullWidth: false, leading: Slot(imageName: StyleDictionaryGlobalEnumIcons.wifiOutline24.rawValue), theme: theme, action: action)
         case 1:
             return UBButton(label: "Full width", variant: .filledPrimary, fullWidth: true, theme: theme, action: action)
         default:
             return UBButton(label: "Full width with Image", variant: .filledPrimary, fullWidth: true, leading: Slot(imageName: StyleDictionaryGlobalEnumIcons.wifiOutline24.rawValue), theme: theme, action: action)
         }
-    }
-    
-    func getOverflowOptions(row: Int, theme: UBTheme, action: @escaping () -> Void) -> UBButton {
-        return UBButton(label: "When limited space, the content can wrap to the next line", variant: .filledPrimary, fullWidth: true, leading: Slot(imageName: StyleDictionaryGlobalEnumIcons.editOutline24.rawValue), theme: theme, action: action)
     }
     
     func getAdaOptions(row: Int, theme: UBTheme, action: @escaping () -> Void) -> UBButton {
@@ -147,15 +143,6 @@ public enum UltaButtonViewOptions: String, CaseIterable {
         case .link:
             let button = UBButton(label: "A text button to be announced as a link", variant: .filledPrimary, fullWidth: true, theme: theme, accessibilityInfo: UBButtonAccessibilityInfo(ubButtonAccessibilityHint: "Accessibility Hint", ubButtonAccessibilityLabel: "Accessibility Label"), accessibilityTraits: .isLink, action: action)
             return button
-        }
-    }
-    
-    func isFullWidth(row: Int) -> Bool {
-        switch row {
-        case 0:
-            return false
-        default:
-            return true
         }
     }
 }

@@ -25,8 +25,8 @@ struct UltaButtonView: View {
                 ForEach(0..<presenter.numberOfSections, id: \.self) { section in
                     Section(header: sectionHeader(section: section)) {
                         ForEach(0..<presenter.getRowsCount(for: section), id: \.self) { row in
-                            UltaButtonRowView(buttonView: presenter.getComponent(row: row, section: section, isSelected: false, theme: theme, action: {
-                                presenter.activeAlert = ButtonAlert(id: 0, title: "Row: \(row)", message: "Section: \(section)")
+                            UltaButtonRowView(buttonView: presenter.getComponent(row: row, section: section, theme: theme, action: {
+                                presenter.activeAlert = ButtonAlert(id: 0, title: "Title for row: \(row)", message: "Message for section: \(section)")
                             }))
                             .listRowBackground(getListRowBackground(row: row))
                         }

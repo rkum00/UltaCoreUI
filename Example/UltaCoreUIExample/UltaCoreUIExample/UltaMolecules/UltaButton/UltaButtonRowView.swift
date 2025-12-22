@@ -17,7 +17,7 @@ struct UltaButtonRowView: View {
     
     var body: some View {
         HStack {
-            buttonView.frame(height: 48)
+            buttonView
         }
     }
 }

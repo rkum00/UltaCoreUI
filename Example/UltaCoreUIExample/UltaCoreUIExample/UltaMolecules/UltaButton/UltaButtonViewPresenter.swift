@@ -30,7 +30,7 @@ class UltaButtonViewPresenter: ObservableObject {
         return UltaButtonViewOptions.allCases[section].numberOfRows()
     }
     
-    func getComponent(row: Int, section: Int, isSelected: Bool = false, theme: UBTheme = UBTheme.current, action: @escaping () -> Void) -> UBButton {
+    func getComponent(row: Int, section: Int, theme: UBTheme = UBTheme.current, action: @escaping () -> Void) -> UBButton {
         switch UltaButtonViewOptions.allCases[section] {
         case .topDescription:
             return UBButton(label: "", variant: .filledPrimary, action: {})
