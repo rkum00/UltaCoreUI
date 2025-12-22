@@ -179,14 +179,14 @@
 			path = HomeView;
 			sourceTree = "<group>";
 		};
-		8829728A2EDEE6A900538F3F /* OptionsThemesView */ = {
+		8829728A2EDEE6A900538F3F /* UltaThemesView */ = {
 			isa = PBXGroup;
 			children = (
 				8829728B2EDEE6E100538F3F /* UltaOptionsThemeView.swift */,
 				8829728D2EE01DB100538F3F /* UltaOptionsThemeRouter.swift */,
 				8829728F2EE01DF000538F3F /* UltaOptionsThemePresenter.swift */,
 			);
-			path = OptionsThemesView;
+			path = UltaThemesView;
 			sourceTree = "<group>";
 		};
 		882972912EE0399500538F3F /* UltaTextView */ = {
@@ -262,7 +262,7 @@
 				881064522EDEABBD001B17CC /* HomeView */,
 				8808554B2EE17CF10016AA79 /* UltaAtoms */,
 				8808554C2EE17CFD0016AA79 /* UltaMolecules */,
-				8829728A2EDEE6A900538F3F /* OptionsThemesView */,
+				8829728A2EDEE6A900538F3F /* UltaThemesView */,
 				88C8087B2ED73AB5000BD06E /* Assets.xcassets */,
 				88C8087D2ED73AB5000BD06E /* Preview Content */,
 			);

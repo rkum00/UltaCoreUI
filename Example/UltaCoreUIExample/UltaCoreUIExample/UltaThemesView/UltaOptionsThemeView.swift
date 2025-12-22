@@ -15,8 +15,7 @@ struct UltaOptionsThemeView: View {
     var body: some View {
         List(UBTheme.allCases, id: \.self) { theme in
             NavigationLink(
-                destination: presenter.navigateToDetail(selectedPageOption: selectedOption, for: theme)
-            ) {
+                destination: presenter.navigateToDetail(selectedPageOption: selectedOption, for: theme)) {
                 Text(theme.rawValue.capitalized)
                     .padding(.vertical, 10)
             }

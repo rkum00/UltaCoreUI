@@ -18,6 +18,7 @@ public enum TextColorType: CaseIterable {
     case neutralHighInverse
     case primary
     case onPrimary
+    case muted
     case error
     case warning
     case positive
@@ -46,6 +47,8 @@ public enum TextColorType: CaseIterable {
             return UBTheme.applyPositiveColor(theme: theme)
         case .info:
             return UBTheme.applyInfoColor(theme: theme)
+        case .muted:
+            return UBTheme.applyDisabledColor(theme: theme)
         }
     }
     
@@ -75,6 +78,8 @@ public enum TextColorType: CaseIterable {
             return Color(UBTheme.applyPositiveColor(theme: theme))
         case .info:
             return Color(UBTheme.applyInfoColor(theme: theme))
+        case .muted:
+            return Color(UBTheme.applyDisabledColor(theme: theme))
         }
     }
     

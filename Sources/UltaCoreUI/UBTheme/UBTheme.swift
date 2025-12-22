@@ -282,4 +282,48 @@ public extension UBTheme {
             return Theme3.ubThemeColorOutlineNeutralHigh
         }
     }
+    
+    static func applyBackgroundDisabledColor(theme: UBTheme = .current) -> UIColor {
+        switch theme {
+        case .theme1:
+            return Theme1.ubThemeColorBackgroundDisabled
+        case .theme2:
+            return Theme2.ubThemeColorBackgroundDisabled
+        case .theme3:
+            return Theme3.ubThemeColorBackgroundDisabled
+        }
+    }
+    
+    static func getPressedOpacity(theme: UBTheme = .current) -> CGFloat {
+        switch theme {
+        case .theme1:
+            return CGFloat(Theme1.ubThemeOpacityPressed)
+        case .theme2:
+            return CGFloat(Theme2.ubThemeOpacityPressed)
+        case .theme3:
+            return CGFloat(Theme3.ubThemeOpacityPressed)
+        }
+    }
+    
+    static func applyOutlineDisabledColor(theme: UBTheme = .current) -> UIColor {
+        switch theme {
+        case .theme1:
+            return Theme1.ubThemeColorOutlineDisabled
+        case .theme2:
+            return Theme2.ubThemeColorOutlineDisabled
+        case .theme3:
+            return Theme3.ubThemeColorOutlineDisabled
+        }
+    }
+    
+    static func applyOutlineNeutralHighInverseColor(theme: UBTheme = .current) -> UIColor {
+        switch theme {
+        case .theme1:
+            return Theme1.ubThemeColorOutlineNeutralHighInverse
+        case .theme2:
+            return Theme2.ubThemeColorOutlineNeutralHighInverse
+        case .theme3:
+            return Theme3.ubThemeColorOutlineNeutralHighInverse
+        }
+    }
 }
