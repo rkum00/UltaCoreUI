@@ -67,6 +67,8 @@ public enum UltaTextViewOptions: String, CaseIterable {
             return UBText(theme: theme, textAttribute: TextAttributes(text: "Positive", color: .positive))
         case .info:
             return UBText(theme: theme, textAttribute: TextAttributes(text: "Info", color: .info))
+        case .muted:
+            return UBText(theme: theme, textAttribute: TextAttributes(text: "Muted", color: .muted))
         }
     }
     
