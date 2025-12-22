@@ -20,14 +20,14 @@ final class UltaOptionsThemeRouter {
             UltaIconsView(theme: theme, optionType: .icons)
         case .ubText:
             UltaTextView(theme: theme, optionType: .ubText)
+        case .ubButton:
+            UltaButtonView(theme: theme, optionType: .ubButton)
         case .ubCardContainer:
             UltaCardContainerView(theme: theme, optionType: .ubCardContainer)
         case .ubBanner:
             UltaBannerView(theme: theme, optionType: .ubBanner)
         case .ubLoader:
             UltaLoaderView(theme: theme, optionType: .ubLoader)
-        default:
-            Text(theme.rawValue)
         }
     }
 }
