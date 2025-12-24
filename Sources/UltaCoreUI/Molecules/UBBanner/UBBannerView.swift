@@ -108,7 +108,6 @@ private extension UBBannerView {
                 trailingIcon?
                     .renderingMode(.template)
                     .scaledToFit()
-                    .scaleEffect(UBGlobal.fontLineHeight25)
                     .foregroundColor(.white)
             }
             .buttonStyle(.plain)
