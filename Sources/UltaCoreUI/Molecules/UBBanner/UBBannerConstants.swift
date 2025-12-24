@@ -28,16 +28,16 @@ public enum UBBannerType: String, CaseIterable {
         }
     }
     
-    var iconName: String {
-        switch self {
-        case .success: return "checkmark.circle.fill"
-        case .error: return "xmark.octagon.fill"
-        case .warning: return "exclamationmark.triangle.fill"
-        case .info: return "info.circle.fill"
-        }
-    }
-    
-    var crossicon: String {
-        return "xmark"
-    }
+//    var iconName: String {
+//        switch self {
+//        case .success: return "checkmark.circle.fill"
+//        case .error: return "xmark.octagon.fill"
+//        case .warning: return "exclamationmark.triangle.fill"
+//        case .info: return "info.circle.fill"
+//        }
+//    }
+//    
+//    var crossicon: String {
+//        return "xmark"
+//    }
 }

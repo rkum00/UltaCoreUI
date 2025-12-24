@@ -8,11 +8,13 @@
 import SwiftUI
 
 @available(iOS 15.0, *)
-public struct UBBannerView: View {
+public struct UBBannerView: View, UBImages {
     let title: String
     let message: String?
     let type: UBBannerType
     let textColor: TextColorType
+    var leadingIcon: Image? = nil
+    var trailingIcon: Image? = nil
     let duration: TimeInterval?
     let theme: UBTheme
     let onClose: ((UBBannerType) -> Void)?
@@ -24,6 +26,8 @@ public struct UBBannerView: View {
         message: String?,
         type: UBBannerType,
         textColor: TextColorType,
+        leading: Slot? = nil,
+        trailing: Slot? = nil,
         duration: TimeInterval? = nil,
         theme: UBTheme = .current,
         onClose: ((UBBannerType) -> Void)? = nil
@@ -35,6 +39,13 @@ public struct UBBannerView: View {
         self.duration = duration
         self.theme = theme
         self.onClose = onClose
+        
+        if let leadingImage = getSlotImage(slot: leading) {
+            leadingIcon = leadingImage
+        }
+        if let trailingImage = getSlotImage(slot: trailing) {
+            trailingIcon = trailingImage
+        }
     }
     
     public var body: some View {
@@ -64,7 +75,7 @@ public struct UBBannerView: View {
 @available(iOS 15.0, *)
 private extension UBBannerView {
     var iconView: some View {
-        Image(systemName: type.iconName)
+        leadingIcon?
             .resizable()
             .scaledToFit()
             .frame(
@@ -98,7 +109,7 @@ private extension UBBannerView {
     var closeButton: some View {
         if onClose != nil {
             Button(action: dismissBanner) {
-                Image(systemName: type.crossicon)
+                trailingIcon?
                     .resizable()
                     .scaledToFit()
                     .frame(
@@ -127,6 +138,14 @@ private extension UBBannerView {
             isVisible = false
             onClose?(type)
         }
+    }
+    
+    private func getSlotImage(slot: Slot?) ->Image? {
+        if let leading = slot?.imageName,
+           let uiImage = getImageView(name: leading) {
+            return uiImage
+        }
+        return nil
     }
 }
 
