@@ -26,13 +26,13 @@ public enum UltaBannerViewOptions: String, CaseIterable {
         
         switch UBBannerType.allCases[row] {
         case .success:
-            UBBannerView(title: "Success", message: "Operation completed.", type: .success, textColor: .neutralHighInverse, duration: 2, theme: theme, onClose: onClose)
+            UBBannerView(title: "Success", message: "Operation completed.", type: .success, textColor: .neutralHighInverse, leading: Slot(imageName: StyleDictionaryGlobalEnumIcons.checkmarkCircleOutline24.rawValue), trailing: Slot(imageName: StyleDictionaryGlobalEnumIcons.closeOutline16.rawValue), duration: 2, theme: theme, onClose: onClose)
         case .error:
-            UBBannerView(title: "Error", message: "Operation failed.", type: .error, textColor: .neutralHighInverse, duration: 3, theme: theme, onClose: onClose)
+            UBBannerView(title: "Error", message: "Operation failed.", type: .error, textColor: .neutralHighInverse, leading: Slot(imageName: StyleDictionaryGlobalEnumIcons.errorFilled24.rawValue), trailing: Slot(imageName: StyleDictionaryGlobalEnumIcons.closeOutline16.rawValue), duration: 3, theme: theme, onClose: onClose)
         case .warning:
-            UBBannerView(title: "Waring", message: "Operation throwing warning.", type: .warning, textColor: .neutralHighInverse, duration: 4, theme: theme, onClose: onClose)
+            UBBannerView(title: "Waring", message: "Operation throwing warning.", type: .warning, textColor: .neutralHighInverse, leading: Slot(imageName: StyleDictionaryGlobalEnumIcons.warningFilled24.rawValue), trailing: Slot(imageName: StyleDictionaryGlobalEnumIcons.closeOutline16.rawValue), duration: 4, theme: theme, onClose: onClose)
         case .info:
-            UBBannerView(title: "Info", message: "Operation information.", type: .info, textColor: .neutralHighInverse, duration: 5, theme: theme, onClose: onClose)
+            UBBannerView(title: "Info", message: "Operation information.", type: .info, textColor: .neutralHighInverse, leading: Slot(imageName: StyleDictionaryGlobalEnumIcons.infoFilled24.rawValue), trailing: Slot(imageName: StyleDictionaryGlobalEnumIcons.closeOutline16.rawValue), duration: 5, theme: theme, onClose: onClose)
         }
     }
     
@@ -40,13 +40,13 @@ public enum UltaBannerViewOptions: String, CaseIterable {
         
         switch UBBannerType.allCases[row] {
         case .success:
-            UBBannerView(title: "Success", message: "Operation completed.", type: .success, textColor: .neutralHighInverse, theme: theme, onClose: onClose)
+            UBBannerView(title: "Success", message: "Operation completed.", type: .success, textColor: .neutralHighInverse, leading: Slot(imageName: StyleDictionaryGlobalEnumIcons.checkmarkCircleOutline24.rawValue), trailing: Slot(imageName: StyleDictionaryGlobalEnumIcons.closeOutline16.rawValue), theme: theme, onClose: onClose)
         case .error:
-            UBBannerView(title: "Error", message: "Operation failed.", type: .error, textColor: .neutralHighInverse, theme: theme, onClose: onClose)
+            UBBannerView(title: "Error", message: "Operation failed.", type: .error, textColor: .neutralHighInverse, leading: Slot(imageName: StyleDictionaryGlobalEnumIcons.errorFilled24.rawValue), trailing: Slot(imageName: StyleDictionaryGlobalEnumIcons.closeOutline16.rawValue), theme: theme, onClose: onClose)
         case .warning:
-            UBBannerView(title: "Waring", message: "Operation throwing warning.", type: .warning, textColor: .neutralHighInverse, theme: theme, onClose: onClose)
+            UBBannerView(title: "Waring", message: "Operation throwing warning.", type: .warning, textColor: .neutralHighInverse, leading: Slot(imageName: StyleDictionaryGlobalEnumIcons.warningFilled24.rawValue), trailing: Slot(imageName: StyleDictionaryGlobalEnumIcons.closeOutline16.rawValue), theme: theme, onClose: onClose)
         case .info:
-            UBBannerView(title: "Info", message: "Operation information.", type: .info, textColor: .neutralHighInverse, theme: theme, onClose: onClose)
+            UBBannerView(title: "Info", message: "Operation information.", type: .info, textColor: .neutralHighInverse, leading: Slot(imageName: StyleDictionaryGlobalEnumIcons.infoFilled24.rawValue), trailing: Slot(imageName: StyleDictionaryGlobalEnumIcons.closeOutline16.rawValue), theme: theme, onClose: onClose)
         }
     }
 }
