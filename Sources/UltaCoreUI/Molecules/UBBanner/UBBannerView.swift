@@ -76,12 +76,8 @@ public struct UBBannerView: View, UBImages {
 private extension UBBannerView {
     var iconView: some View {
         leadingIcon?
-            .resizable()
+            .renderingMode(.template)
             .scaledToFit()
-            .frame(
-                width: UBGlobal.sizeWidth600,
-                height: UBGlobal.sizeHeight600
-            )
             .foregroundColor(.white)
     }
     
@@ -110,12 +106,8 @@ private extension UBBannerView {
         if onClose != nil {
             Button(action: dismissBanner) {
                 trailingIcon?
-                    .resizable()
+                    .renderingMode(.template)
                     .scaledToFit()
-                    .frame(
-                        width: UBGlobal.sizeWidth400,
-                        height: UBGlobal.sizeHeight400
-                    )
                     .scaleEffect(UBGlobal.fontLineHeight25)
                     .foregroundColor(.white)
             }
