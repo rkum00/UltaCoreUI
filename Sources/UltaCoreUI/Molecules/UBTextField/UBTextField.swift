@@ -8,7 +8,7 @@
 import SwiftUI
 
 @available(iOS 15.0, *)
-struct UBTextField: View, UBImages {
+public struct UBTextField: View, UBImages {
     
     let helperText: String?
     let maxCharacters: Int?
@@ -23,7 +23,7 @@ struct UBTextField: View, UBImages {
     @Binding var text: String
     
     // MARK: - Initializer
-    init(
+    public init(
         text: Binding<String>,
         helperText: String? = nil,
         maxCharacters: Int? = nil,
