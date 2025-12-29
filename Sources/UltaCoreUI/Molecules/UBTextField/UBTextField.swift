@@ -66,7 +66,9 @@ public struct UBTextField: View, UBImages {
                     .onChange(of: text) { newValue in
                         guard let maxCharacters else { return }
                         if newValue.count > maxCharacters {
-                            text = String(newValue.prefix(maxCharacters))
+                            DispatchQueue.main.async {
+                                text = String(newValue.prefix(maxCharacters))
+                            }
                         }
                     }
                 if let trailingIcon {
