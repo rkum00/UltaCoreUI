@@ -77,7 +77,7 @@ public struct UBTextField: View, UBImages {
             }
             .padding(UBGlobal.space300)
             .overlay(
-                RoundedRectangle(cornerRadius: UBGlobal.borderRadius200)
+                RoundedRectangle(cornerRadius: (variant == .rounded) ? UBGlobal.borderRadius200 : UBGlobal.borderRadius0)
                     .stroke(variant.getBorderColor(theme: theme), lineWidth: UBGlobal.borderWidth100)
             )
             HStack {
