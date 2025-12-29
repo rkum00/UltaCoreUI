@@ -17,9 +17,9 @@ public enum TextFieldVariant: String, CaseIterable {
     func getBorderColor(theme: UBTheme = .current) -> Color {
         switch self {
         case .flat:
-            return .red
+            return Color(UBTheme.applyNeutralHighColor(theme: theme))
         default:
-            return .red
+            return Color(UBTheme.applyNeutralLowColor(theme: theme))
         }
     }
     
