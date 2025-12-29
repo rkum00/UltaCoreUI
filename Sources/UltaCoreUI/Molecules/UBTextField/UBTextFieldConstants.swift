@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 // This is used for selecting the TextField variant
-public enum TextFieldVariant {
+public enum TextFieldVariant: String, CaseIterable {
     case flat
     case rounded
     

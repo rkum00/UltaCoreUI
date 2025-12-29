@@ -52,7 +52,7 @@ public struct UBTextField: View, UBImages {
     }
     
     // MARK: - Body
-    var body: some View {
+    public var body: some View {
         VStack(alignment: .leading, spacing: UBGlobal.space100) {
             HStack(spacing: UBGlobal.space200) {
                 
