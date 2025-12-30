@@ -96,6 +96,7 @@ public struct UBTextField: View, UBImages {
                 }
             }
         }
+        .fixedSize(horizontal: false, vertical: true)
     }
     
     // MARK: - Helpers
