@@ -89,15 +89,7 @@ public struct UBTextField: View, UBImages {
             
             footerView
         }
-        .fixedSize(horizontal: false, vertical: true)
-        .listRowInsets(
-            EdgeInsets(
-                top: UBGlobal.space0,
-                leading: UBGlobal.space0,
-                bottom: helperText == nil ? UBGlobal.space0 : UBGlobal.space600,
-                trailing: UBGlobal.space0
-            )
-        )
+        .focused($isFocused)
     }
     
     // MARK: Floating TextField
@@ -112,7 +104,6 @@ public struct UBTextField: View, UBImages {
             }
             
             TextField("", text: $text)
-                .focused($isFocused)
                 .keyboardType(keyboardType.uiKeyboardType)
                 .accessibilityIdentifier(textFieldAccessibility ?? "")
                 .padding(.top, textFieldTopPadding)
@@ -149,6 +140,7 @@ public struct UBTextField: View, UBImages {
                 UBText(textAttribute: TextAttributes(text: "\(text.count)/\(maxCharacters)", color: .neutralLow, fontSize: .small, textAlign: .end))
             }
         }
+        .contentShape(Rectangle())
     }
     
     // MARK: Helpers
