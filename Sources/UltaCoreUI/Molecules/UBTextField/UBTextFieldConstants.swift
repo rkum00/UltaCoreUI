@@ -60,6 +60,7 @@ public enum UBKeyboardType {
     }
 }
 
+// MARK: - UBTextFieldSize
 public enum UBTextFieldSize {
     case compact
     case regular
@@ -73,7 +74,6 @@ public enum UBTextFieldSize {
         }
     }
 
-    /// Offset keeps floating label INSIDE border
     var floatingOffset: CGFloat {
         switch self {
         case .compact: return -14
@@ -82,12 +82,27 @@ public enum UBTextFieldSize {
         }
     }
 
-    /// Top padding to reserve space for label
     var topPadding: CGFloat {
         switch self {
         case .compact: return 8
         case .regular: return 12
         case .large: return 14
+        }
+    }
+
+    var bottomPadding: CGFloat {
+        switch self {
+        case .compact: return 6
+        case .regular: return 8
+        case .large: return 8
+        }
+    }
+
+    var horizontalPadding: CGFloat {
+        switch self {
+        case .compact: return 12
+        case .regular: return 16
+        case .large: return 16
         }
     }
 }

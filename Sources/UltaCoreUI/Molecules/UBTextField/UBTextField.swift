@@ -111,9 +111,10 @@ public struct UBTextField: View, UBImages {
     }
 }
 */
+
 public struct UBTextField: View, UBImages {
     
-    // MARK: - Properties
+    // MARK: Properties
     let helperText: String?
     let maxCharacters: Int?
     let placeHolderText: String?
@@ -129,7 +130,7 @@ public struct UBTextField: View, UBImages {
     @Binding var text: String
     @FocusState private var isFocused: Bool
     
-    // MARK: - Initializer
+    // MARK: Initializer
     public init(
         text: Binding<String>,
         helperText: String? = nil,
@@ -162,7 +163,7 @@ public struct UBTextField: View, UBImages {
         }
     }
     
-    // MARK: - Body
+    // MARK: Body
     public var body: some View {
         VStack(alignment: .leading, spacing: UBGlobal.space100) {
             
@@ -183,9 +184,9 @@ public struct UBTextField: View, UBImages {
                 }
             }
             .frame(height: size.height)
-            .padding(.horizontal, UBGlobal.space300)
-            .padding(.top, size.topPadding)   // 🔑 reserves label space
-            .padding(.bottom, 8)
+            .padding(.horizontal, size.horizontalPadding)
+            .padding(.top, size.topPadding)
+            .padding(.bottom, size.bottomPadding)
             .overlay(borderView)
             
             footerView
@@ -193,7 +194,7 @@ public struct UBTextField: View, UBImages {
         .fixedSize(horizontal: false, vertical: true)
     }
     
-    // MARK: - Floating TextField
+    // MARK: Floating TextField
     private var floatingTextField: some View {
         ZStack(alignment: .leading) {
             
@@ -221,7 +222,7 @@ public struct UBTextField: View, UBImages {
         }
     }
     
-    // MARK: - Border
+    // MARK: Border
     private var borderView: some View {
         RoundedRectangle(
             cornerRadius: variant == .rounded
@@ -234,7 +235,7 @@ public struct UBTextField: View, UBImages {
         )
     }
     
-    // MARK: - Footer
+    // MARK: Footer
     private var footerView: some View {
         HStack {
             if let helperText {
@@ -251,7 +252,7 @@ public struct UBTextField: View, UBImages {
         }
     }
     
-    // MARK: - Helpers
+    // MARK: Helpers
     private var shouldFloat: Bool {
         isFocused || !text.isEmpty
     }
