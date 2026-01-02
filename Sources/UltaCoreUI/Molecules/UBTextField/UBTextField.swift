@@ -124,16 +124,17 @@ public struct UBTextField: View, UBImages {
             : UBGlobal.borderRadius0
         )
         .stroke(
-            variant.getBorderColor(theme: theme),
+            borderColor,
             lineWidth: UBGlobal.borderWidth100
         )
+        .animation(.easeInOut(duration: 0.2), value: isMaxLimitReached)
     }
     
     // MARK: Footer
     private var footerView: some View {
         HStack {
             if let helperText {
-                UBText(textAttribute: TextAttributes(text: helperText, color: .error, fontSize: .small))
+                UBText(textAttribute: TextAttributes(text: helperText, color: variant.helperTextColor, fontSize: .small))
             }
             Spacer()
             if let maxCharacters {
@@ -150,6 +151,18 @@ public struct UBTextField: View, UBImages {
     
     private var textFieldTopPadding: CGFloat {
         shouldFloat ? size.floatingTextPadding : UBGlobal.space0
+    }
+    
+    private var isMaxLimitReached: Bool {
+        guard let maxCharacters else { return false }
+        return text.count >= maxCharacters
+    }
+    
+    private var borderColor: Color {
+        if isMaxLimitReached {
+            return Color(UBTheme.applyErrorColor(theme: theme))
+        }
+        return variant.getBorderColor(theme: theme)
     }
     
     private func getSlotImage(slot: Slot?) -> UIImage? {

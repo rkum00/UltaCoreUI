@@ -33,6 +33,10 @@ struct UltaTextFieldView: View {
                 }
             }
             .listStyle(GroupedListStyle())
+            .scrollDismissesKeyboard(.interactively)
+            .safeAreaInset(edge: .bottom) {
+                Color.clear.frame(height: UBGlobal.space1100)
+            }
         }
         .navigationTitle("\(optionType.rawValue) Options")
     }

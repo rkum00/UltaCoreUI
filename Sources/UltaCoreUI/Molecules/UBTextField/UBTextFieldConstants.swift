@@ -23,13 +23,12 @@ public enum TextFieldVariant: String, CaseIterable {
         }
     }
     
-    @available(iOS 13.0, *)
-    func getTextColor(theme: UBTheme = .current) -> Color {
+    var helperTextColor: TextColorType {
         switch self {
         case .flat:
-            return .gray
-        default:
-            return .red
+            return .neutralLow
+        case .rounded:
+            return .primary
         }
     }
 }
