@@ -111,6 +111,7 @@ public struct UBTextField: View, UBImages {
     }
 }
 */
+
 public struct UBTextField: View, UBImages {
     
     // MARK: - Properties
@@ -120,6 +121,7 @@ public struct UBTextField: View, UBImages {
     let variant: TextFieldVariant
     let textFieldAccessibility: String?
     let keyboardType: UBKeyboardType
+    let size: UBTextFieldSize
     let theme: UBTheme
     
     var leadingIcon: Image?
@@ -139,6 +141,7 @@ public struct UBTextField: View, UBImages {
         trailing: Slot? = nil,
         textFieldAccessibility: String?,
         keyboardType: UBKeyboardType = .default,
+        size: UBTextFieldSize = .regular,
         theme: UBTheme = .current
     ) {
         self._text = text
@@ -148,6 +151,7 @@ public struct UBTextField: View, UBImages {
         self.variant = variant
         self.textFieldAccessibility = textFieldAccessibility
         self.keyboardType = keyboardType
+        self.size = size
         self.theme = theme
         
         if let leadingImage = getSlotImage(slot: leading) {
@@ -179,7 +183,8 @@ public struct UBTextField: View, UBImages {
                         .foregroundColor(.gray)
                 }
             }
-            .padding(UBGlobal.space300)
+            .frame(height: size.height)
+            .padding(.horizontal, UBGlobal.space300)
             .overlay(borderView)
             
             footerView
@@ -193,13 +198,12 @@ public struct UBTextField: View, UBImages {
             
             if let placeHolderText {
                 Text(placeHolderText)
+                    .font(.caption)
                     .foregroundColor(isFocused
                                      ? variant.getBorderColor(theme: theme)
                                      : .gray)
-                    .font(.caption)
-                    .background(Color(UBTheme.applyThemeColorForBackground(theme: theme)))
                     .scaleEffect(shouldFloat ? 0.85 : 1.0, anchor: .leading)
-                    .offset(y: shouldFloat ? -22 : 0)
+                    .offset(y: shouldFloat ? size.floatingOffset : 0)
                     .animation(.easeOut(duration: 0.2), value: shouldFloat)
             }
             
@@ -256,4 +260,3 @@ public struct UBTextField: View, UBImages {
         return getImage(name: imageName)
     }
 }
-

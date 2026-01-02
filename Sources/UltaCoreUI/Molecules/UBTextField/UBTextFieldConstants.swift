@@ -59,3 +59,25 @@ public enum UBKeyboardType {
         }
     }
 }
+
+public enum UBTextFieldSize {
+    case compact
+    case regular
+    case large
+    
+    var height: CGFloat {
+        switch self {
+        case .compact: return 44
+        case .regular: return 48
+        case .large: return 56
+        }
+    }
+    
+    var floatingOffset: CGFloat {
+        switch self {
+        case .compact: return -20
+        case .regular: return -22
+        case .large: return -26
+        }
+    }
+}
