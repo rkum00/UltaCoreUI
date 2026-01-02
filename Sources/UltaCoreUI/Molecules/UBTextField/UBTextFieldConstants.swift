@@ -68,27 +68,27 @@ public enum UBTextFieldSize {
     
     var height: CGFloat {
         switch self {
-        case .compact: return 44
-        case .regular: return 48
-        case .large: return 56
+        case .compact: return UBGlobal.sizeHeightMinH900
+        case .regular: return UBGlobal.sizeHeight900
+        case .large: return UBGlobal.sizeHeight1000
         }
     }
     
     /// Floating placeholder offset
     var floatingOffset: CGFloat {
         switch self {
-        case .compact: return -12
-        case .regular: return -14
-        case .large: return -16
+        case .compact: return -UBGlobal.space300
+        case .regular: return -UBGlobal.space350
+        case .large: return -UBGlobal.space400
         }
     }
     
     /// Base top padding for floating label
     var baseTopPadding: CGFloat {
         switch self {
-        case .compact: return 8
-        case .regular: return 12
-        case .large: return 14
+        case .compact: return UBGlobal.space200
+        case .regular: return UBGlobal.space300
+        case .large: return UBGlobal.space350
         }
     }
     
@@ -96,7 +96,7 @@ public enum UBTextFieldSize {
     func topPadding(for variant: TextFieldVariant) -> CGFloat {
         switch variant {
         case .rounded:
-            return baseTopPadding + 4 // extra space for rounded corners
+            return baseTopPadding + UBGlobal.space150
         default:
             return baseTopPadding
         }
@@ -104,26 +104,26 @@ public enum UBTextFieldSize {
     
     var bottomPadding: CGFloat {
         switch self {
-        case .compact: return 6
-        case .regular: return 8
-        case .large: return 8
+        case .compact: return UBGlobal.space150
+        case .regular: return UBGlobal.space200
+        case .large: return UBGlobal.space200
         }
     }
     
     var horizontalPadding: CGFloat {
         switch self {
-        case .compact: return 12
-        case .regular: return 16
-        case .large: return 16
+        case .compact: return UBGlobal.space300
+        case .regular: return UBGlobal.space400
+        case .large: return UBGlobal.space400
         }
     }
     
     /// Extra padding between floating label and input text
     var floatingTextPadding: CGFloat {
         switch self {
-        case .compact: return 4
-        case .regular: return 6
-        case .large: return 8
+        case .compact: return UBGlobal.space100
+        case .regular: return UBGlobal.space150
+        case .large: return UBGlobal.space200
         }
     }
 }

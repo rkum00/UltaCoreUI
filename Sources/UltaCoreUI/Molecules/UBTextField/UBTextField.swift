@@ -83,7 +83,7 @@ public struct UBTextField: View, UBImages {
             }
             .frame(height: size.height)
             .padding(.horizontal, size.horizontalPadding)
-            .padding(.top, size.topPadding(for: variant)) // extra padding for rounded
+            .padding(.top, size.topPadding(for: variant))
             .padding(.bottom, size.bottomPadding)
             .overlay(borderView)
             
@@ -103,7 +103,7 @@ public struct UBTextField: View, UBImages {
                                      ? variant.getBorderColor(theme: theme)
                                      : .gray)
                     .scaleEffect(shouldFloat ? 0.85 : 1.0, anchor: .leading)
-                    .offset(y: shouldFloat ? size.floatingOffset : 0)
+                    .offset(y: shouldFloat ? size.floatingOffset : UBGlobal.space0)
                     .animation(.easeOut(duration: 0.2), value: shouldFloat)
             }
             
@@ -111,7 +111,7 @@ public struct UBTextField: View, UBImages {
                 .focused($isFocused)
                 .keyboardType(keyboardType.uiKeyboardType)
                 .accessibilityIdentifier(textFieldAccessibility ?? "")
-                .padding(.top, textFieldTopPadding) // dynamic padding when floating
+                .padding(.top, textFieldTopPadding)
                 .onChange(of: text) { newValue in
                     guard let maxCharacters else { return }
                     if newValue.count > maxCharacters {
@@ -157,7 +157,7 @@ public struct UBTextField: View, UBImages {
     }
     
     private var textFieldTopPadding: CGFloat {
-        shouldFloat ? size.floatingTextPadding : 0
+        shouldFloat ? size.floatingTextPadding : UBGlobal.space0
     }
     
     private func getSlotImage(slot: Slot?) -> UIImage? {
