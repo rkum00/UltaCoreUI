@@ -23,6 +23,7 @@ enum OptionsPageType: String, CaseIterable {
     case ubCardContainer = "UBCard Container"
     case ubBanner = "UBBanner"
     case ubLoader = "UBLoader"
+    case ubTextField = "UBTextField"
 }
 
 public enum GlobalTheme1ColorEnum: String, CaseIterable {
@@ -332,6 +333,10 @@ public enum StyleDictionaryGlobalEnumIcons: String, CaseIterable {
     case wifiOutline16 = "wifi_outlined_16"
     case wifiOutline24 = "wifi_outlined_24"
     case wifiOutline32 = "wifi_outlined_32"
+    case userOutline16 = "user_outlined_16"
+    case userOutline24 = "user_outlined_24"
+    case trashOutline16 = "trash_outlined_16"
+    case trashOutline24 = "trash_outlined_24"
 }
 
 
@@ -351,5 +356,6 @@ let sections: [SectionData] = [
                         OptionsPageType.ubButton,
                         OptionsPageType.ubCardContainer,
                         OptionsPageType.ubBanner,
-                        OptionsPageType.ubLoader])
+                        OptionsPageType.ubLoader,
+                        OptionsPageType.ubTextField])
 ]

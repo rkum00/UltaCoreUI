@@ -28,6 +28,8 @@ final class UltaOptionsThemeRouter {
             UltaBannerView(theme: theme, optionType: .ubBanner)
         case .ubLoader:
             UltaLoaderView(theme: theme, optionType: .ubLoader)
+        case .ubTextField:
+            UltaTextFieldView(theme: theme, optionType: .ubTextField)
         }
     }
 }
