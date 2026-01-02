@@ -138,7 +138,7 @@ public struct UBTextField: View, UBImages {
             }
             Spacer()
             if let maxCharacters {
-                UBText(textAttribute: TextAttributes(text: "\(text.count)/\(maxCharacters)", color: .neutralLow, fontSize: .small))
+                UBText(textAttribute: TextAttributes(text: "\(text.count)/\(maxCharacters)", color: .neutralLow, fontSize: .small, textAlign: .end))
             }
         }
     }
