@@ -90,6 +90,14 @@ public struct UBTextField: View, UBImages {
             footerView
         }
         .fixedSize(horizontal: false, vertical: true)
+        .listRowInsets(
+            EdgeInsets(
+                top: UBGlobal.space0,
+                leading: UBGlobal.space0,
+                bottom: helperText == nil ? UBGlobal.space0 : UBGlobal.space600,
+                trailing: UBGlobal.space0
+            )
+        )
     }
     
     // MARK: Floating TextField

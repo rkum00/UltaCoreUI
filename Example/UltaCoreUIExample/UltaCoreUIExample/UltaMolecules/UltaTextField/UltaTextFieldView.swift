@@ -26,7 +26,6 @@ struct UltaTextFieldView: View {
                     Section(header: sectionHeader(section: section)) {
                         ForEach(0..<presenter.getRowsCount(for: section), id: \.self) { row in
                             UltaTextFieldRowView(textFieldView: presenter.getComponent(row: row, section: section, theme: theme))
-                                .listRowInsets(EdgeInsets())
                         }
                     }
                     .listRowSeparator(.hidden)
