@@ -65,7 +65,7 @@ public enum UBTextFieldSize {
     case compact
     case regular
     case large
-
+    
     var height: CGFloat {
         switch self {
         case .compact: return 44
@@ -73,23 +73,35 @@ public enum UBTextFieldSize {
         case .large: return 56
         }
     }
-
+    
+    /// Floating placeholder offset
     var floatingOffset: CGFloat {
         switch self {
-        case .compact: return -14
-        case .regular: return -16
-        case .large: return -18
+        case .compact: return -12
+        case .regular: return -14
+        case .large: return -16
         }
     }
-
-    var topPadding: CGFloat {
+    
+    /// Base top padding for floating label
+    var baseTopPadding: CGFloat {
         switch self {
         case .compact: return 8
         case .regular: return 12
         case .large: return 14
         }
     }
-
+    
+    /// Extra top padding for rounded variant
+    func topPadding(for variant: TextFieldVariant) -> CGFloat {
+        switch variant {
+        case .rounded:
+            return baseTopPadding + 4 // add extra space for rounded corners
+        default:
+            return baseTopPadding
+        }
+    }
+    
     var bottomPadding: CGFloat {
         switch self {
         case .compact: return 6
@@ -97,7 +109,7 @@ public enum UBTextFieldSize {
         case .large: return 8
         }
     }
-
+    
     var horizontalPadding: CGFloat {
         switch self {
         case .compact: return 12
