@@ -64,7 +64,7 @@ public enum UBTextFieldSize {
     case compact
     case regular
     case large
-    
+
     var height: CGFloat {
         switch self {
         case .compact: return 44
@@ -72,12 +72,22 @@ public enum UBTextFieldSize {
         case .large: return 56
         }
     }
-    
+
+    /// Offset keeps floating label INSIDE border
     var floatingOffset: CGFloat {
         switch self {
-        case .compact: return -20
-        case .regular: return -22
-        case .large: return -26
+        case .compact: return -14
+        case .regular: return -16
+        case .large: return -18
+        }
+    }
+
+    /// Top padding to reserve space for label
+    var topPadding: CGFloat {
+        switch self {
+        case .compact: return 8
+        case .regular: return 12
+        case .large: return 14
         }
     }
 }

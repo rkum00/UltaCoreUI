@@ -111,7 +111,6 @@ public struct UBTextField: View, UBImages {
     }
 }
 */
-
 public struct UBTextField: View, UBImages {
     
     // MARK: - Properties
@@ -185,6 +184,8 @@ public struct UBTextField: View, UBImages {
             }
             .frame(height: size.height)
             .padding(.horizontal, UBGlobal.space300)
+            .padding(.top, size.topPadding)   // 🔑 reserves label space
+            .padding(.bottom, 8)
             .overlay(borderView)
             
             footerView
