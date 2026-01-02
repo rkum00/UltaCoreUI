@@ -33,3 +33,29 @@ public enum TextFieldVariant: String, CaseIterable {
         }
     }
 }
+
+public enum UBKeyboardType {
+    case `default`
+    case email
+    case number
+    case phone
+    case decimal
+    case url
+    
+    var uiKeyboardType: UIKeyboardType {
+        switch self {
+        case .default:
+            return .default
+        case .email:
+            return .emailAddress
+        case .number:
+            return .numberPad
+        case .phone:
+            return .phonePad
+        case .decimal:
+            return .decimalPad
+        case .url:
+            return .URL
+        }
+    }
+}

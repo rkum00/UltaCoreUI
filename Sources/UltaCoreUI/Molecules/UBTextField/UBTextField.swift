@@ -15,6 +15,7 @@ public struct UBTextField: View, UBImages {
     let placeHolderText: String?
     let variant: TextFieldVariant
     let textFieldAccessibility: String?
+    let keyboardType: UBKeyboardType
     let theme: UBTheme
     
     var leadingIcon: Image?
@@ -32,6 +33,7 @@ public struct UBTextField: View, UBImages {
         leading: Slot? = nil,
         trailing: Slot? = nil,
         textFieldAccessibility: String?,
+        keyboardType: UBKeyboardType = .default,
         theme: UBTheme = .current
     ) {
         self._text = text
@@ -40,6 +42,7 @@ public struct UBTextField: View, UBImages {
         self.placeHolderText = placeHolderText
         self.variant = variant
         self.textFieldAccessibility = textFieldAccessibility
+        self.keyboardType = keyboardType
         self.theme = theme
         
         if let leadingImage = getSlotImage(slot: leading) {
@@ -62,6 +65,7 @@ public struct UBTextField: View, UBImages {
                         .foregroundColor(.gray)
                 }
                 TextField(placeHolderText ?? "", text: $text)
+                    .keyboardType(keyboardType.uiKeyboardType)
                     .accessibilityIdentifier(textFieldAccessibility ?? "")
                     .onChange(of: text) { newValue in
                         guard let maxCharacters else { return }
