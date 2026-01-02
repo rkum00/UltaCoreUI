@@ -96,7 +96,7 @@ public enum UBTextFieldSize {
     func topPadding(for variant: TextFieldVariant) -> CGFloat {
         switch variant {
         case .rounded:
-            return baseTopPadding + 4 // add extra space for rounded corners
+            return baseTopPadding + 4 // extra space for rounded corners
         default:
             return baseTopPadding
         }
@@ -115,6 +115,15 @@ public enum UBTextFieldSize {
         case .compact: return 12
         case .regular: return 16
         case .large: return 16
+        }
+    }
+    
+    /// Extra padding between floating label and input text
+    var floatingTextPadding: CGFloat {
+        switch self {
+        case .compact: return 4
+        case .regular: return 6
+        case .large: return 8
         }
     }
 }
