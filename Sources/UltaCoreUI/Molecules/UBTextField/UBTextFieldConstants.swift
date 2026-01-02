@@ -77,9 +77,9 @@ public enum UBTextFieldSize {
     /// Floating placeholder offset
     var floatingOffset: CGFloat {
         switch self {
-        case .compact: return -UBGlobal.space300
-        case .regular: return -UBGlobal.space350
-        case .large: return -UBGlobal.space400
+        case .compact: return -UBGlobal.space400
+        case .regular: return -UBGlobal.space450
+        case .large: return -UBGlobal.space500
         }
     }
     

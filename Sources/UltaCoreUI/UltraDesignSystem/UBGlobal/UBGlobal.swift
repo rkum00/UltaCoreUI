@@ -550,6 +550,7 @@ public class UBGlobal {
     public static let space300 = CGFloat(12.00)
     public static let space350 = CGFloat(14.00)
     public static let space400 = CGFloat(16.00)
+    public static let space450 = CGFloat(18.00)
     public static let space50 = CGFloat(2.00)
     public static let space500 = CGFloat(20.00)
     public static let space600 = CGFloat(24.00)
