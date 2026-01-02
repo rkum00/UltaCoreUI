@@ -37,7 +37,7 @@ public enum UltaTextFieldViewOptions: String, CaseIterable {
         case .rounded:
             UBTextField(text: text, helperText: "Mandatory field*", maxCharacters: 20, placeHolderText: "Mandatory Test", variant: .rounded, textFieldAccessibility: "", theme: theme)
         default:
-            UBTextField(text: text, helperText: "Testing field", maxCharacters: 10, placeHolderText: "Test", variant: .flat, textFieldAccessibility: "", theme: theme)
+            UBTextField(text: text, helperText: "Testing field", maxCharacters: 30, placeHolderText: "Test", variant: .flat, textFieldAccessibility: "", theme: theme)
         }
     }
     
@@ -50,7 +50,7 @@ public enum UltaTextFieldViewOptions: String, CaseIterable {
         case 0:
             UBTextField(text: text, helperText: "User Name*", maxCharacters: 20, placeHolderText: "Enter username", variant: .rounded, leading: Slot(imageName: StyleDictionaryGlobalEnumIcons.userOutline24.rawValue), textFieldAccessibility: "", keyboardType: .email, theme: theme)
         default:
-            UBTextField(text: text, maxCharacters: 10, placeHolderText: "Empty bin", variant: .rounded, trailing: Slot(imageName: StyleDictionaryGlobalEnumIcons.trashOutline24.rawValue), textFieldAccessibility: "", theme: theme)
+            UBTextField(text: text, maxCharacters: 30, placeHolderText: "Empty bin", variant: .rounded, trailing: Slot(imageName: StyleDictionaryGlobalEnumIcons.trashOutline24.rawValue), textFieldAccessibility: "", theme: theme)
         }
     }
 }
