@@ -33,7 +33,7 @@ class UltaPickupPresenter: ObservableObject {
     
     func getComponent(row: Int, section: Int) -> some View {
         switch UltaPickupViewOptions.allCases[section] {
-        case .options, .delivery:
+        case .options, .deals, .delivery:
             return UltaPickupViewOptions.options.getPickupOptionsComponent(section: section, row: row, theme: theme)
         }
     }

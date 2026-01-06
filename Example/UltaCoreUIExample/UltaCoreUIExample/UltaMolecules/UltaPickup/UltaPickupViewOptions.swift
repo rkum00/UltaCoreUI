@@ -11,11 +11,12 @@ import SwiftUI
 
 enum UltaPickupViewOptions: String, CaseIterable {
     case options = "Pickup Options"
+    case deals = "Deals Options"
     case delivery = "Delivery Options"
     
     func numberOfRows() -> Int {
         switch self {
-        case .options, .delivery:
+        case .options, .deals, .delivery:
             return cardData.count
         }
     }
@@ -107,7 +108,7 @@ enum UltaPickupViewOptions: String, CaseIterable {
         private var tintColor: Color {
             switch selectionMode {
             case .outline:
-                return Color(UBTheme.applyBackgroundPrimaryColor(theme: theme))
+                return isSelected ? Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)) : Color(UBTheme.applyOutlineDisabledColor(theme: theme))
             case .background:
                 return isSelected
                 ? Color(UBTheme.applyBackgroundBaselineColor(theme: theme))
