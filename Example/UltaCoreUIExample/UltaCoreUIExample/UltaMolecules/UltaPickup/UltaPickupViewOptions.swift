@@ -34,12 +34,13 @@ enum UltaPickupViewOptions: String, CaseIterable {
                 UltaCardData(title: "SameDay", subTitle: "Free", description: "Free instore pickup", imageName: StyleDictionaryGlobalEnumIcons.wifiOutline24.rawValue)]
     }
     
-    func getPickupOptionsComponent(section: Int, row: Int, theme: UBTheme = .current) -> some View {
+    func getPickupOptionsComponent(section: Int, row: Int, theme: UBTheme = .current, selectedItem: Binding<[Int: Int]>) -> some View {
         InteractiveCardComponent(
             section: section,
             row: row,
             theme: theme,
-            selectionMode: .outline
+            selectionMode: .outline,
+            selectedItem: selectedItem
         )
     }
     
@@ -49,7 +50,11 @@ enum UltaPickupViewOptions: String, CaseIterable {
         let theme: UBTheme
         let selectionMode: UBCardSelectionMode
         
-        @State private var isSelected: Bool = false
+        @Binding var selectedItem: [Int: Int]
+        
+        private var isSelected: Bool {
+            selectedItem[section] == row
+        }
         
         var body: some View {
             
@@ -62,7 +67,7 @@ enum UltaPickupViewOptions: String, CaseIterable {
                 theme: theme,
                 contentPadding: .small,
                 outlineColor: outlineColor,
-                onTap: { isSelected.toggle() }
+                onTap: { selectedItem[section] = row }
             ) {
                 UBCardView(
                     icon: getImageView(name: UltaPickupViewOptions.options.cardData[row].imageName ?? ""),

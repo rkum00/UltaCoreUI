@@ -31,10 +31,10 @@ class UltaPickupPresenter: ObservableObject {
         return UltaPickupViewOptions.allCases[section].numberOfRows()
     }
     
-    func getComponent(row: Int, section: Int) -> some View {
+    func getComponent(row: Int, section: Int, selectedItem: Binding<[Int: Int]>) -> some View {
         switch UltaPickupViewOptions.allCases[section] {
         case .options, .deals, .delivery:
-            return UltaPickupViewOptions.options.getPickupOptionsComponent(section: section, row: row, theme: theme)
+            return UltaPickupViewOptions.options.getPickupOptionsComponent(section: section, row: row, theme: theme, selectedItem: selectedItem)
         }
     }
     

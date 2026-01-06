@@ -14,6 +14,8 @@ struct UltaPickupView: View {
     let optionType: OptionsPageType
     let theme: UBTheme
     
+    @State private var selectedItem: [Int: Int] = [:]
+    
     // MARK: - Layout Constants
     private let cardWidth: CGFloat = UltaPickupViewOptions.options.gridSize.width
     private let cardHeight: CGFloat = UltaPickupViewOptions.options.gridSize.height
@@ -43,7 +45,8 @@ struct UltaPickupView: View {
                                     UltaPickupRowView(
                                         ubCardContainer: presenter.getComponent(
                                             row: row,
-                                            section: section
+                                            section: section,
+                                            selectedItem: $selectedItem
                                         ),
                                         section: section,
                                         row: row
