@@ -16,12 +16,21 @@ enum UltaPickupViewOptions: String, CaseIterable {
     func numberOfRows() -> Int {
         switch self {
         case .options, .delivery:
-            return 6
+            return cardData.count
         }
     }
     
     var gridSize: CGSize {
         return CGSize(width: (UBGlobal.sizeWidthMinW1200 + UBGlobal.sizeWidthMinW20), height: (UBGlobal.sizeHeightMaxH1800 + UBGlobal.sizeHeightMaxH200))
+    }
+    
+    var cardData: [UltaCardData] {
+        return [UltaCardData(title: "Ship", subTitle: "Free", description: "Shipping with $35", imageName: StyleDictionaryGlobalEnumIcons.wifiOutline24.rawValue),
+                UltaCardData(title: "Pickup", subTitle: "Free Same", description: "delivery over $50", imageName: StyleDictionaryGlobalEnumIcons.warningOutlined24.rawValue),
+                UltaCardData(title: "SameDay", subTitle: "Free", description: "Free instore pickup", imageName: StyleDictionaryGlobalEnumIcons.wifiOutline24.rawValue),
+                UltaCardData(title: "Ship", subTitle: "Free", description: "Shipping with $35", imageName: StyleDictionaryGlobalEnumIcons.warningOutlined24.rawValue),
+                UltaCardData(title: "Pickup", subTitle: "Free Same", description: "delivery over $50", imageName: StyleDictionaryGlobalEnumIcons.wifiOutline24.rawValue),
+                UltaCardData(title: "SameDay", subTitle: "Free", description: "Free instore pickup", imageName: StyleDictionaryGlobalEnumIcons.wifiOutline24.rawValue)]
     }
     
     func getPickupOptionsComponent(section: Int, row: Int, theme: UBTheme = .current) -> some View {
@@ -33,7 +42,7 @@ enum UltaPickupViewOptions: String, CaseIterable {
         )
     }
     
-    struct InteractiveCardComponent: View {
+    struct InteractiveCardComponent: View, UBImages {
         let section: Int
         let row: Int
         let theme: UBTheme
@@ -55,10 +64,10 @@ enum UltaPickupViewOptions: String, CaseIterable {
                 onTap: { isSelected.toggle() }
             ) {
                 UBCardView(
-                    icon: Image(systemName: "bolt.fill"),
-                    title: "Pick up",
-                    subtitle: "Free",
-                    description: "Shipping with $35",
+                    icon: getImageView(name: UltaPickupViewOptions.options.cardData[row].imageName ?? ""),
+                    title: UltaPickupViewOptions.options.cardData[row].title,
+                    subtitle: UltaPickupViewOptions.options.cardData[row].subTitle,
+                    description: UltaPickupViewOptions.options.cardData[row].description,
                     textColor: textColor,
                     tintColor: tintColor
                 )
@@ -106,4 +115,11 @@ enum UltaPickupViewOptions: String, CaseIterable {
             }
         }
     }
+}
+
+struct UltaCardData {
+    let title: String
+    let subTitle: String
+    let description: String
+    let imageName: String?
 }
