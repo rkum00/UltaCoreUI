@@ -30,6 +30,8 @@ final class UltaOptionsThemeRouter {
             UltaLoaderView(theme: theme, optionType: .ubLoader)
         case .ubTextField:
             UltaTextFieldView(theme: theme, optionType: .ubTextField)
+        case .ubPickup:
+            UltaPickupView(theme: theme, optionType: .ubPickup)
         }
     }
 }

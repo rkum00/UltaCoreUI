@@ -10,7 +10,7 @@ import UltaCoreUI
 
 final class UltaOptionsThemePresenter: ObservableObject {
     private let router: UltaOptionsThemeRouter
-
+    
     init(router: UltaOptionsThemeRouter) {
         self.router = router
     }
@@ -18,4 +18,3 @@ final class UltaOptionsThemePresenter: ObservableObject {
         router.makeDetailView(selectedPageOption: selectedPageOption, for: theme)
     }
 }
-

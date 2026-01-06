@@ -24,6 +24,7 @@ enum OptionsPageType: String, CaseIterable {
     case ubBanner = "UBBanner"
     case ubLoader = "UBLoader"
     case ubTextField = "UBTextField"
+    case ubPickup = "UBPickup and delivery"
 }
 
 public enum GlobalTheme1ColorEnum: String, CaseIterable {
@@ -204,7 +205,6 @@ public enum GlobalTheme2ColorEnum: String, CaseIterable {
         case .ubThemeColorOutlineWarning: return Theme2.ubThemeColorOutlineWarning
         }
     }
-
 }
 
 public enum GlobalTheme3ColorEnum: String, CaseIterable {
@@ -357,5 +357,6 @@ let sections: [SectionData] = [
                         OptionsPageType.ubCardContainer,
                         OptionsPageType.ubBanner,
                         OptionsPageType.ubLoader,
-                        OptionsPageType.ubTextField])
+                        OptionsPageType.ubTextField,
+                        OptionsPageType.ubPickup])
 ]
