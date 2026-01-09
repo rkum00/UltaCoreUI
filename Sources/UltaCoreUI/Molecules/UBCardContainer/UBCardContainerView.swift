@@ -123,7 +123,7 @@ public struct UBCardContainerView<Content: View>: View {
                     .stroke(outlineColor.getColor(theme: theme), lineWidth: type.lineWidth)
             )
             .contentShape(shapeView)
-            .gesture(
+            .simultaneousGesture(
                 onTap == nil ? nil :
                     DragGesture(minimumDistance: 0)
                     .updating($isPressed) { _, pressed, _ in
