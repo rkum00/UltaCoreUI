@@ -69,41 +69,70 @@ public struct UBCardContainerView<Content: View>: View {
     }
     
     // MARK: - Interaction Wrapper
-    @ViewBuilder
-    private func applyInteraction(to view: some View) -> some View {
-        if onTap == nil {
-            view
-        } else {
-            view
-                .contentShape(shapeView)
-                .highPriorityGesture(
-                    DragGesture(minimumDistance: 0)
-                        .updating($isPressed) { _, pressed, _ in
-                            pressed = true
-                        }
-                        .onEnded { _ in onTap?() }
-                )
-        }
-    }
-    
+    /*
+     @ViewBuilder
+     private func applyInteraction(to view: some View) -> some View {
+     if onTap == nil {
+     view
+     } else {
+     view
+     .contentShape(shapeView)
+     .highPriorityGesture(
+     DragGesture(minimumDistance: 0)
+     .updating($isPressed) { _, pressed, _ in
+     pressed = true
+     }
+     .onEnded { _ in onTap?() }
+     )
+     }
+     }
+     */
+    /*
+     public var body: some View {
+     applyInteraction(
+     to: arrangedContent
+     .padding(UBCardPadding.insets(edge: contentPaddingEdge, size: contentPadding))
+     .frame(width: size.getWidth())
+     .background(
+     shapeView
+     .fill(state.getBackgroundColor(theme: theme))
+     .shadow(radius: type.shadowRadius)
+     )
+     .overlay(
+     shapeView
+     .stroke(outlineColor.getColor(theme: theme), lineWidth: type.lineWidth)
+     )
+     .opacity(isPressed && onTap != nil ? state.opacityValue * 0.85 : state.opacityValue)
+     .scaleEffect(isPressed && onTap != nil ? 0.97 : 1.0)
+     .animation(.easeOut(duration: 0.15), value: isPressed)
+     )
+     }
+     */
     // MARK: - Body
     public var body: some View {
-        applyInteraction(
-            to: arrangedContent
-                .padding(UBCardPadding.insets(edge: contentPaddingEdge, size: contentPadding))
-                .frame(width: size.getWidth())
-                .background(
-                    shapeView
-                        .fill(state.getBackgroundColor(theme: theme))
-                        .shadow(radius: type.shadowRadius)
-                )
-                .overlay(
-                    shapeView
-                        .stroke(outlineColor.getColor(theme: theme), lineWidth: type.lineWidth)
-                )
-                .opacity(isPressed && onTap != nil ? state.opacityValue * 0.85 : state.opacityValue)
-                .scaleEffect(isPressed && onTap != nil ? 0.97 : 1.0)
-                .animation(.easeOut(duration: 0.15), value: isPressed)
-        )
+        arrangedContent
+            .padding(UBCardPadding.insets(edge: contentPaddingEdge, size: contentPadding))
+            .frame(width: size.getWidth())
+            .background(
+                shapeView
+                    .fill(state.getBackgroundColor(theme: theme))
+                    .shadow(radius: type.shadowRadius)
+            )
+            .overlay(
+                shapeView
+                    .stroke(outlineColor.getColor(theme: theme), lineWidth: type.lineWidth)
+            )
+            .contentShape(shapeView)
+            .gesture(
+                onTap == nil ? nil :
+                    DragGesture(minimumDistance: 0)
+                    .updating($isPressed) { _, pressed, _ in
+                        pressed = true
+                    }
+                    .onEnded { _ in onTap?() }
+            )
+            .opacity(isPressed && onTap != nil ? state.opacityValue * 0.85 : state.opacityValue)
+            .scaleEffect(isPressed && onTap != nil ? 0.97 : 1.0)
+            .animation(.easeOut(duration: 0.15), value: isPressed)
     }
 }
