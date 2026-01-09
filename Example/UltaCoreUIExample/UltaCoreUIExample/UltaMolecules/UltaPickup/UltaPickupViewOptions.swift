@@ -67,7 +67,13 @@ enum UltaPickupViewOptions: String, CaseIterable {
                 theme: theme,
                 contentPadding: .small,
                 outlineColor: outlineColor,
-                onTap: { selectedItem[section] = row }
+                onTap: {
+                    if selectedItem[section] == row {
+                        selectedItem.removeValue(forKey: section)
+                    } else {
+                        selectedItem[section] = row
+                    }
+                }
             ) {
                 UBCardView(
                     icon: getImageView(name: UltaPickupViewOptions.options.cardData[row].imageName ?? ""),
