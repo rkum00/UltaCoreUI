@@ -75,7 +75,7 @@ public struct UBCardContainerView<Content: View>: View {
             view
         } else {
             view
-                .contentShape(Rectangle())
+                .contentShape(shapeView)
                 .highPriorityGesture(
                     DragGesture(minimumDistance: 0)
                         .updating($isPressed) { _, pressed, _ in
