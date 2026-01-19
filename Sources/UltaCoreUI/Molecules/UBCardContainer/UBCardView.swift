@@ -15,15 +15,17 @@ public struct UBCardView: View {
     let description: String
     let textColor: TextColorType
     let tintColor: Color
+    let theme: UBTheme
     
     
-    public init(icon: Image?, title: String, subtitle: String, description: String, textColor: TextColorType = .neutralLow, tintColor: Color) {
+    public init(icon: Image?, title: String, subtitle: String, description: String, textColor: TextColorType = .neutralLow, tintColor: Color, theme: UBTheme) {
         self.icon = icon
         self.title = title
         self.subtitle = subtitle
         self.description = description
         self.tintColor = tintColor
         self.textColor = textColor
+        self.theme = theme
     }
     
     public var body: some View {
@@ -35,17 +37,17 @@ public struct UBCardView: View {
                 .scaledToFit()
                 .frame(width: UBGlobal.sizeWidth600, height: UBGlobal.sizeHeight600)
         }
-        UBText(textAttribute: TextAttributes(text: title,
+        UBText(theme: theme, textAttribute: TextAttributes(text: title,
                                              color: textColor,
                                              fontSize: .medium,
                                              textAlign: .center,
                                              fontWeight: .bold))
-        UBText(textAttribute: TextAttributes(text: subtitle,
+        UBText(theme: theme, textAttribute: TextAttributes(text: subtitle,
                                              color: textColor,
                                              fontSize: .small,
                                              textAlign: .center,
                                              fontWeight: .regular))
-        UBText(textAttribute: TextAttributes(text: description,
+        UBText(theme: theme, textAttribute: TextAttributes(text: description,
                                              color: textColor,
                                              fontSize: .small,
                                              textAlign: .center,
