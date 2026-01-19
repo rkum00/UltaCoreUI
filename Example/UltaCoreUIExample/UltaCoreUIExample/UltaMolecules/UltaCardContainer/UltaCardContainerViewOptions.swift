@@ -48,7 +48,8 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                                title: "Pick up",
                                subtitle: "Free",
                                description: "Shipping with $35",
-                               tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)))
+                               tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)),
+                               theme: theme)
                 },
                 section: section,
                 row: row
@@ -68,7 +69,8 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                                title: "Secure Mode",
                                subtitle: "Unavailable",
                                description: "Free in store pickup",
-                               tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)))
+                               tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)),
+                               theme: theme)
                 },
                 section: section,
                 row: row
@@ -89,7 +91,8 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                                title: "Same Day",
                                subtitle: "Free same",
                                description: "Delivery over $50",
-                               tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)))
+                               tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)),
+                               theme: theme)
                 },
                 section: section,
                 row: row
@@ -114,7 +117,8 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                                title: "Pick up",
                                subtitle: "Free",
                                description: "Shipping with $35",
-                               tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)))
+                               tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)),
+                               theme: theme)
                 },
                 section: section,
                 row: row
@@ -134,7 +138,8 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                                title: "Secure Mode",
                                subtitle: "Unavailable",
                                description: "Free in store pickup",
-                               tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)))
+                               tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)),
+                               theme: theme)
                 },
                 section: section,
                 row: row
@@ -155,7 +160,8 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                                title: "Same Day",
                                subtitle: "Free same",
                                description: "Delivery over $50",
-                               tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)))
+                               tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)),
+                               theme: theme)
                 },
                 section: section,
                 row: row
@@ -176,7 +182,8 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                                title: "Pick up",
                                subtitle: "Free",
                                description: "Shipping with $35",
-                               tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)))
+                               tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)),
+                               theme: theme)
                 },
                 section: section,
                 row: row
@@ -196,7 +203,8 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                                title: "Secure Mode",
                                subtitle: "Unavailable",
                                description: "Free in store pickup",
-                               tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)))
+                               tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)),
+                               theme: theme)
                 },
                 section: section,
                 row: row
@@ -216,7 +224,8 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                                title: "Same Day",
                                subtitle: "Free same",
                                description: "Delivery over $50",
-                               tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)))
+                               tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)),
+                               theme: theme)
                 },
                 section: section,
                 row: row
@@ -242,7 +251,8 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                                subtitle: "Free",
                                description: "Shipping",
                                textColor: .neutralHighInverse,
-                               tintColor: Color(UBTheme.applyBackgroundBaselineColor(theme: theme)))
+                               tintColor: Color(UBTheme.applyBackgroundBaselineColor(theme: theme)),
+                               theme: theme)
                 },
                 section: section,
                 row: row
@@ -263,7 +273,8 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                                subtitle: "Unavailable",
                                description: "Free in store pickup",
                                textColor: .neutralHighInverse,
-                               tintColor: Color(UBTheme.applyBackgroundBaselineColor(theme: theme)))
+                               tintColor: Color(UBTheme.applyBackgroundBaselineColor(theme: theme)),
+                               theme: theme)
                 },
                 section: section,
                 row: row
@@ -284,7 +295,8 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                                subtitle: "Free same",
                                description: "Delivery over $50",
                                textColor: .neutralHighInverse,
-                               tintColor: Color(UBTheme.applyBackgroundBaselineColor(theme: theme)))
+                               tintColor: Color(UBTheme.applyBackgroundBaselineColor(theme: theme)),
+                               theme: theme)
                 },
                 section: section,
                 row: row
@@ -306,7 +318,8 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                                subtitle: "Out of store",
                                description: "Delivery over $50",
                                textColor: .neutralLow,
-                               tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)))
+                               tintColor: Color(UBTheme.applyBackgroundPrimaryColor(theme: theme)),
+                               theme: theme)
                 },
                 section: section,
                 row: row
@@ -367,7 +380,8 @@ public enum UltaCardContainerViewOptions: String, CaseIterable {
                     subtitle: "Free",
                     description: "Shipping with $35",
                     textColor: textColor,
-                    tintColor: tintColor
+                    tintColor: tintColor,
+                    theme: theme
                 )
             }
         }

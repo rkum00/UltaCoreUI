@@ -81,7 +81,8 @@ enum UltaPickupViewOptions: String, CaseIterable {
                     subtitle: UltaPickupViewOptions.options.cardData[row].subTitle,
                     description: UltaPickupViewOptions.options.cardData[row].description,
                     textColor: textColor,
-                    tintColor: tintColor
+                    tintColor: tintColor,
+                    theme: theme
                 )
             }
         }
@@ -110,7 +111,7 @@ enum UltaPickupViewOptions: String, CaseIterable {
         private var textColor: TextColorType {
             switch selectionMode {
             case .outline:
-                return .neutralLow
+                return isSelected ? .primary : .neutralLow
             case .background:
                 return isSelected ? .neutralHighInverse : .neutralLow
             }
