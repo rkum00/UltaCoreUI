@@ -97,7 +97,7 @@ public struct UBTextField: View, UBImages {
         ZStack(alignment: .leading) {
             
             if let placeHolderText {
-                UBText(textAttribute: TextAttributes(text: placeHolderText, color: isFocused ? .neutralHigh : .neutralLow))
+                UBText(theme: theme, textAttribute: TextAttributes(text: placeHolderText, color: isFocused ? .neutralHigh : .neutralLow))
                     .scaleEffect(shouldFloat ? 0.85 : 1.0, anchor: .leading)
                     .offset(y: shouldFloat ? size.floatingOffset : UBGlobal.space0)
                     .animation(.easeOut(duration: 0.2), value: shouldFloat)
@@ -134,11 +134,11 @@ public struct UBTextField: View, UBImages {
     private var footerView: some View {
         HStack {
             if let helperText {
-                UBText(textAttribute: TextAttributes(text: helperText, color: variant.helperTextColor, fontSize: .small))
+                UBText(theme: theme, textAttribute: TextAttributes(text: helperText, color: variant.helperTextColor, fontSize: .small))
             }
             Spacer()
             if let maxCharacters {
-                UBText(textAttribute: TextAttributes(text: "\(text.count)/\(maxCharacters)", color: .neutralLow, fontSize: .small, textAlign: .end))
+                UBText(theme: theme, textAttribute: TextAttributes(text: "\(text.count)/\(maxCharacters)", color: .neutralLow, fontSize: .small, textAlign: .end))
             }
         }
         .contentShape(Rectangle())
