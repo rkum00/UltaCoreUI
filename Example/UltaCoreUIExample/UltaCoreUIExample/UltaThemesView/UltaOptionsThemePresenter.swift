@@ -8,7 +8,7 @@
 import SwiftUI
 import UltaCoreUI
 
-final class UltaOptionsThemePresenter: ObservableObject {
+final class UltaOptionsThemePresenter {
     private let router: UltaOptionsThemeRouter
     
     init(router: UltaOptionsThemeRouter) {
